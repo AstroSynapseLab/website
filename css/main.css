@@ -1,0 +1,83 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+body {
+  background-color: transparent;
+}
+
+html {
+ background-color: black;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-15%);
+}
+
+.title {
+  margin-top: 150px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: 'Bruno Ace SC', cursive;
+  font-size: 80px;
+  color:#ABA1FF;
+}
+
+.sub-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 28px; 
+  color: white;
+  margin-top: 60px;
+  
+}
+
+.sub-text {
+  font-family:'Rajdhani';
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.decoration {
+  position: relative;
+  background-image: linear-gradient(45deg, #a8c1ff 25%, #d0deff 50%, #a8c1ff 75%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3),
+               0 0 5px rgba(0, 127, 255, 0.2),
+               0 0 10px rgba(0, 127, 255, 0.3),
+               0 0 20px rgba(0, 127, 255, 0.4);
+}
+
+.decoration::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
