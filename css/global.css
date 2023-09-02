@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    line-height: normal;
+  }
+  
+  :root {
+    /* fonts */
+    --text-text-200-bold: "Basier Square";
+    --font-inherit: inherit;
+  
+    /* font sizes */
+    --text-text-200-bold-size: 18px;
+    --text-text-uppercase-400-regular-size: 24px;
+    --text-text-100-regular-size: 16px;
+    --body-body-extra-large-size: 38px;
+    --display-display-7-size: 72px;
+    --display-display-6-size: 90px;
+    --display-display-3-size: 160px;
+    --heading-heading-1-size: 54px;
+    --display-display-4-size: 130px;
+    --display-display-1-size: 270px;
+  
+    /* Colors */
+    --color-gray-100: #0b0c0e;
+    --color-gray-200: rgba(0, 0, 0, 0.1);
+    --color-white: #fff;
+    --color-gainsboro: #d9d9d9;
+    --color-gold: #ffdd29;
+    --color-mistyrose: #ffdfd8;
+    --color-darkslategray: #413f3f;
+  
+    /* Paddings */
+    --padding-5xl: 24px;
+  
+    /* border radiuses */
+    --br-11xs-2: 1.2px;
+  }
+  
