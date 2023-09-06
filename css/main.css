@@ -1,124 +1,51 @@
 /* styles.css */
+@font-face {
+  font-family: "Basier Square Bold";
+  src: url('../fonts/BasierSquare-Bold.otf') format('opentype'),
+       url('../fonts/BasierSquare-Regular.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 
-@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
-
-
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  color: white;
+@font-face {
+  font-family: "Basier Square Regular";
+  src: url('../fonts/BasierSquare-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-  background-color: transparent;
-}
-
-html {
- background-color: black;
-}
-
-/* #bgVideo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  transform: translateX(-50%) translateY(-15%);
-} */
-
-#bgVideo {
-  position: absolute; /* Change from fixed to absolute */
-  left: 0;
-  top: 25%;
-  width: 100%;
-  height: 100%;
-  z-index: -100;
-}
-
-.title {
-  margin-top: 150px;
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-family: 'Bruno Ace SC', cursive;
-  font-size: 80px;
-  color:#ABA1FF;
-}
-
-.sub-title {
-  font-family:'Rajdhani';
-  display: block;
-  width: 100%;
-  text-align: center;
-  font-size: 28px; 
-  color: white;
-  margin-top: 60px;
-  
-}
-
-.sub-text {
-  font-size: 18px;
-  margin-top: 0;
-}
-
-.decoration {
   position: relative;
-  background-image: linear-gradient(45deg, #a8c1ff 25%, #d0deff 50%, #a8c1ff 75%);
-  -webkit-background-clip: text;
-  color: transparent;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3),
-               0 0 5px rgba(0, 127, 255, 0.2),
-               0 0 10px rgba(0, 127, 255, 0.3),
-               0 0 20px rgba(0, 127, 255, 0.4);
+  background-color: black;
 }
 
-.decoration::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size: 100% 4px, 6px 100%;
-  pointer-events: none;
+.header-bg {
+  position: relative;
+  background-image: url("../imgs/landing-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  background:  cover no-repeat;
+  /* height: 960px; */
 }
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 50px;
-  }
-
-  .sub-title {
-    font-size: 24px;
-    margin-top: 30;
-  }
-
-  .sub-text {
-    font-size: 18px;
-    margin-top: 0;
-  }
+.landing-subtitle {
+  color: #FFF;
+  font-family: "Basier Square Bold";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 74px;
+  margin-left: 90px;
+  margin-top: 65%;
 }
 
-@media (max-width: 480px) {
-  .title {
-    font-size: 50px;
-  }
-
-  .sub-title {
-    font-size: 24px;
-    margin-top: 30;
-  }
-
-  .sub-text {
-    font-size: 18px;
-    margin-top: 0;
-  }
+.intro-text {
+  color: #FFDFD8;
+  font-family: "Basier Square Regular";
+  font-size: 38px;
+  line-height: 56px; /* 147.368% */
+  margin-left: 90px;
+  margin-top: 400px;
 }
