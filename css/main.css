@@ -19,15 +19,13 @@ body {
   background-color: black;
 }
 
-.header-bg {
+.header {
   position: relative;
   background-image: url("../imgs/landing-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
-  background:  cover no-repeat;
-  /* height: 960px; */
+  min-height: 760px;
 }
 
 .landing-subtitle {
@@ -37,15 +35,120 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: 74px;
-  margin-left: 90px;
-  margin-top: 65%;
+  margin-top: 450px;
 }
 
 .intro-text {
   color: #FFDFD8;
   font-family: "Basier Square Regular";
-  font-size: 38px;
+  font-size: 34px;
   line-height: 56px; /* 147.368% */
-  margin-left: 90px;
-  margin-top: 400px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+
+.solutions, .avatars, .integrations, .about-us{
+  color: #FFF;
+}
+
+.solutions, .integrations {
+  margin-bottom: 200px;
+}
+
+.avatars-description, .integrations-description {
+  padding-top: 200px;
+  padding-bottom: 50px;
+}
+
+.avatars-features {
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.avatars-description h1, .integrations-description h1, .about-us-intro h1 {
+  font-family: "Basier Square Bold";
+  font-size: 130px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130px; /* 100% */
+  letter-spacing: -3px;
+  min-height: ;
+}
+
+.integrations-description {
+  background-image: url("../imgs/integrations-header.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.avatars-description {
+  background-image: url("../imgs/avatars-header.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.solutions h3 {
+  font-family: "Basier Square Bold";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 66px; /* 122.222% */
+}
+
+.integrations-subtitle {
+  color: #FFDFD8;
+  font-family: "Basier Square Regular";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px; /* 147.368% */
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.solutions-description {
+  font-family: "Basier Square Regular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px; /* 158.333% */
+}
+
+.integrations-description h3 {
+  font-family: "Basier Square Bold";
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 66px; /* 122.222% */
+}
+
+.about-us-subtitle {
+  color: #413F3F;
+  font-family: "Basier Square Bold";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 84px; /* 116.667% */
+}
+
+.about-us-description {
+  background-image: url("../imgs/about-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.about-us-description .subtitle {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: #FFDFD8;
+  font-family: "Basier Square Regular";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px; /* 147.368% */
+
 }
