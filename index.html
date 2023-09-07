@@ -31,9 +31,35 @@ style guide rules end -->
 
 <!-- content -->
 <div class="container">
-  <nav class="navbar navbar-dark fixed-top">
+  <nav class="navbar navbar-dark fixed-top navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">Astro Synapse</a>
+      <a class="navbar-brand" href="#">
+        <img src="imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Astro Synapse
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">AI Avatars</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">LLM Integrations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li>
+            <a class="btn btn-outline-light" href="#">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+    
     </div>
   </nav>
   <!-- Landing Section -->
@@ -57,15 +83,18 @@ style guide rules end -->
 
   <!-- Solution Section -->
   <div class="row solutions">
-    <div class="col-12 offset-1">
+    <div class="col-1 offset-1">
+      <img src="imgs/dash.png" class="d-inline-block align-self-center mt-lg-4" alt="">
+    </div>
+    <div class="col-10">
       <h3>Solutions</h3>
     </div>
     <div class="row">
-      <div class="col-4 offset-1">
+      <div class="col-4 offset-2">
         <h6>AI Avatars</h6>
         <p>An interconnected system that entirely replace all your interactions with software and the internet using simple text and voice commands.</p>
       </div>
-      <div class="col-6 offset-1">
+      <div class="col-4 offset-1">
         <h6>Custom Integrations</h6>
         <p>Tailored solutions for integrating Language Learning Models (LLMs) into your workflows.</p>
         
@@ -73,7 +102,7 @@ style guide rules end -->
     </div>
 
     <div class="row">
-      <div class="col-4 offset-1">
+      <div class="col-4 offset-2">
         <a href=""> LEARN MORE</a>
       </div>
 
@@ -88,18 +117,19 @@ style guide rules end -->
   <div class="row avatars">
 
     <div class="row avatars-description">
-
-    
     
       <div class="row">
         <div class="col-7 offset-1">
           <h1>AI Avatars</h1>
-          <p style="font-size: 38px;">An interconnected system driven by several types of AI models (LLM, Audio, Video) that entirely replace all your interactions with software and the internet using simple text and voice commands.</p>
+          <p style="font-size: 38px; margin-bottom: 200px;">An interconnected system driven by several types of AI models (LLM, Audio, Video) that entirely replace all your interactions with software and the internet using simple text and voice commands.</p>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-6 offset-2">
+        <div class="col-1 offset-2">
+          <img src="imgs/dash.png" class="d-inline-block align-self-center mt-lg-2" alt="">
+        </div>
+        <div class="col-6">
           
           <h3>Features</h3>
           <div class="row">
@@ -118,56 +148,85 @@ style guide rules end -->
     <div class="row avatars-features">
 
       <div class="row">
+        
         <div class="col-3 offset-2">
-          <h6>Search Agent</h6>
-          <p>Utilizes search engines such as Google, DuckDuckGo, and Metaphor for automated web searches.</p>
+          <div class="border border-1">
+            <h6>Search Agent</h6>
+            <p>Utilizes search engines such as Google, DuckDuckGo, and Metaphor for automated web searches.</p>
+          </div>
+        </div>
+        
+        <div class="col-3">
+          <div class="border border-1">
+            <h6>Browser Agent</h6>
+            <p>Equipped with the capability to scrape, read website contents, and interact with web pages and web applications.</p>
+          </div>
+          
         </div>
         <div class="col-3">
-          <h6>Browser Agent</h6>
-          <p>Equipped with the capability to scrape, read website contents, and interact with web pages and web applications.</p>
-        </div>
-        <div class="col-3">
-          <h6>X Agent</h6>
-          <p>An account manager for managing your X social media profile.</p>
+          <div class="border border-1">
+            <h6>X Agent</h6>
+            <p>An account manager for managing your X social media profile.</p>
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-3 offset-2">
-          <h6>Email Agent</h6>
-          <p>Configured to access our preferred email provider, with the function to read, analyze, and respond to emails.</p>
+          <div class="border border-1">
+            <h6>Email Agent</h6>
+            <p>Configured to access our preferred email provider, with the function to read, analyze, and respond to emails.</p>
+          </div>
         </div>
+        
         <div class="col-3">
-          <h6>Gmail Agent</h6>
-          <p>A specialized email agent for the Google Mail provider.</p>
+          <div class="border border-1">
+            <h6>Gmail Agent</h6>
+            <p>A specialized email agent for the Google Mail provider.</p>
+          </div>
         </div>
+        
         <div class="col-3">
-          <h6>Google Drive Agent</h6>
-          <p>An agent with accessibility to your preferred Google Drive, capable of summarizing, reading, and creating documents. It can also perform basic document management like setting up sharing preferences.</p>
+          <div class="border border-1">
+            <h6>Google Drive Agent</h6>
+            <p>An agent with accessibility to your preferred Google Drive, capable of summarizing, reading, and creating documents. It can also perform basic document management like setting up sharing preferences.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-3 offset-2">
+          <div class="border border-1">
+            <h6>API Agent</h6>
+            <p>Specialized in consuming various APIs given it's provided with appropriate documentation describing the API it's connecting to.</p>
+          </div>
+        </div>
+        
+        <div class="col-3">
+          <div class="border border-1">
+            <h6>Coding Agent</h6>
+            <p>Designed to write code, from a simple webpage to a Python game. It can write code based on prompts and subsequent questions; the prompts don't need to be technical.</p>
+          </div>
+        </div>
+        
+        <div class="col-3">
+          <div class="border border-1">
+            <h6>Scrum Agent</h6>
+            <p>Facilitates the entire Scrum process, manages team members, DS, and creates project breakdowns to Epics > User Stories > Development Tasks. It also helps in project scoping estimation and writing tech documentation.</p>
+          </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-3 offset-2">
-          <h6>API Agent</h6>
-          <p>Specialized in consuming various APIs given it's provided with appropriate documentation describing the API it's connecting to.</p>
+          <div class="border border-1">
+            <h6>Github Agent</h6>
+            <p>Can load a github repositry into its system and allow you to ask questions about the provided code repository</p>
+          </div>
         </div>
-        <div class="col-3">
-          <h6>Coding Agent</h6>
-          <p>Designed to write code, from a simple webpage to a Python game. It can write code based on prompts and subsequent questions; the prompts don't need to be technical.</p>
-        </div>
-        <div class="col-3">
-          <h6>Scrum Agent</h6>
-          <p>Facilitates the entire Scrum process, manages team members, DS, and creates project breakdowns to Epics > User Stories > Development Tasks. It also helps in project scoping estimation and writing tech documentation.</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-3 offset-2">
-          <h6>Github Agent</h6>
-          <p>Can load a github repositry into its system and allow you to ask questions about the provided code repository</p>
-        </div>
-        <div class="col-7">
+        
+        <div class="col-7 avatars-features-subtitle">
           <p>Autonomous AI-driven avatars based on your predefined datasets, instructions, and scripts.</p>
         </div>
       </div>
@@ -198,7 +257,7 @@ style guide rules end -->
 
     <div class="row">
       
-      <div class="col-3 offset-1">
+      <div class="col-4">
         <h6>Knowledge Base Integrations</h6>
         <ul>
           <li>Seamlessly integrate your cloud storage or other document repositories into a chatbot, enabling you to interact with your documents through conversational interfaces.</li>
@@ -206,7 +265,7 @@ style guide rules end -->
         </ul>
       </div>
      
-      <div class="col-3">
+      <div class="col-4">
         <h6>Scrum Automation</h6>
         <ul>
           <li>Automate your entire Scrum process with a chatbot that serves as a virtual Scrum Master.</li>
@@ -214,7 +273,7 @@ style guide rules end -->
         </ul>
       </div>
       
-      <div class="col-3">
+      <div class="col-4">
         <h6>Digital Marketing Automation</h6>
         <ul>
           <li>Streamline your copywriting efforts and manage your social media accounts automatically.</li>
@@ -224,14 +283,14 @@ style guide rules end -->
 
     </div>
 
-    <div class="row">
+    <div class="row contact-form">
       <div class="col-4 offset-4">
-        <h3>Contact Us</h3>
+        <h3 style="margin-top: 100px;">Contact Us</h3>
         <form action="">
-          <input type="text" placeholder="Your name">
-          <input type="text" placeholder="Your email address">
-          <input type="text" placeholder="Message"> <br>
-          <input type="submit" value="Send Message">
+          <input type="text" class="form-control mb-3 input-data" placeholder="Name">
+          <input type="email" class="form-control mb-3 input-data" placeholder="Your email address">
+          <textarea type="text" class="form-control mb-3 input-data" rows="3" placeholder="Message"></textarea>
+          <input class="form-control btn btn-primary" type="submit" value="Send Message">
         </form>
       </div>
     </div>
@@ -277,10 +336,34 @@ style guide rules end -->
 
   </div>
 
-  <div class="row">
-    <div class="col-11 offset-1">
-      <h1>Integrating AI into all sectors, fueling innovation and driving growth.</h1>
+  <div class="row bottom-title">
+    
+    <div class="col-12">
+      <h1>Integrating AI into all sectors, <span> fueling innovation </span> and driving growth.</h1>
     </div>
+
+  </div>
+
+  <div class="row contacts"> 
+    <div class="col-8">
+      <h6>Contact</h6>
+      <p>Times Square 1, New York, NY</p>
+      <p>+1 (212) 555-1234</p>
+      <p>contact@astrosynapse.ai</p>
+    </div>
+    
+    
+    <div class="col-4 contact-form">
+      <h3>Contact Us</h3>
+      <form action="">
+        <input type="text" class="form-control mb-3 input-data" placeholder="Name">
+        <input type="email" class="form-control mb-3 input-data" placeholder="Your email address">
+        <textarea type="text" class="form-control mb-3 input-data" rows="3" placeholder="Message"></textarea>
+        <input class="form-control btn btn-primary" type="submit" value="Send Message">
+      </form>
+    </div>
+    
+
   </div>
 
 </div>
