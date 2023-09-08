@@ -1,8 +1,7 @@
 /* styles.css */
 @font-face {
   font-family: "Basier Square Bold";
-  src: url('../fonts/BasierSquare-Bold.otf') format('opentype'),
-       url('../fonts/BasierSquare-Regular.otf') format('opentype');
+  src: url('../fonts/BasierSquare-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
@@ -15,39 +14,85 @@
 }
 
 body {
-  position: relative;
+  color: white;
   background-color: black;
 }
 
-nav {
-  margin-top: 40px;
+p, a {
+  font-family: "Basier Square Regular";
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Basier Square Bold";
+}
+
+h1 {
+  font-size: 130px;
+  font-style: normal;
+  line-height: 130px; /* 100% */
+  letter-spacing: -3px;
+}
+
+h2 {
+  font-size: 90px;
+  font-style: normal;
+  line-height: 94px;
+}
+
+h3 {
+  font-size: 54px;
+  font-style: normal;
+  line-height: 66px; /* 122.222% */
+}
+
+h4 {
+  font-family: "Basier Square Regular";
+  font-size: 34px;
+  font-style: normal;
+  line-height: 56px; /* 147.368% */
+}
+
+h5 {
+  font-size: 24px;
+  font-style: normal;
+  line-height: 34px; /* 141.667% */
+}
+
+/* NAVBAR MENU */
+
+.navbar {
+  margin-top: 30px;
 }
 
 .navbar-nav {
   margin-left: auto;
+  margin-right: 8.333333%;
 }
 
-p {
-  font-family: "Basier Square Regular";
+.navbar-nav a {
+  color: #FFF;
+  margin-left: 15px;
+  /* padding: 10px 35px 10px 35px;
+   border-radius: 0; */
+}
+
+.navbar-nav .btn {
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 0;
 }
 
 .navbar-brand {
-  color: #FFF;
   text-align: center;
   font-family: "Basier Square Bold";
   font-size: 30.61px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
   letter-spacing: -0.392px;
 }
 
-.navbar-nav a {
-  color: white;
-  padding: 10px 35px 10px 35px;
-  border-radius: 0;
-  margin-left: 15px;
-}
+/* HEADER SECTION */
 
 .header {
   position: relative;
@@ -55,46 +100,34 @@ p {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 760px;
+  min-height: 960px;
 }
 
-.landing-subtitle {
-  color: #FFF;
-  font-family: "Basier Square Bold";
-  font-size: 70px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 74px;
-  margin-top: 450px;
+.header h2 {
+  padding-top: 650px;
 }
 
-.intro-text {
-  color: #FFDFD8;
-  font-family: "Basier Square Regular";
-  font-size: 34px;
-  line-height: 56px; /* 147.368% */
-  margin-top: 100px;
-  margin-bottom: 100px;
+/* INTRO SECTION */
 
+.intro {
+  margin-top: 250px;
+  margin-bottom: 250px;
 }
 
-.solutions, .avatars, .integrations, .about-us{
-  color: #FFF;
-}
+/* SOLUTIONS SECTION */
 
 .solutions {
   margin-top: 50px;
   background-image: url("../imgs/solutions-bg.png");
-  background-position: left bottom;
+  background-position: -85% top;
   background-repeat: no-repeat;
+  padding-bottom: 300px;
 }
 
 .solutions a {
   color: #FFDD29;
-  font-family: "Basier Square Regular";
   font-size: 18px;
   font-style: normal;
-  font-weight: 500;
   line-height: 20px; /* 111.111% */
   letter-spacing: 1.08px;
   text-transform: uppercase;
@@ -102,119 +135,83 @@ p {
 }
 
 .solutions h3 {
-  margin-bottom: 200px;
-}
-
-.solutions h6 {
-  color: #FFF;
-  font-family: "Basier Square Bold";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 34px; /* 141.667% */
+  margin-bottom: 100px;
 }
 
 .solutions p {
-  font-family: "Basier Square Regular";
   font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 38px; /* 158.333% */
 }
 
-.solutions, .integrations {
-  margin-bottom: 200px;
-}
+/* AVATARS SECTION */
 
-.avatars-description, .integrations-description {
-  padding-top: 200px;
-  padding-bottom: 50px;
-}
-
-.avatars-features {
-  padding-top: 50px;
+.avatars-bg {
+  background-image: url("../imgs/avatars-header.png");
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+  padding-top: 250px;
   padding-bottom: 200px;
 }
 
-.avatars-description h1, .integrations-description h1, .about-us-intro h1 {
-  font-family: "Basier Square Bold";
-  font-size: 130px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 130px; /* 100% */
-  letter-spacing: -3px;
-}
-
-.avatars-description h1 {
+.avatars h1, .avatars h3 {
   margin-bottom: 80px;
 }
 
-.integrations-description {
+.avatars h4 {
+  margin-bottom: 260px;
+}
+
+.avatars p {
+  font-size: 24px;
+  line-height: 38px; /* 158.333% */
+}
+
+.features p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 166.667% */
+}
+
+.features h4  {
+  color: #FFDFD8;
+  padding: 40px 0 0 40px;
+}
+
+.features .border {
+  padding: 15px;
+  min-height: 315px;
+  margin-top: 30px;
+  border-color: rgba(255, 255, 255, 0.3)!important;
+}
+
+/* INTEGRATIONS SECTION */
+
+.integrations-bg {
   background-image: url("../imgs/integrations-header.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  padding-top: 500px;
+  padding-bottom: 300px;
 }
 
-.avatars-description {
-  background-image: url("../imgs/avatars-header.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+.integrations-bg h3 {
+  margin-bottom: 60px;
 }
 
-.avatars-features h6 {
-  color: #FFF;
-  font-family: "Basier Square Bold";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 34px; /* 141.667% */
-  padding: 15px 0 15px 0;
+.integrations-bg h4 {
+  margin-bottom: 240px;
 }
 
-.avatars-features .border {
-  padding: 15px;
-  min-height: 315px;
-  margin-top: 30px;
-}
-
-.avatars-features-subtitle {
-  color: #FFDFD8;
-  font-family: "Basier Square Regular";
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 56px; /* 147.368% */
-  padding: 120px 120px 0 40px;
-}
-
-.solutions h3 {
-  font-family: "Basier Square Bold";
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 66px; /* 122.222% */
-}
-
-.integrations-subtitle {
-  color: #FFDFD8;
-  font-family: "Basier Square Regular";
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 56px; /* 147.368% */
-  padding-top: 50px;
-  padding-bottom: 100px;
-}
-
-.integrations h6 {
-  font-family: "Basier Square Bold";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 34px; /* 141.667% */
+.integrations h1 {
   margin-bottom: 80px;
+}
+
+.integrations p {
+  font-size: 24px;
+  line-height: 38px; /* 158.333% */
 }
 
 .integrations li {
@@ -225,23 +222,17 @@ p {
   line-height: 30px; /* 166.667% */
 }
 
-.solutions-description {
-  font-family: "Basier Square Regular";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 38px; /* 158.333% */
+.integrations .contact-form {
+  margin-top: 50px;
 }
 
-.integrations-description h3 {
-  font-family: "Basier Square Bold";
-  font-size: 44px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 66px; /* 122.222% */
+/* ABOUT US */
+
+.about-us {
+  margin-top: 150px;
 }
 
-.about-us-subtitle {
+.about-us span {
   color: #413F3F;
   font-family: "Basier Square Bold";
   font-size: 56px;
@@ -250,66 +241,49 @@ p {
   line-height: 84px; /* 116.667% */
 }
 
-.about-us-description {
+.about-us h4 {
+  margin-top: 150px;
+  margin-bottom: 250px;
+}
+
+.about-us h3, .about-us h5 {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.about-us h5 {
+  font-family: "Basier Square Regular";
+}
+
+.about-us-bg {
   background-image: url("../imgs/about-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  padding-bottom: 100px;
+  margin-top: 100px;
 }
 
-.about-us-description .subtitle {
-  padding-top: 200px;
-  padding-bottom: 150px;
-  color: #FFDFD8;
-  font-family: "Basier Square Regular";
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 56px; /* 147.368% */
+/* FOOTER */
 
-}
-
-.about-us-description h3 {
-  color: #FFF;
-  font-family: "Basier Square Bold";
-  font-size: 54px;
-  font-style: normal;
-  line-height: 66px; /* 122.222% */
-  margin-bottom: 70px;;
-}
-
-.about-us-description p {
-  padding-top: 70px;
-  padding-bottom: 70px;
-  color: #FFF;
-  font-family: "Basier Square Regular";
-  font-size: 24px;
-  font-style: normal;
-  line-height: 38px; /* 158.333% */
-}
-
-.bottom-title h1 {
+.footer h1 {
   color: #413F3F;
-  font-family: "Basier Square Bold";
   font-size: 160px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 160px; /* 100% */
-  letter-spacing: -6px;
   padding-top: 200px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
-.bottom-title span {
+.footer h1 span {
   color: #FFF;
 }
+
+.footer .contact-form {
+  margin-bottom: 100px;
+}
+
+/* CONTACT FORM STYLE */
 
 .contact-form h3 {
-  font-family: "Basier Square Bold";
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 50px; /* 131.579% */
   margin-bottom: 20px;
 }
 
@@ -335,12 +309,4 @@ p {
 
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
-}
-
-.contacts {
-  padding-bottom: 200px;
-}
-
-.contacts h6 {
-  
 }

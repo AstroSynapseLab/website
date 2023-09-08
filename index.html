@@ -30,19 +30,22 @@ style guide rules end -->
 <body>
 
 <!-- content -->
-<div class="container">
-  <nav class="navbar navbar-dark fixed-top navbar-expand-lg">
-    <div class="container">
+<div class="as-container container-fluid">
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-dark fixed-top navbar-expand-lg offset-1">
+    <div class="container-fluid">
+
       <a class="navbar-brand" href="#">
         <img src="imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Astro Synapse
       </a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        
+      <div class="collapse navbar-collapse" id="">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">AI Avatars</a>
@@ -57,51 +60,53 @@ style guide rules end -->
             <a class="btn btn-outline-light" href="#">Contact</a>
           </li>
         </ul>
-
       </div>
     
     </div>
   </nav>
-  <!-- Landing Section -->
+
+  <!-- Header Section -->
   <div class="row header">  
-    <div class="col-12">
-      
-      <div class="row row-gap-12">
-        <div class="col-lg-6 col-md-8 col-sm-8 offset-1">
-          <p class="landing-subtitle">AI Research & Integrations Lab</p>
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-6 offset-1">
+          <h2>AI Research & Integrations Lab</h2>
         </div>
       </div>
-
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-7 offset-1">
-      <p class="intro-text">Our lab operates as a premier AI research and integration lab, specializing in providing essential AI technological and business know-how to various businesses.</p>
+  <!-- Intro Section -->
+  <div class="row intro">
+    <div class="col-lg-5 offset-1">
+      <h4>Our lab operates as a premier AI research and integration lab, specializing in providing essential AI technological and business know-how to various businesses.</h4>
     </div>
   </div>
 
-  <!-- Solution Section -->
+  <!-- Solutions Section -->
   <div class="row solutions">
-    <div class="col-1 offset-1">
-      <img src="imgs/dash.png" class="d-inline-block align-self-center mt-lg-4" alt="">
-    </div>
-    <div class="col-10">
-      <h3>Solutions</h3>
-    </div>
+
     <div class="row">
-      <div class="col-4 offset-2">
-        <h6>AI Avatars</h6>
+      <div class="col-lg-1 offset-1">
+        <img src="imgs/dash.png" class="d-inline-block mt-4" alt="">
+      </div>
+      <div class="col-lg-10">
+        <h3>Solutions</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 offset-2">
+        <h5>AI Avatars</h5>
         <p>An interconnected system that entirely replace all your interactions with software and the internet using simple text and voice commands.</p>
       </div>
       <div class="col-4 offset-1">
-        <h6>Custom Integrations</h6>
+        <h5>Custom Integrations</h5>
         <p>Tailored solutions for integrating Language Learning Models (LLMs) into your workflows.</p>
-        
       </div>
     </div>
 
-    <div class="row">
+    <div class="row linx">
       <div class="col-4 offset-2">
         <a href=""> LEARN MORE</a>
       </div>
@@ -116,56 +121,53 @@ style guide rules end -->
   <!-- AI Avatars Section-->
   <div class="row avatars">
 
-    <div class="row avatars-description">
+    <div class="row avatars-bg">
     
       <div class="row">
-        <div class="col-7 offset-1">
+        <div class="col-6 offset-1">
           <h1>AI Avatars</h1>
-          <p style="font-size: 38px; margin-bottom: 200px;">An interconnected system driven by several types of AI models (LLM, Audio, Video) that entirely replace all your interactions with software and the internet using simple text and voice commands.</p>
+          <h4>An interconnected system driven by several types of AI models (LLM, Audio, Video) that entirely replace all your interactions with software and the internet using simple text and voice commands.</h4>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-1 offset-2">
+        <div class="col-1 offset-1">
           <img src="imgs/dash.png" class="d-inline-block align-self-center mt-lg-2" alt="">
         </div>
         <div class="col-6">
-          
           <h3>Features</h3>
-          <div class="row">
-            
-            <div class="col-8">
-              <p>AI Avatar comes with a toolkit of autonomous agents that can perform various operations, completely autonomous and driven by a Language Model (LLM) or other types of foundational models.</p>
-            </div>
-            
-          </div>
-          
         </div>
       </div>
-    
+
+      <div class="row">
+        <div class="col-4 offset-2">
+          <p>AI Avatar comes with a toolkit of autonomous agents that can perform various operations, completely autonomous and driven by a Language Model (LLM) or other types of foundational models.</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="row avatars-features">
+    <div class="row features">
 
       <div class="row">
         
         <div class="col-3 offset-2">
-          <div class="border border-1">
-            <h6>Search Agent</h6>
+          <div class="border">
+            <h5>Search Agent</h5>
             <p>Utilizes search engines such as Google, DuckDuckGo, and Metaphor for automated web searches.</p>
           </div>
         </div>
         
         <div class="col-3">
           <div class="border border-1">
-            <h6>Browser Agent</h6>
+            <h5>Browser Agent</h5>
             <p>Equipped with the capability to scrape, read website contents, and interact with web pages and web applications.</p>
           </div>
           
         </div>
         <div class="col-3">
           <div class="border border-1">
-            <h6>X Agent</h6>
+            <h5>X Agent</h5>
             <p>An account manager for managing your X social media profile.</p>
           </div>
         </div>
@@ -174,21 +176,21 @@ style guide rules end -->
       <div class="row">
         <div class="col-3 offset-2">
           <div class="border border-1">
-            <h6>Email Agent</h6>
+            <h5>Email Agent</h5>
             <p>Configured to access our preferred email provider, with the function to read, analyze, and respond to emails.</p>
           </div>
         </div>
         
         <div class="col-3">
           <div class="border border-1">
-            <h6>Gmail Agent</h6>
+            <h5>Gmail Agent</h5>
             <p>A specialized email agent for the Google Mail provider.</p>
           </div>
         </div>
         
         <div class="col-3">
           <div class="border border-1">
-            <h6>Google Drive Agent</h6>
+            <h5>Google Drive Agent</h5>
             <p>An agent with accessibility to your preferred Google Drive, capable of summarizing, reading, and creating documents. It can also perform basic document management like setting up sharing preferences.</p>
           </div>
         </div>
@@ -198,21 +200,21 @@ style guide rules end -->
 
         <div class="col-3 offset-2">
           <div class="border border-1">
-            <h6>API Agent</h6>
+            <h5>API Agent</h5>
             <p>Specialized in consuming various APIs given it's provided with appropriate documentation describing the API it's connecting to.</p>
           </div>
         </div>
         
         <div class="col-3">
           <div class="border border-1">
-            <h6>Coding Agent</h6>
+            <h5>Coding Agent</h5>
             <p>Designed to write code, from a simple webpage to a Python game. It can write code based on prompts and subsequent questions; the prompts don't need to be technical.</p>
           </div>
         </div>
         
         <div class="col-3">
           <div class="border border-1">
-            <h6>Scrum Agent</h6>
+            <h5>Scrum Agent</h5>
             <p>Facilitates the entire Scrum process, manages team members, DS, and creates project breakdowns to Epics > User Stories > Development Tasks. It also helps in project scoping estimation and writing tech documentation.</p>
           </div>
         </div>
@@ -221,13 +223,13 @@ style guide rules end -->
       <div class="row">
         <div class="col-3 offset-2">
           <div class="border border-1">
-            <h6>Github Agent</h6>
+            <h5>Github Agent</h5>
             <p>Can load a github repositry into its system and allow you to ask questions about the provided code repository</p>
           </div>
         </div>
         
-        <div class="col-7 avatars-features-subtitle">
-          <p>Autonomous AI-driven avatars based on your predefined datasets, instructions, and scripts.</p>
+        <div class="col-5">
+          <h4>Autonomous AI-driven avatars based on your predefined datasets, instructions, and scripts.</h4>
         </div>
       </div>
 
@@ -238,43 +240,41 @@ style guide rules end -->
   <!-- LLM Integrations Section -->
   <div class="row integrations">
     
-    <div class="row integrations-description">
+    <div class="row integrations-bg">
       <div class="row">
-        <div class="col-8 offset-4">
+        <div class="col-7 offset-4">
           <h1>LLM Integrations</h1>
-          <p class="integrations-subtitle">Tailored solutions for integrating Language Learning Models (LLMs) into your workflows.</p>
+          <h4>Tailored solutions for integrating Language Learning Models (LLMs) into your workflows.</h>
         </div>
       </div>
-
       <div class="row">
-        <div class="col-8 offset-4">
+        <div class="col-6 offset-4">
           <h3>Solutions</h3>
-          <p class="solutions-description">These custom integrations may not include all the features available with AI Avatars but provide a flexible option for minimalistic integration across various stages of automation.</p>
+          <p>These custom integrations may not include all the features available with AI Avatars but provide a flexible option for minimalistic integration across various stages of automation.</p>
         </div>
       </div>
-
     </div>
 
     <div class="row">
       
-      <div class="col-4">
-        <h6>Knowledge Base Integrations</h6>
+      <div class="col-3 offset-1">
+        <h5>Knowledge Base Integrations</h5>
         <ul>
           <li>Seamlessly integrate your cloud storage or other document repositories into a chatbot, enabling you to interact with your documents through conversational interfaces.</li>
           <li>By embedding a knowledge base into a Vector Database, you gain the capability to perform complex searches across your documents.</li>
         </ul>
       </div>
      
-      <div class="col-4">
-        <h6>Scrum Automation</h6>
+      <div class="col-3">
+        <h5>Scrum Automation</h5>
         <ul>
           <li>Automate your entire Scrum process with a chatbot that serves as a virtual Scrum Master.</li>
           <li>The bot can decompose a project into Epics and User Stories, generate development tasks, and even write code based on technical specifications.</li>
         </ul>
       </div>
       
-      <div class="col-4">
-        <h6>Digital Marketing Automation</h6>
+      <div class="col-3">
+        <h5>Digital Marketing Automation</h5>
         <ul>
           <li>Streamline your copywriting efforts and manage your social media accounts automatically.</li>
           <li>Utilize a chatbot capable of writing and posting on social media platforms, either autonomously or under your supervision.</li>
@@ -284,7 +284,7 @@ style guide rules end -->
     </div>
 
     <div class="row contact-form">
-      <div class="col-4 offset-4">
+      <div class="col-3 offset-4">
         <h3 style="margin-top: 100px;">Contact Us</h3>
         <form action="">
           <input type="text" class="form-control mb-3 input-data" placeholder="Name">
@@ -299,71 +299,56 @@ style guide rules end -->
 
   <!-- About Us Section -->
   <div class="row about-us">
-    <div class="row about-us-intro">
-      <div class="row">
-        <div class="col-11 offset-1">
-          <h1>ABOUT US</h1>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-11 offset-1">
-          <p class="about-us-subtitle">AI consulting / Custom model training /  Research and patent licensing / Open-source</p>
-      </div>
-    </div>
 
-    
-    <div class="row about-us-description">
-      
-      <div class="col-7 offset-1">
-        <div class="row">
-          <div class="col-12">
-            <p class="subtitle">Astro Synapse is a leading AI research and integration lab dedicated to delivering critical AI technology and business expertise to  enterprises.</p>
-          </div>
-        </div>
-    
-        <div class="row">
-          <div class="col-12">
-            <h3>Tailored AI models to your business requirements.</h3>
-            <p>We work closely with businesses to identify their unique needs, create customized training data sets, and train AI models that precisely meet their requirements. </p>
-            <p>We offer ongoing support and maintenance for the trained models, ensuring they continue to serve businesses optimally over time.</p>
-          </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-10 offset-1">
+          <h1>ABOUT US</h1>
+          <span>AI consulting / Custom model training /  Research and patent licensing / Open-source</span>
         </div>
       </div>
-    
+
+      <div class="row about-us-bg">
+        <div class="col-6 offset-1">
+          <h4>Astro Synapse is a leading AI research and integration lab dedicated to delivering critical AI technology and business expertise to  enterprises.</h4>
+          <h3>Tailored AI models to your business requirements.</h3>
+          <h5>We work closely with businesses to identify their unique needs, create customized training data sets, and train AI models that precisely meet their requirements. </h5>
+          <h5>We offer ongoing support and maintenance for the trained models, ensuring they continue to serve businesses optimally over time.</h5>
+        </div>
+      </div>
     </div>
    
-
   </div>
 
-  <div class="row bottom-title">
-    
-    <div class="col-12">
-      <h1>Integrating AI into all sectors, <span> fueling innovation </span> and driving growth.</h1>
-    </div>
+  <div class="row footer">
+    <div class="col-10 offset-1">
 
-  </div>
+      <div  class="row">
+        <div class="col-12">
+          <h1>Integrating AI into all sectors, <span> fueling innovation </span> and driving growth.</h1>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-8">
+          <h5>Contact</h5>
+          <p>Times Square 1, New York, NY</p>
+          <p>+1 (212) 555-1234</p>
+          <p>contact@astrosynapse.ai</p>
+        </div>
 
-  <div class="row contacts"> 
-    <div class="col-8">
-      <h6>Contact</h6>
-      <p>Times Square 1, New York, NY</p>
-      <p>+1 (212) 555-1234</p>
-      <p>contact@astrosynapse.ai</p>
-    </div>
-    
-    
-    <div class="col-4 contact-form">
-      <h3>Contact Us</h3>
-      <form action="">
-        <input type="text" class="form-control mb-3 input-data" placeholder="Name">
-        <input type="email" class="form-control mb-3 input-data" placeholder="Your email address">
-        <textarea type="text" class="form-control mb-3 input-data" rows="3" placeholder="Message"></textarea>
-        <input class="form-control btn btn-primary" type="submit" value="Send Message">
-      </form>
-    </div>
-    
+        <div class="col-4 contact-form">
+          <h3>Contact Us</h3>
+          <form action="">
+            <input type="text" class="form-control mb-3 input-data" placeholder="Name">
+            <input type="email" class="form-control mb-3 input-data" placeholder="Your email address">
+            <textarea type="text" class="form-control mb-3 input-data" rows="3" placeholder="Message"></textarea>
+            <input class="form-control btn btn-primary" type="submit" value="Send Message">
+          </form>
+        </div>
+      </div>
 
+    </div>
   </div>
 
 </div>
