@@ -132,6 +132,7 @@ h5 {
   letter-spacing: 1.08px;
   text-transform: uppercase;
   text-decoration: none;
+  margin-top: auto;
 }
 
 .solutions h3 {
@@ -148,7 +149,7 @@ h5 {
 .avatars-bg {
   background-image: url("../imgs/avatars-header.png");
   background-size: cover;
-  background-position: right top;
+  background-position: right center;
   background-repeat: no-repeat;
   padding-top: 250px;
   padding-bottom: 200px;
@@ -258,7 +259,7 @@ h5 {
 .about-us-bg {
   background-image: url("../imgs/about-bg.png");
   background-size: cover;
-  background-position: center center;
+  background-position: center right;
   background-repeat: no-repeat;
   padding-bottom: 100px;
   margin-top: 100px;
@@ -288,12 +289,19 @@ h5 {
   margin-bottom: 20px;
 }
 
+.contact-form textarea {
+  height: 150px;
+}
+
 .form-control {
   border-radius: 0;
   font-family: "Basier Square Regular";
-  font-size: 14px;
+  font-size: 18px;
   color: #FFF;
+  height: 60px;
 }
+
+
 
 .input-data {
   background: transparent;
@@ -347,12 +355,13 @@ h5 {
   }
 
   .header {
+    background-image: url("../imgs/header-bg-mobile.png");
     background-size: cover;
     min-height: 484px;
   }
 
   .header h2 {
-    padding-top: 300px;
+    padding-top: 180px;
   }
 
   .intro {
@@ -368,6 +377,11 @@ h5 {
     margin-bottom: 20px;
   }
 
+  .solutions h5 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
   .avatars-bg {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -379,6 +393,11 @@ h5 {
 
   .avatars h4 {
     margin-bottom: 70px;
+  }
+
+  .features .border {
+    border: none !important;
+    min-height: auto;
   }
 
   .integrations-bg {
@@ -398,6 +417,10 @@ h5 {
     font-size: 60px;
   }
 
+  .about-us span {
+    line-height: 64px; /* 116.667% */
+  }
+
   .about-us h4 {
     margin-top: 30px;
     margin-bottom: 50px;
@@ -410,8 +433,8 @@ h5 {
 
   .footer h1 {
     color: #413F3F;
-    font-size: 80px;
-    line-height: 80px; /* 100% */
+    font-size: 70px;
+    line-height: 70px; /* 100% */
     padding-top: 20px;
     padding-bottom: 10px;
   }
