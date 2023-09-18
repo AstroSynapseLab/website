@@ -104,7 +104,7 @@ h5 {
 }
 
 .header h2 {
-  padding-top: 650px;
+  padding-top: 550px;
 }
 
 /* INTRO SECTION */
@@ -213,6 +213,11 @@ h5 {
 .integrations p {
   font-size: 24px;
   line-height: 38px; /* 158.333% */
+}
+
+.integrations ul {
+  padding-right: 100px;
+  padding-left: 0;
 }
 
 .integrations li {
@@ -332,7 +337,7 @@ h5 {
   h2 {
     font-size: 50px;
     font-style: normal;
-    line-height: 54px;
+    line-height: 44px;
   }
 
   h3 {
@@ -352,6 +357,10 @@ h5 {
     font-size: 20px;
     font-style: normal;
     line-height: 30px; /* 141.667% */
+  }
+
+  .navbar-toggler {
+    display: none;
   }
 
   .header {
@@ -415,6 +424,15 @@ h5 {
 
   .integrations h1 {
     font-size: 60px;
+    line-height: 60px;
+  }
+
+  .integrations h5 {
+    margin-top: 40px;
+  }
+
+  .integrations ul {
+    padding-left: 20px;
   }
 
   .about-us span {
@@ -431,11 +449,19 @@ h5 {
     margin-bottom: 10px;
   }
 
+  .about-us-bg {
+    background-image: none;
+  }
+
   .footer h1 {
     color: #413F3F;
     font-size: 70px;
     line-height: 70px; /* 100% */
     padding-top: 20px;
     padding-bottom: 10px;
+  }
+  
+  .footer h3 {
+    margin-top: 80px;
   }
 }
