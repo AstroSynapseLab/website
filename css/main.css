@@ -27,11 +27,17 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Basier Square Bold";
 }
 
-h1 {
+/* h1 {
   font-size: 130px;
   font-style: normal;
-  line-height: 130px; /* 100% */
+  line-height: 130px;
   letter-spacing: -3px;
+} */
+
+h1 {
+  color: #413F3F;
+  font-size: 130px;
+  line-height: 130px; /* 100% */
 }
 
 h2 {
@@ -59,6 +65,15 @@ h5 {
   line-height: 34px; /* 141.667% */
 }
 
+p {
+  font-size: 24px;
+  line-height: 38px; /* 158.333% */
+}
+
+span {
+  color: white;
+}
+
 /* NAVBAR MENU */
 
 .navbar {
@@ -73,8 +88,8 @@ h5 {
 .navbar-nav a {
   color: #FFF;
   margin-left: 15px;
-  /* padding: 10px 35px 10px 35px;
-   border-radius: 0; */
+  padding: 10px 35px 10px 35px;
+   border-radius: 0;
 }
 
 .navbar-nav .btn {
@@ -92,39 +107,28 @@ h5 {
   letter-spacing: -0.392px;
 }
 
-/* HEADER SECTION */
-
-.header {
-  position: relative;
+/* LANDING SECTION */
+.landing-bg {
   background-image: url("../imgs/landing-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 960px;
 }
 
-.header h2 {
-  padding-top: 550px;
+.landing h2 {
+  margin-top: 100px;
 }
 
-/* INTRO SECTION */
+/* ABOUT US SECTION */
 
-.intro {
-  margin-top: 250px;
-  margin-bottom: 250px;
-}
-
-/* SOLUTIONS SECTION */
-
-.solutions {
-  margin-top: 50px;
-  background-image: url("../imgs/solutions-bg.png");
+.about-us-bg {
+  background-image: url("../imgs/about-us-bg.png");
   background-position: -85% top;
   background-repeat: no-repeat;
-  padding-bottom: 300px;
+  
 }
 
-.solutions a {
+.about-us-link {
   color: #FFDD29;
   font-size: 18px;
   font-style: normal;
@@ -135,160 +139,21 @@ h5 {
   margin-top: auto;
 }
 
-.solutions h3 {
-  margin-bottom: 100px;
-}
-
-.solutions p {
-  font-size: 24px;
-  line-height: 38px; /* 158.333% */
-}
-
-/* AVATARS SECTION */
-
-.avatars-bg {
-  background-image: url("../imgs/avatars-header.png");
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-  padding-top: 250px;
-  padding-bottom: 200px;
-}
-
-.avatars h1, .avatars h3 {
-  margin-bottom: 80px;
-}
-
-.avatars h4 {
-  margin-bottom: 260px;
-}
-
-.avatars p {
-  font-size: 24px;
-  line-height: 38px; /* 158.333% */
-}
-
-.features p {
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 166.667% */
-}
-
-.features h4  {
-  color: #FFDFD8;
-  padding: 40px 0 0 40px;
-}
-
-.features .border {
-  padding: 15px;
-  min-height: 315px;
-  margin-top: 30px;
-  border-color: rgba(255, 255, 255, 0.3)!important;
-}
-
-/* INTEGRATIONS SECTION */
-
-.integrations-bg {
-  background-image: url("../imgs/integrations-header.png");
+.asai-bg {
+  background-image: url("../imgs/asai-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  padding-top: 500px;
-  padding-bottom: 300px;
 }
 
-.integrations-bg h3 {
-  margin-bottom: 60px;
-}
-
-.integrations-bg h4 {
-  margin-bottom: 240px;
-}
-
-.integrations h1 {
-  margin-bottom: 80px;
-}
-
-.integrations p {
-  font-size: 24px;
-  line-height: 38px; /* 158.333% */
-}
-
-.integrations ul {
-  padding-right: 100px;
-  padding-left: 0;
-}
-
-.integrations li {
-  font-family: "Basier Square Regular";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 166.667% */
-}
-
-.integrations .contact-form {
-  margin-top: 50px;
-}
-
-/* ABOUT US */
-
-.about-us {
-  margin-top: 150px;
-}
-
-.about-us span {
-  color: #413F3F;
-  font-family: "Basier Square Bold";
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 84px; /* 116.667% */
-}
-
-.about-us h4 {
-  margin-top: 150px;
-  margin-bottom: 250px;
-}
-
-.about-us h3, .about-us h5 {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.about-us h5 {
-  font-family: "Basier Square Regular";
-}
-
-.about-us-bg {
-  background-image: url("../imgs/about-bg.png");
+.solutions-bg {
+  background-image: url("../imgs/solutions-bg.png");
   background-size: cover;
-  background-position: center right;
+  background-position: -200px center;
   background-repeat: no-repeat;
-  padding-bottom: 100px;
-  margin-top: 100px;
 }
 
-/* FOOTER */
-
-.footer h1 {
-  color: #413F3F;
-  font-size: 160px;
-  line-height: 160px; /* 100% */
-  padding-top: 200px;
-  padding-bottom: 100px;
-}
-
-.footer h1 span {
-  color: #FFF;
-}
-
-.footer .contact-form {
-  margin-bottom: 100px;
-}
-
-/* CONTACT FORM STYLE */
+/* CONTACT FORM */
 
 .contact-form h3 {
   margin-bottom: 20px;
@@ -306,8 +171,6 @@ h5 {
   height: 60px;
 }
 
-
-
 .input-data {
   background: transparent;
 }
@@ -323,6 +186,12 @@ h5 {
 
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
+}
+
+@media screen and (min-width: 768px)  {
+  .vh-md-100 {
+    height: 100vh;
+  }
 }
 
 @media screen and (max-width: 768px)  {
@@ -363,94 +232,14 @@ h5 {
     display: none;
   }
 
-  .header {
-    background-image: url("../imgs/header-bg-mobile.png");
-    background-size: cover;
+  .landing-bg {
+    background-image: url("../imgs/landing-bg.png");
+    background-size: contain;
     min-height: 484px;
-  }
-
-  .header h2 {
-    padding-top: 180px;
-  }
-
-  .intro {
-    margin-top: 50px;
-    margin-bottom: 50px;
   }
 
   .solutions {
     padding-bottom: 100px;
-  }
-
-  .solutions h3 {
-    margin-bottom: 20px;
-  }
-
-  .solutions h5 {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-
-  .avatars-bg {
-    padding-top: 50px;
-    padding-bottom: 20px;
-  }
-
-  .avatars h1, .avatars h3 {
-    margin-bottom: 20px;
-  }
-
-  .avatars h4 {
-    margin-bottom: 70px;
-  }
-
-  .features .border {
-    border: none !important;
-    min-height: auto;
-  }
-
-  .integrations-bg {
-    padding-top: 75px;
-    padding-bottom: 40px;
-  }
-
-  .integrations-bg h3 {
-    margin-bottom: 20px;
-  }
-
-  .integrations-bg h4 {
-    margin-bottom: 40px;
-  }
-
-  .integrations h1 {
-    font-size: 60px;
-    line-height: 60px;
-  }
-
-  .integrations h5 {
-    margin-top: 40px;
-  }
-
-  .integrations ul {
-    padding-left: 20px;
-  }
-
-  .about-us span {
-    line-height: 64px; /* 116.667% */
-  }
-
-  .about-us h4 {
-    margin-top: 30px;
-    margin-bottom: 50px;
-  }
-
-  .about-us h3, .about-us h5 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .about-us-bg {
-    background-image: none;
   }
 
   .footer h1 {
