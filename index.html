@@ -244,22 +244,6 @@
 <script src="js/main.js" type="text/javascript"></script>
 
 <script>
-  // if (window.matchMedia("(min-width: 576px)").matches) {
-  //   // Listen to slide events
-  //   $('#aboutUsCarousel').on('slide.bs.carousel', function (event) {
-  //     const carouselData = {
-  //       total: $(this).find('.carousel-item').length, // total carousel items
-  //       currentIndex: $(event.relatedTarget).index() // the index of the currently displayed item (starts from 0)
-  //     };
-  
-  //     // Hide prev button if we hit the first item
-  //     $('.carousel-control-prev', this).toggleClass('d-none', carouselData.currentIndex === 0);
-    
-  //     // Hide next button if we hit the last item
-  //     $('.carousel-control-next', this).toggleClass('d-none', carouselData.currentIndex === carouselData.total - 1);
-  //   });
-  // }
-
   $('#aboutUsCarousel').on('slide.bs.carousel', function (event) {
     const carouselData = {
       total: $(this).find('.carousel-item').length, // total carousel items
