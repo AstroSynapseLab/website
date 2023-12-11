@@ -255,5 +255,12 @@
 
     // Hide next button if we hit the last item
     $('.carousel-control-next', this).toggleClass('d-none', carouselData.currentIndex === carouselData.total - 1);
+
+    scrollToAnchor('about-us');
   });
+
+  function scrollToAnchor(anchorID) {
+    var anchor = $("#" + anchorID);
+    $('html,body').animate({scrollTop: anchor.offset().top},'slow');
+  }
   </script>
