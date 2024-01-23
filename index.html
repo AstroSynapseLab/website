@@ -11,6 +11,25 @@
 
 </body>
 <link href="css/main.css" rel="stylesheet">
+<style>
+  #card_container .card { filter: drop-shadow(0 0 52px rgba(182, 53, 194, 0.6)); background-color: black; color: white; }
+  .card a img {
+    height: 32px;
+    opacity: .7
+  }
+  .card a {
+    position: absolute;
+    bottom: 3rem;
+    right: 2.5rem;
+  }
+  h1 {
+    color: #3b1b4d;
+  }
+  h1 span {
+    color: white;
+  }
+  /*3b1b4d*/
+</style>
 <!-- here we use body tag to add custom classes to it, no need to close it, or account it in tags hierarchy  -->
 <body>
 
@@ -62,161 +81,61 @@
     </div>
   </div>
 
-  <!-- About Us Section -->
+  <!-- Main Content -->
   <div class="row vh-md-100 d-flex align-items-center" id="about-us">
-    <div id="aboutUsCarousel" class="carousel slide" data-bs-interval="false" data-bs-wrap="false">
-      <!-- Carousel Slides -->
-      <div class="carousel-inner">
-
-        <!-- Custom Integrations Item -->
-        <div class="carousel-item">
-          <div class="col-12 vh-md-100 d-flex flex-column solutions-bg">
-        
-            <div class="row flex-grow-1">
-              <div class="col-8 offset-md-2 d-flex flex-column justify-content-center">
-                <h2 class="mt-md-5">Custom Integrations</h2>
-                <h4>Specific requirements need custom solutions. In this case, we can offer custom LLM and AI avatar integrations.</h4>
-              </div>
-            </div>
-  
-            <div class="row flex-grow-1 d-flex align-items-center">
-              <div class="col-md-11 offset-md-1">
-                <div class="row">
-                  <div class="col-3 col-md-1 offset-md-1 d-none d-md-block">
-                    <img src="imgs/dash.png" class="d-inline-block mt-4" alt="">
-                  </div>
-
-                  <div class="col-6">
-                    <h3 class="mb-5 mt-5 mt-md-0">LLM Integrations</h3>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4 offset-md-2 offset-md-1 d-flex flex-column mb-5 mb-md-0">
-                    <h5>Knowledge Base Integration</h5>
-                    <p class="flex-grow-1">Seamlessly integrate your cloud storage or other document repositories into a chatbot, enabling interaction with your documents through conversational interfaces.</p>
-                    <a class="about-us-link" href=""> LEARN MORE</a>
-                  </div>
-                  <div class="col-md-4 offset-md-1 d-flex align-items-start flex-column mb-5 mb-md-0">
-                    <h5>Data & Privacy Protection</h5>
-                    <p>If your concern is privacy, our solutions help you protect your data by building a custom Retrieval Augmented Generation(RAG) system around a closed-source LLM API or a custom open-source model.</p>
-                    <a class="mt-auto about-us-link" href=""> LEARN MORE</a>
-                  </div>
-                </div>
-        
-              </div>
-            </div>
-          </div>
-        </div>
-    
         <!-- About us Item -->
-        <div class="carousel-item active">
           <div class="col-12 vh-md-100 d-flex flex-column">
-        
             <div class="row flex-grow-1">
               <div class="col-md-7 offset-md-1 d-flex align-items-center">
                 <h4 class="mt-md-5">Our lab specializes in constructing lifelike artificial personalities by applying a quantified version of the OCEAN model. Our aim is to empower individuals and businesses by providing reliable and trustworthy AI solutions and know-how, based on transparent technology.</h4>
               </div>
             </div>
-  
-            <div class="row flex-grow-1 d-flex align-items-center about-us-bg">
-              <div class="col-md-11 offset-md-1">
-            
-                <div class="row">
-                  <div class="col-3 col-md-1 offset-md-1 d-none d-md-block">
-                    <img src="imgs/dash.png" class="d-inline-block mt-4" alt="">
-                  </div>
-                  <div class="col-6">
-                    <h3 class="mb-5 mt-5 mt-md-0">Solutions</h3>
-                  </div>
-                </div>
-        
-                <div class="row">
-                  <div class="col-md-4 offset-md-2 offset-md-1 d-flex flex-column mb-5 mb-md-0">
-                    <h5>Custom Integrations</h5>
-                    <p class="flex-grow-1">Tailored solutions for integrating Large Language Models (LLMs) into your workflows and business.</p>
-                    <a class="about-us-link" href="" data-bs-target="#aboutUsCarousel"  data-bs-slide="prev"> << LEARN MORE</a>
-                  </div>
-                  <div class="col-md-4 offset-md-1 d-flex align-items-start flex-column mb-5 mb-md-0">
-                    <h5>ASAI</h5>
-                    <p>Our open-source platform for building personalized AI avatars. An interconnected system that entirely replaces all your interactions with software and the internet using simple text and voice commands.</p>
-                    <a class="mt-auto about-us-link" href="" data-bs-target="#aboutUsCarousel"  data-bs-slide="next"> LEARN MORE >> </a>
-                  </div>
-                </div>
-  
-              </div>
-            </div>
-          </div>
         </div>
-
-        <!-- ASAI Item -->
-        <div class="carousel-item">
-          <div class="col-12 vh-md-100 d-flex flex-column asai-bg">
-        
-            <div class="row flex-grow-1">
-              <div class="col-md-7 offset-md-1 d-flex flex-column justify-content-center">
-                <img src="imgs/ASAILogotype.svg" width="480" class="logotype" alt="">
-                <h4 class="mt-5">AI Avatar is an interconnected system driven by several types of AI models (LLM, Audio, Video) that entirely replace your interactions with software and the internet using simple text and voice commands. Build Your Own AI Avatar!</h4>
-                
-              </div>
-            </div>
-  
-            <div class="row flex-grow-1 d-flex align-items-center">
-              <div class="col-md-11 offset-md-1">
-            
-                <div class="row">
-                  <div class="col-3 col-md-1 offset-md-1 d-none d-md-block">
-                    <img src="imgs/dash.png" class="d-inline-block mt-4" alt="">
-                  </div>
-                  <div class="col-6">
-                    <h3 class="mb-5 mt-5 mt-md-0">Features</h3>
-                  </div>
-                </div>
-        
-                <div class="row">
-                  <div class="col-md-6 offset-md-2 offset-md-1 mb-5 mb-md-0">
-                    <p>Your Avatar comes with a toolkit of autonomous agents that can perform various operations, completely autonomous and driven by a Large Language Model (LLM) or other types of foundational models.</p>
-                    <div class="row">
-                      <div class="col-4">
-                        <a class="about-us-link" href="https://asai.astrosynapse.ai" target="_blank"> LEARN MORE</a>
-                      </div>
-                      <div class="col-4">
-                        <a class="about-us-link" href="https://asai.astrosynapse.ai/login" target="_blank"> early Access</a>
-                      </div>
-                      <div class="col-4">
-                        <a class="about-us-link" href="https://asai.astrosynapse.ai/chat" target="_blank"> talk to asai</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-  
-              </div>
-            </div>
-
-          </div>
-        </div>
-      
       </div>
-    
-      <!-- Carousel Control Buttons -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#aboutUsCarousel"  data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#aboutUsCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    
-    </div>  
+  </div>
+
+  <!-- Link Cards -->
+  <div class="offset-md-1 row row-cols-1 row-cols-md-3 g-4 justify-content-around" id="card_container">
+    <div class="col-md-3">
+      <div class="card h-100 rounded-0" id="card_integrations">
+        <img src="imgs/card-1.png" class="card-img" alt="Background image">
+        <div class="card-img-overlay p-4">
+          <h4 class="card-title">Custom AI Integrations</h4>
+          <p class="card-text">LLM and AI avatar integrations</p>
+          <a href="solutions/"><img src="imgs/arrow.png" alt="Arrow pointing right"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card h-100 rounded-0" id="card_avatar">
+        <img src="imgs/card-2.png" class="card-img" alt="Background image">
+        <div class="card-img-overlay p-4">
+          <h4 class="card-title">AI Avatar ASAI</h4>
+          <p class="card-text">Open-source platform for building personalized AI avatars</p>
+          <a href="ai-avatars/"><img src="imgs/arrow.png" alt="Arrow pointing right"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="card h-100 rounded-0" id="card_about">
+        <img src="imgs/card-3.png" class="card-img" alt="Background image">
+        <div class="card-img-overlay p-4">
+          <h4 class="card-title">About us</h4>
+          <p class="card-text">Providing reliable and trustworthy AI solutions and know-how</p>
+          <a href="about-us/"><img src="imgs/arrow.png" alt="Arrow pointing right"></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Contact Us Section -->
-  <div class="row vh-md-100 d-flex align-items-center footer">
-    <div class="col-md-10 offset-md-1">
+  <div class="row vh-md-100 d-flex align-items-center footer mt-5">
+    <div class="col-md-10 offset-md-1 mt-5">
 
       <div  class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 px-5">
           <h1>Integrating AI into all sectors, <span> fueling innovation </span> and driving growth.</h1>
         </div>
       </div>
