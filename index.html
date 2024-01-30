@@ -28,7 +28,14 @@
   h1 span {
     color: white;
   }
-  /*3b1b4d*/
+  #footer p {
+    color: #98A2B3;
+  }
+
+  .form-control {
+    font-size: 16px;
+    height: 50px;
+  }
 </style>
 <!-- here we use body tag to add custom classes to it, no need to close it, or account it in tags hierarchy  -->
 <body>
@@ -134,24 +141,33 @@
   <div class="row vh-md-100 d-flex align-items-center footer mt-5">
     <div class="col-md-10 offset-md-1 mt-5">
 
-      <div  class="row">
+      <div  class="row mb-5">
         <div class="col-md-12 px-5">
           <h1>Integrating AI into all sectors, <span> fueling innovation </span> and driving growth.</h1>
         </div>
       </div>
     
-      <div class="row mt-5">
-        <div class="col-md-6 offset-md-3 contact-form mb-3 mb-md-0" id="contact-us">
-          <h3>Contact Us</h3>
-          <form action="https://formspree.io/f/mbjvkrja" method="POST">
+      <div class="row pt-5 justify-content-between" id="footer">
+        <div class="col-3">
+          <h3 class="fs-5 lh-base">Astro Synapse Limited</h3>
+          <p class="fs-6 lh-sm">71 Lower Baggot Street, Dublin 2, Co. Dublin, D02 P593, Ireland</p>
+        </div>
+        <div class="col-3">
+          <ul class="list-unstyled ms-5">
+            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="solutions/">Solutions</a></li>
+            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="ai-avatars/">AI Avatars</a></li>
+            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="About us/">About us</a></li>
+          </ul>
+        </div>
+        <div class="col-3 pb-5" id="contact-us">
+          <form action="https://formspree.io/f/mbjvkrja" method="POST" class="pb-5">
             <input name="Name" type="text" class="form-control mb-3 input-data" placeholder="Name">
             <input name="Email" type="email" class="form-control mb-3 input-data" placeholder="Your email address">
             <textarea name="Message" type="text" class="form-control mb-3 input-data" rows="10" placeholder="Message"></textarea>
-            <input class="form-control btn btn-primary" type="submit" value="Send Message">
+            <input class="form-control btn btn-primary" type="submit" value="Send">
           </form>
         </div>
       </div>
-
     </div>
   </div>
 
