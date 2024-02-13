@@ -263,3 +263,42 @@ span {
     padding-bottom: 10px;
   }
 }
+
+/* website update */
+
+#card_container .card { filter: drop-shadow(0 0 52px rgba(182, 53, 194, 0.6)); background-color: black; color: white; }
+  .card a img {
+    height: 32px;
+    opacity: .7
+  }
+  .card a {
+    position: absolute;
+    bottom: 3rem;
+    right: 2.5rem;
+  }
+  h1 {
+    color: #3b1b4d;
+  }
+  h1 span {
+    color: white;
+  }
+  #footer p {
+    color: #98A2B3;
+  }
+
+  .form-control {
+    font-size: 16px;
+    height: 50px;
+  }
+
+  .fixed-top.scrolled {
+    background-color: rgba(0, 0, 0, .8) !important;
+    transition: background-color 500ms linear;
+  }
+
+  #footer p a {
+    text-decoration: none;
+  }
+  #footer p a img {
+    width: 29px;
+  }
