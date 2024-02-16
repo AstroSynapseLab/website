@@ -74,6 +74,10 @@ span {
   color: white;
 }
 
+.light-grey-text {
+  color: #FFDFD8
+}
+
 /* NAVBAR MENU */
 
 .navbar {
@@ -188,6 +192,18 @@ span {
   color: white;
 }
 
+/*
+  SOLUTIONS PAGE
+*/
+
+#solutions .landing-bg {
+  background-image: url("/imgs/solutions-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
 @media screen and (min-width: 768px)  {
   .vh-md-100 {
     height: 100vh;
@@ -301,4 +317,8 @@ span {
   }
   #footer p a img {
     width: 29px;
+  }
+
+  .link-nav-active {
+    font-weight: bold;
   }
