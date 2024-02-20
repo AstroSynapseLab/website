@@ -27,13 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Basier Square Bold";
 }
 
-/* h1 {
-  font-size: 130px;
-  font-style: normal;
-  line-height: 130px;
-  letter-spacing: -3px;
-} */
-
 h1 {
   color: #413F3F;
   font-size: 130px;
@@ -74,9 +67,15 @@ span {
   color: white;
 }
 
+.global-padding {
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
 .light-grey-text {
   color: #FFDFD8
 }
+
 
 /* NAVBAR MENU */
 
@@ -108,7 +107,7 @@ span {
   font-size: 30.61px;
   font-style: normal;
   line-height: normal;
-  letter-spacing: -0.392px;
+  letter-spacing: -0.392px;;
 }
 
 /* LANDING SECTION */
@@ -203,6 +202,10 @@ span {
   background-repeat: no-repeat;
 }
 
+/*
+  DESKTOP
+*/
+
 
 @media screen and (min-width: 768px)  {
   .vh-md-100 {
@@ -213,6 +216,10 @@ span {
     display: flex;
   }
 }
+
+/*
+  MOBILE
+*/
 
 @media screen and (max-width: 768px)  {
 
@@ -248,6 +255,10 @@ span {
     line-height: 30px; /* 141.667% */
   }
 
+  .hide-on-mobile {
+    display: none;
+  } 
+
   .navbar-toggler {
     display: none;
   }
@@ -272,9 +283,8 @@ span {
   }
 
   .footer h1 {
-    color: #413F3F;
-    font-size: 70px;
-    line-height: 70px; /* 100% */
+    font-size: 60px;
+    line-height: 60px; /* 100% */
     padding-top: 20px;
     padding-bottom: 10px;
   }
@@ -282,7 +292,7 @@ span {
 
 /* website update */
 
-#card_container .card { filter: drop-shadow(0 0 52px rgba(182, 53, 194, 0.6)); background-color: black; color: white; }
+#card_container .card { filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); background-color: transparent; color: white; }
   .card a img {
     height: 32px;
     opacity: .7
