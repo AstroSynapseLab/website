@@ -9,157 +9,168 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/imgs/logo.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha256-MBffSnbbXwHCuZtgPYiwMQbfE7z+GOZ7fBPCNB06Z98=" crossorigin="anonymous">
 
-<link href="/css/main.css" rel="stylesheet">
+<link href="../css/main.css" rel="stylesheet">
 </head>
 <!-- here we use body tag to add custom classes to it, no need to close it, or account it in tags hierarchy  -->
 <body id="solutions">
 
 <!-- content -->
-<div class="container-fluid">
+<div class="container-fluid px-0">
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-dark fixed-top navbar-expand-lg d-sm-block">
-    <div class="d-flex offset-lg-1">
+    <nav class="navbar navbar-dark fixed-top navbar-expand-lg d-sm-block">
+      <div class="d-flex global-padding">
 
-      <a class="navbar-brand" href="/">
-        <img src="/imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Astro Synapse
-      </a>
+        <a class="navbar-brand" href="../index.html">
+          <img src="../imgs/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          <span class="hide-on-mobile"> 
+            Astro Synapse
+          </span>
+        </a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="">
+          <ul class="navbar-nav">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><u>Solutions</u></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../ai-avatars/index.html">AI Avatars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about-us/index.html">About Us</a>
+            </li>
+            <li class="d-flex align-items-center">
+              <a class="btn btn-outline-light" href="#contact-us">Contact</a>
+            </li>
+          </ul>
+        </div>
       
-      <div class="collapse navbar-collapse" id="">
-        <ul class="navbar-nav">
-          
-          <li class="nav-item">
-            <a class="nav-link link-nav-active" href="/solutions/">Solutions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/ai-avatars/">AI Avatars</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about-us/">About Us</a>
-          </li>
-          <li>
-            <a class="btn btn-outline-light" href="#contact-us">Contact</a>
-          </li>
-        </ul>
       </div>
+    </nav>
     
-    </div>
-  </nav>
-
-  <!-- Landing Section -->
-  <div class="row d-flex align-items-center landing landing-bg">  
-    <div class="col-lg-12">
-      <div class="row">
-        <div class="col-11 offset-md-4">
-          <h2>RAG solutions for<br> your business</h2>
-          <p class="mt-5 light-grey-text">
-            We develop custom Retrieval-Augmented<br> Generation (RAG) solutions for your<br>business.
-          </p>
+      <!-- Landing Section -->
+      <div class="row vh-md-100 d-flex align-items-center landing solutions-landing-bg mx-0">  
+        <div class="px-0">
+          <div class="row m-0">
+            <div class="col-md-4"></div>
+            <div class="col-md-8 global-padding">
+              <h2>RAG solutions for<br> your business</h2>
+              <p class="mt-5 light-grey-text">
+                We develop custom Retrieval-Augmented<br> Generation (RAG) solutions for your<br>business.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-12">
-      <div class="col-11 offset-md-1">
-        <h2>Your private<br>chatGPT on<br>steroids</h2>
-        <p class="mt-5 light-grey-text">
-          AI Avatar is a personalized AI system integrated into<br>
-          various platforms with custom plugins and agents we<br>
+  <!-- Products Section -->
+  <div class="col-lg-12 vh-md-100 hide-on-desktop">
+    <img src="../imgs/solutions-1.png" alt="asai"  class="asai-mobile">
+  </div>
+
+  <div class="col-lg-12 asai-bg vh-md-100">
+    <div class="col-md-7 h-100 global-padding ">
+      <div class="h-100 d-flex flex-column justify-content-center gap-4 mt-4 mt-md-0">
+        <h2>Your private chatGPT on steroids</h2>
+        <p class="light-grey-text">
+          AI Avatar is a personalized AI system integrated into
+          various platforms with custom plugins and agents we
           develop on your behalf.
         </p>
         <a href="#" class="form-control btn btn-primary">TRY ASAI NOW</a>
       </div>
     </div>
   </div>
-
-  <!-- Main Content -->
-  <div class="row vh-md-100 d-flex align-items-center" id="about-us">
-        <!-- About us Item -->
-          <div class="col-12 vh-md-100 d-flex flex-column">
-            <div class="row flex-grow-1">
-              <div class="col-md-7 offset-md-1 d-flex align-items-center">
-                <h4 class="mt-md-5">Our lab specializes in constructing lifelike artificial personalities by applying a quantified version of the OCEAN model. Our aim is to empower individuals and businesses by providing reliable and trustworthy AI solutions and know-how, based on transparent technology.</h4>
-              </div>
-            </div>
-        </div>
-      </div>
-  </div>
-
-  <!-- Link Cards -->
-  <div class="offset-md-1 row row-cols-1 row-cols-md-3 g-4 justify-content-around" id="card_container">
-    <div class="col-md-3">
-      <div class="card h-100 rounded-0" id="card_integrations">
-        <img src="imgs/card-1.png" class="card-img" alt="Background image">
-        <div class="card-img-overlay p-4">
-          <h4 class="card-title">Custom AI Integrations</h4>
-          <p class="card-text">LLM and AI avatar integrations</p>
-          <a href="/solutions/"><img src="imgs/arrow.png" alt="Arrow pointing right"></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card h-100 rounded-0" id="card_avatar">
-        <img src="imgs/card-2.png" class="card-img" alt="Background image">
-        <div class="card-img-overlay p-4">
-          <h4 class="card-title">AI Avatar ASAI</h4>
-          <p class="card-text">Open-source platform for building personalized AI avatars</p>
-          <a href="/ai-avatars/"><img src="imgs/arrow.png" alt="Arrow pointing right"></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="card h-100 rounded-0" id="card_about">
-        <img src="imgs/card-3.png" class="card-img" alt="Background image">
-        <div class="card-img-overlay p-4">
-          <h4 class="card-title">About us</h4>
-          <p class="card-text">Providing reliable and trustworthy AI solutions and know-how</p>
-          <a href="/about-us/"><img src="imgs/arrow.png" alt="Arrow pointing right"></a>
-        </div>
+  
+  <div class="col-lg-12 solutions-2-bg vh-md-100">
+    <div class="col-md-7 h-100 global-padding">
+      <div class="h-100 d-flex flex-column justify-content-center gap-4 mt-4 mt-md-0">
+        <h2 class="mt-4">Take control of your documents and data</h2>
+        <p class="light-grey-text">
+          Seamlessly integrate your cloud storage or
+          other document repositories into a chatbot, 
+          enabling you to interact with your documents
+          through conversational interfaces.
+        </p>
+        <a href="#contact-us" class="form-control btn btn-primary">CONTACT US</a>
       </div>
     </div>
   </div>
+  
+  <div class="col-lg-12 solutions-3-bg vh-md-100">
+    <div class="col-md-7 h-100 global-padding">
+      <div class="h-100 d-flex flex-column justify-content-center gap-4 mt-4 mt-md-0">
+        <h2 class="mt-4">Interact with your documents</h2>
+        <p class="light-grey-text">
+          Closed-source LLMs provide direct API access to LLM models, 
+          which in turn allows us to integrate a custom data management 
+          layer around the API that allows you to take control of your 
+          documents and data.
+        </p>
+        <a href="#contact-us" class="form-control btn btn-primary">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 solutions-4-bg vh-md-100">
+    <div class="col-md-7 h-100 global-padding">
+      <div class="h-100 d-flex flex-column justify-content-center gap-4 mt-4 mt-md-0">
+        <h2 class="mt-4">Software Automation</h2>
+        <p class="light-grey-text">
+          Every repetitive task in your professional workflow is a 
+          candidate for automation via LLM integration.
+        </p>
+        <ul>
+          <li>Automate Scrum process</li>
+          <li>Automate copywriting and content creation</li>
+          <li>Automate digital media posting</li>
+          <li>Automate and organise accounting</li>
+          <li>Get sales and lead generation done for you</li>
+          <li>Integrate Automated code generation in your workflows</li>
+          <li>Get designs by prompting</li>
+          <li>Integrate fast document and image analysis</li>
+          <li>Video transcription</li>
+          <li>Create your digital sales persona</li>
+        </ul>
+        <a href="#contact-us" class="form-control btn btn-primary">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- Contact Us Section -->
-  <div class="row vh-md-100 d-flex align-items-center footer mt-5">
-    <div class="col-md-10 offset-md-1 mt-5">
-
-      <div  class="row mb-5">
-        <div class="col-md-12 px-5">
-          <h1>Integrating AI into all sectors, <span> fueling innovation </span> and driving growth.</h1>
-        </div>
-      </div>
-    
+  <div class="row align-items-center footer mt-5 mx-0 justify-content-center">
+    <div class="global-padding">
       <div class="row pt-5 justify-content-between" id="footer">
-        <div class="col-3">
+        <div class="col-md-3">
           <h3 class="fs-5 lh-base">Astro Synapse Limited</h3>
           <p class="fs-6 lh-sm">71 Lower Baggot Street, Dublin 2, Co. Dublin, D02 P593, Ireland</p>
           <p>
-            <a href="#">
-              <img src="/imgs/social-x.png" alt="Twitter link" class="pe-2" href="https://twitter.com/astrosynapselab" target="_blank">
+            <a href="https://twitter.com/astrosynapselab" target="_blank">
+              <img src="../imgs/social-x.png" alt="Twitter link" class="pe-2" >
             </a>
-            <a href="#">
-              <img src="/imgs/social-li.png" alt="Linkedin link" class="pe-2" href="https://www.linkedin.com/company/astro-synapse/" target="_blank">
+            <a href="https://www.linkedin.com/company/astro-synapse/" target="_blank">
+              <img src="../imgs/social-li.png" alt="Linkedin link" class="pe-2" >
             </a>
-            <a href="#">
-              <img src="/imgs/social-gh.png" alt="Github link" class="pe-2" href="https://github.com/AstroSynapseLab" target="_blank">
+            <a href="https://github.com/AstroSynapseLab" target="_blank">
+              <img src="../imgs/social-gh.png" alt="Github link" class="pe-2" >
             </a>
           </p>
         </div>
-        <div class="col-3">
-          <ul class="list-unstyled ms-5">
-            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="/solutions/">Solutions</a></li>
-            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="/ai-avatars/">AI Avatars</a></li>
-            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="/about-us/">About us</a></li>
+        <div class="col-md-3">
+          <ul class="list-unstyled ms-md-5">
+            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="#"><u>Solutions</u></a></li>
+            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="../ai-avatars/index.html">AI Avatars</a></li>
+            <li class="mb-2"><a class="link-light link-underline-opacity-0 link-underline-opacity-75-hover" href="../about-us/index.html">About us</a></li>
           </ul>
-        </div>
-        <div class="col-3 pb-5" id="contact-us">
+        </div> 
+        <div class="col-md-3" id="contact-us">
           <form action="https://formspree.io/f/mbjvkrja" method="POST" class="pb-5">
             <input name="Name" type="text" class="form-control mb-3 input-data" placeholder="Name">
             <input name="Email" type="email" class="form-control mb-3 input-data" placeholder="Your email address">

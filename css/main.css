@@ -63,6 +63,10 @@ p {
   line-height: 38px; /* 158.333% */
 }
 
+li {
+  font-size: 20px;
+}
+
 span {
   color: white;
 }
@@ -80,7 +84,8 @@ span {
 /* NAVBAR MENU */
 
 .navbar {
-  margin-top: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .navbar-nav {
@@ -92,7 +97,7 @@ span {
   color: #FFF;
   margin-left: 15px;
   padding: 10px 35px 10px 35px;
-   border-radius: 0;
+  border-radius: 0;
 }
 
 .navbar-nav .btn {
@@ -149,12 +154,7 @@ span {
   background-repeat: no-repeat;
 }
 
-.solutions-bg {
-  background-image: url("../imgs/solutions-bg.png");
-  background-size: cover;
-  background-position: -200px center;
-  background-repeat: no-repeat;
-}
+
 
 /* CONTACT FORM */
 
@@ -191,15 +191,80 @@ span {
   color: white;
 }
 
+.btn-primary {
+  font-family: "Basier Square Bold";
+  background-color: #3B37FF;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-primary:hover {
+  background-color: #1f1da3;
+}
+
+.btn-primary:focus {
+  background-color: #1f1da3;
+  color: white;
+}
+
+
+
 /*
   SOLUTIONS PAGE
 */
 
-#solutions .landing-bg {
-  background-image: url("/imgs/solutions-bg.png");
+.solutions-landing-bg {
+    position: relative;
+    overflow: hidden; 
+}
+.solutions-landing-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../imgs/solutions-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+.asai-bg {
+  background-image: url("../imgs/solutions-1.png");
+  background-size: 55% auto;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.solutions-2-bg {
+  background-image: url("../imgs/solutions-2.png");
+  background-size: 35% auto;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+
+.solutions-3-bg {
+  background-image: url("../imgs/solutions-3.png");
+  background-size: 35% auto;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.solutions-4-bg {
+  background-image: url("../imgs/solutions-4.png");
+  background-size: 35% auto;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.asai-mobile {
+  width: 100%; 
+  height: auto;
+  object-fit: contain; /
 }
 
 /*
@@ -213,6 +278,10 @@ span {
 
   .d-md-flex {
     display: flex;
+  }
+
+  .hide-on-desktop {
+    display: none;
   }
 }
 
@@ -237,6 +306,10 @@ span {
     font-style: normal;
     line-height: 30px; 
   }
+
+  .hide-on-desktop {
+    display: none;
+  }
 }
 
 /*
@@ -255,7 +328,7 @@ span {
   h2 {
     font-size: 50px;
     font-style: normal;
-    line-height: 44px;
+    line-height: 50px;
   }
 
   h3 {
@@ -269,6 +342,7 @@ span {
     font-size: 24px;
     font-style: normal;
     line-height: 36px; /* 147.368% */
+    color: #FFDFD8;
   }
 
   h5 {
@@ -281,6 +355,7 @@ span {
     display: none;
   } 
 
+
   .navbar-toggler {
     display: none;
   }
@@ -292,8 +367,9 @@ span {
     min-height: 480px;
   }
 
-  .solutions-bg {
-    background-position: -350px center;
+  .asai-bg {
+    background-image: none;
+
   }
 
   .logotype {
@@ -316,6 +392,10 @@ span {
 
   .card-text {
     font-size: 24px;
+  }
+
+  .solutions-landing-bg::before {
+      transform: scaleX(-1);
   }
 }
 
