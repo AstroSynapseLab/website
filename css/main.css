@@ -71,6 +71,10 @@ span {
   color: white;
 }
 
+u {
+  text-underline-offset: 4px;
+}
+
 .global-padding {
   padding-left: 8%;
   padding-right: 8%;
