@@ -40,7 +40,7 @@ h2 {
 }
 
 h3 {
-  font-size: 54px;
+  font-size: 64px;
   font-style: normal;
   line-height: 66px; /* 122.222% */
 }
@@ -206,6 +206,8 @@ span {
 .btn-primary:focus {
   background-color: #1f1da3;
   color: white;
+  border: none;
+  box-shadow: none;
 }
 
 
@@ -264,14 +266,65 @@ span {
 .asai-mobile {
   width: 100%; 
   height: auto;
-  object-fit: contain; /
+  object-fit: contain; 
 }
+
+.asai-logo {
+  width: 40%; 
+  height: auto;
+  object-fit: contain; 
+  
+}
+
 
 .solution-subtitle{
   font-size: 18px;
   font-style: normal;
   color: #DA98FF ;
 }
+
+/*
+  AI AVATARS PAGE
+*/
+
+.ai-title {
+  color: #374BFF;
+  margin-top: 128px;
+}
+
+.avatar-bg {
+  background-image: url("../imgs/solutions-1.png");
+  background-size: 55% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.avatar-btn {
+  background-color: #4C0B71;
+}
+
+.avatar-btn:hover {
+  background-color: #4C0B71;
+}
+
+.avatar-btn:focus {
+  background-color: #4C0B71;
+  outline: none;
+}
+
+.avatar-btn:active {
+  background-color: #4C0B71 !important;
+  outline: none;
+}
+
+.early-access-bg {
+  background-image: url("../imgs/Avatars-2.png");
+  background-size: 90% auto;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+}
+
 
 /*
   DESKTOP
@@ -375,7 +428,14 @@ span {
 
   .asai-bg {
     background-image: none;
+  }
 
+  .avatar-bg {
+    background-image: none;
+  }
+
+  .early-access-bg{
+    background-size: 180%; 
   }
 
   .logotype {
