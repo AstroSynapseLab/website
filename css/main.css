@@ -267,6 +267,12 @@ span {
   object-fit: contain; /
 }
 
+.solution-subtitle{
+  font-size: 18px;
+  font-style: normal;
+  color: #DA98FF ;
+}
+
 /*
   DESKTOP
 */
