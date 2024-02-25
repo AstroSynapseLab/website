@@ -94,7 +94,6 @@ u {
 
 .navbar-nav {
   margin-left: auto;
-  margin-right: 8.333333%;
 }
 
 .navbar-nav a {
@@ -102,6 +101,16 @@ u {
   margin-left: 15px;
   padding: 10px 35px 10px 35px;
   border-radius: 0;
+}
+
+.navbar-toggler{
+  border: none;
+}
+
+.navbar-toggler:focus{
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 
 .navbar-nav .btn {
@@ -381,6 +390,18 @@ u {
 
 @media screen and (max-width: 768px)  {
 
+  .nav-link {
+    text-align: center;
+  }
+
+  .navbar-nav a{
+   margin-left: 0; 
+  }
+
+  .navbar{
+    background-color: rgba(0, 0, 0, .8);
+  }
+
   h1 {
     font-size: 90px;
     font-style: normal;
@@ -418,16 +439,12 @@ u {
     display: none;
   } 
 
-
-  .navbar-toggler {
-    display: none;
-  }
-
   .landing-bg {
     background-image: url("../imgs/landing-bg.png");
-    background-size: contain;
     background-position: center top;
-    min-height: 480px;
+    min-height: 380px;
+    background-size: 150% auto;
+
   }
 
   .asai-bg {
