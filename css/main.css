@@ -488,12 +488,28 @@ u {
 
 /* website update */
 
-#card_container .card { filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); background-color: transparent; color: white; }
-  .card a img {
+#card_container .card { 
+  filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
+  background-color: transparent; 
+  color: white; 
+  transition: filter 0.3s;
+}
+
+#card_container .card:hover { 
+  filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
+}
+
+.arrow-img {
     height: 32px;
-    opacity: .7
+  opacity: .7;
+  transition: opacity .3s;
   }
-  .card a {
+
+.arrow-img:hover {
+  opacity: 1;
+}
+
+.arrow {
     position: absolute;
     bottom: 3rem;
     right: 2.5rem;
