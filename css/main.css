@@ -49,7 +49,6 @@ h4 {
   font-family: "Basier Square Regular";
   font-size: 34px;
   font-style: normal;
-  line-height: 56px; /* 147.368% */
 }
 
 h5 {
@@ -495,16 +494,57 @@ u {
 
 /* website update */
 
-#card_container .card { 
+.card-1 {
+  background-image: url("../imgs/card-1.png");
+  background-size: 110%;
+  background-position: center;
+  position: relative;
   filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
-  background-color: transparent; 
-  color: white; 
-  transition: filter 0.3s;
+  transition: all 0.3s;
+  min-height: 500px;
 }
 
-#card_container .card:hover { 
+.card-1:hover {
   filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
+  background-position: left bottom;
 }
+
+.a-card{
+  text-decoration: none;
+  color: white;
+}
+
+.card-2 {
+  background-image: url("../imgs/card-2.png");
+  background-size: 110%;
+  background-position: center;
+  position: relative;
+  filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
+  transition: all 0.3s;
+  min-height: 500px;
+}
+
+.card-2:hover {
+  filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
+  background-position: right bottom;
+}
+
+
+.card-3 {
+  background-image: url("../imgs/card-3.png");
+  background-size: 110%;
+  background-position: center;
+  position: relative;
+  filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
+  transition: all 0.3s;
+  min-height: 500px;
+}
+
+.card-3:hover {
+  filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
+  background-position: bottom;
+}
+
 
 .arrow-img {
   height: 32px;
