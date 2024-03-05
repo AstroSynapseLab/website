@@ -496,17 +496,18 @@ u {
 
 .card-1 {
   background-image: url("../imgs/card-1.png");
-  background-size: 110%;
-  background-position: center;
+  background-size: 250%;
+  background-position: 75% 0%;
   position: relative;
   filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
   transition: all 0.3s;
-  min-height: 500px;
+  min-height: 800px;
+  background-repeat: no-repeat;
 }
 
 .card-1:hover {
   filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
-  background-position: left bottom;
+  background-position: 70% 5%;
 }
 
 .a-card{
@@ -516,33 +517,34 @@ u {
 
 .card-2 {
   background-image: url("../imgs/card-2.png");
-  background-size: 110%;
-  background-position: center;
+  background-size: 150%;
+  background-position: 75% 0%;
   position: relative;
   filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
   transition: all 0.3s;
-  min-height: 500px;
+  min-height: 800px;
+  background-repeat: no-repeat;
 }
 
 .card-2:hover {
   filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
-  background-position: right bottom;
+  background-position: 75% 20%;
 }
 
 
 .card-3 {
   background-image: url("../imgs/card-3.png");
-  background-size: 110%;
-  background-position: center;
+  background-size: 300%;
+  background-position: 50% 10%;
   position: relative;
   filter: drop-shadow(0 0 20px rgba(182, 53, 194, 0.6)); 
   transition: all 0.3s;
-  min-height: 500px;
+  min-height: 800px;
 }
 
 .card-3:hover {
   filter: drop-shadow(0 0 46px rgba(182, 53, 194, 0.8)); 
-  background-position: bottom;
+  background-position: 50% 13%;
 }
 
 
@@ -591,3 +593,59 @@ h1 span {
 .link-nav-active {
   font-weight: bold;
 }
+
+/* Card image */
+
+/* 2xl (1536px) */
+@media (max-width: 1536px) {
+  .card-1, .card-2, .card-3 {
+    min-height: 580px; /* Slightly reduced min-height */
+  }
+}
+
+/* xl (1280px) */
+@media (max-width: 1280px) {
+  .card-1, .card-2, .card-3 {
+    min-height: 480px; /* Slightly reduced min-height */
+  }
+ 
+}
+
+/* lg (1024px) */
+@media (max-width: 1024px) {
+  .card-1, .card-2, .card-3 {
+    min-height: 380px; /* Further reduced min-height */
+  }
+}
+
+@media (max-width: 991px) {
+  .card-1, .card-2, .card-3 {
+    min-height: 700px; 
+  }
+  .card-1 {
+    background-size: 150%;
+  }
+  .card-2 {
+    background-size: 110%;
+  }
+  .card-3 {
+    background-size: 180%;
+  }
+}
+
+/* sm (640px) */
+@media (max-width: 640px) {
+  .card-1, .card-2, .card-3 {
+    min-height: 550px; /* Significantly reduced min-height for small devices */
+  }
+  .card-1 {
+    background-size: 230%;
+  }
+  .card-2 {
+    background-size: 130%;
+  }
+  .card-3 {
+    background-size: 300%;
+  }
+}
+
