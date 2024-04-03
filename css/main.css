@@ -46,7 +46,6 @@ h3 {
 }
 
 h4 {
-  font-family: "Basier Square Regular";
   font-size: 34px;
   font-style: normal;
 }
@@ -81,6 +80,10 @@ u {
 
 .light-grey-text {
   color: #FFDFD8
+}
+
+.font-regular {
+  font-family: "Basier Square Regular";
 }
 
 
@@ -208,6 +211,10 @@ u {
 
 .form-control::-ms-input-placeholder { /* Microsoft Edge */
   color: white;
+}
+
+.btn-width {
+  width: 350px;
 }
 
 .btn-primary {
@@ -374,14 +381,11 @@ u {
 
   .card-title{
     font-size: 24px;
-    font-style: normal;
     line-height: 36px; 
-  
   }
 
   .card-text {
     font-size: 18px;
-    font-style: normal;
     line-height: 30px; 
   }
 
@@ -493,6 +497,11 @@ u {
 }
 
 /* website update */
+
+.card-padding {
+  padding: 36px;
+}
+
 
 .card-1 {
   background-image: url("../imgs/card-1.png");
