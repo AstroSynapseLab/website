@@ -213,6 +213,10 @@ u {
   color: white;
 }
 
+.btn-width {
+  width: 350px;
+}
+
 .btn-primary {
   font-family: "Basier Square Bold";
   background-color: #3B37FF;
