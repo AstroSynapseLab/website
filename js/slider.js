@@ -36,4 +36,16 @@ $(document).ready(function() {
         
         lastScrollTop = scrollTop;
     }, 100));
+
+    $('.slide a').on('click', function(e) {
+        e.preventDefault();
+        var slideId = this.id + 'Content'
+        var content = $('#' + slideId).html();
+        $('#modalContent').html(content);
+        $('#fullScreenModal').fadeIn();
+    })
+
+    $('.close').on('click', function() {
+        $('#fullScreenModal').fadeOut()
+    })
 });

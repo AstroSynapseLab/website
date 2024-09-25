@@ -36,6 +36,11 @@ a {
   font-family: "Basier Square Regular";
 }
 
+a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
 
 h1,
 h2,
@@ -149,6 +154,40 @@ u {
   display: none;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-top: 45px;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.modal-content {
+  background-color: #000;
+  padding: 20px;
+  width: 100%;
+  color: #fff;
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px
+}
+
+.close img {
+  float: right;
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+
 .slide {
   scroll-snap-align: start;
   height: 100vh;
@@ -156,7 +195,6 @@ u {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   background-size: cover;
   background-position: center center;
 }
@@ -189,8 +227,7 @@ u {
 }
 
 .current-slide {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .slide-content {
@@ -240,7 +277,7 @@ u {
   background-image: url("../imgs/pitch/mobile/slide10.png");
 }
 
-/* Desktop styles */
+/* Mobile styles */
 
 @media screen and (max-width: 768px) {
 
