@@ -32,7 +32,8 @@ body {
 }
 
 p,
-a {
+a,
+li {
   font-family: "Basier Square Regular";
 }
 
@@ -40,7 +41,6 @@ a {
   text-decoration: none;
   font-weight: 700;
 }
-
 
 h1,
 h2,
@@ -305,7 +305,8 @@ u {
     background-color: rgba(0, 0, 0, .8);
   }
 
-  p {
+  p,
+  li {
     font-size: 18px;
     line-height: 26px;
   }
