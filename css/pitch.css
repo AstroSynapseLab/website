@@ -181,38 +181,42 @@ u {
 }
 
 .page-bg-2 {
-  background-image: url("../imgs/pitch/desktop/slide-2.png");
+  background-image: url("../imgs/pitch/desktop/slide-1.png");
 }
 
 .page-bg-3 {
-  background-image: url("../imgs/pitch/desktop/slide-3.png");
+  background-image: url("../imgs/pitch/desktop/new-slide-3.jpeg");
 }
 
 .page-bg-4 {
-  background-image: url("../imgs/pitch/desktop/slide-4.png");
+  background-image: url("../imgs/pitch/desktop/new-slide-4.jpeg");
 }
 
 .page-bg-5 {
-  background-image: url("../imgs/pitch/desktop/slide-5.png");
+  background-image: url("../imgs/pitch/desktop/new-slide-5.jpeg");
 }
 
 .page-bg-6 {
-  background-image: url("../imgs/pitch/desktop/slide-6.png");
+  background-image: url("../imgs/pitch/desktop/new-slide-6.jpeg");
 }
 
 .page-bg-7 {
-  background-image: url("../imgs/pitch/desktop/slide-7.png");
+  background-image: url("../imgs/pitch/desktop/new-slide-7.jpeg");
 }
 
 .page-bg-8 {
-  background-image: url("../imgs/pitch/desktop/slide-8.png");
+  background-image: url("../imgs/pitch/desktop/slide-4.png");
 }
 
 .page-bg-9 {
-  background-image: url("../imgs/pitch/desktop/slide-9.png");
+  background-image: url("../imgs/pitch/desktop/new-slide-9.jpeg");
 }
 
 .page-bg-10 {
+  background-image: url("../imgs/pitch/desktop/slide-9.png");
+}
+
+.page-bg-11 {
   background-image: url("../imgs/pitch/desktop/slide-10.png");
 }
 
