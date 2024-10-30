@@ -309,7 +309,7 @@ u {
 }
 
 .slide-1 {
-  background-color: white;
+  background-color: black;
 }
 
 .slide-1 .title-img {
@@ -329,8 +329,7 @@ u {
 }
 
 .slide-3 {
-  /* background-image: url("../imgs/pitch/desktop/new-slide-3.jpeg"); */
-  background-color: gray;
+  background-image: url("../imgs/pitch/desktop/new-slide-3.jpeg");
 }
 
 .slide-4 {
@@ -427,6 +426,16 @@ u {
     /* dynamic viewport height */
     width: 100%;
   }
+
+  .slide-opacity {
+    background-color: rgba(0, 0, 0, .8);
+    min-height: 100vh;
+    /* fallback */
+    min-height: 100dvh;
+    /* dynamic viewport height */
+    width: 100%;
+  }
+
 
   /* iOS-specific fix */
   @supports (-webkit-touch-callout: none) {
