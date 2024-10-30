@@ -436,6 +436,10 @@ u {
     width: 100%;
   }
 
+  .subtitle {
+    font-size: 18px;
+    line-height: 34px;
+  }
 
   /* iOS-specific fix */
   @supports (-webkit-touch-callout: none) {
