@@ -309,7 +309,7 @@ u {
 }
 
 .slide-1 {
-  background-color: black;
+  background-color: white;
 }
 
 .slide-1 .title-img {
@@ -329,7 +329,8 @@ u {
 }
 
 .slide-3 {
-  background-image: url("../imgs/pitch/desktop/new-slide-3.jpeg");
+  /* background-image: url("../imgs/pitch/desktop/new-slide-3.jpeg"); */
+  background-color: gray;
 }
 
 .slide-4 {
