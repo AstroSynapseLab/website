@@ -64,7 +64,7 @@ $(document).ready(function() {
     });
     
     // Modal handlers
-    $('.slide a').on('click', function(e) {
+    $('.open-dialog').on('click', function(e) {
         e.preventDefault();
         const slideId = this.id + 'Content';
         const content = $('#' + slideId).html();
