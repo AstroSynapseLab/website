@@ -401,6 +401,13 @@ u {
 
   .mobile-content {
     display: block;
+    height: 100vh;
+    /* fallback */
+    height: 100dvh;
+    /* dynamic viewport height */
+    position: fixed;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
   .desktop-content {
@@ -409,6 +416,39 @@ u {
 
   .hide-on-mobile {
     display: none;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    /* fallback */
+    min-height: 100dvh;
+    /* dynamic viewport height */
+    width: 100%;
+  }
+
+  /* iOS-specific fix */
+  @supports (-webkit-touch-callout: none) {
+    .mobile-content {
+      height: -webkit-fill-available;
+    }
+
+    .slide {
+      min-height: -webkit-fill-available;
+    }
+  }
+
+  /* Ensure the inner container takes full height */
+  .slide .container-fluid {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Adjust padding to account for safe areas */
+  .slide .container-fluid {
+    padding-top: max(20px, env(safe-area-inset-top));
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
   }
 }
 
