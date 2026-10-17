@@ -1,0 +1,22 @@
+{#-
+  Decorative looping background video.
+    name      file name in /assets/video/ (expects .webm, .mp4 and a .jpg poster)
+    eager     true for videos visible on load (heroes): autoplay immediately.
+              Otherwise the video is only fetched once it scrolls near the viewport (main.js).
+    modifier  optional BEM modifier, e.g. "soft" or "mirrored"
+    parallax  true: video follows the pointer (main.js)
+    small     true: a 720p version ({name}-720.webm/.mp4) exists and is served to screens up to 900px wide
+-#}
+{% macro bgVideo(name, eager=false, modifier="", parallax=false, small=false) -%}
+<div class="bg-video{% if modifier %} bg-video--{{ modifier }}{% endif %}" aria-hidden="true"{% if parallax %} data-parallax{% endif %}>
+    {#- Below-the-fold posters are lazy: main.js copies data-poster to poster shortly before the video scrolls into view. #}
+    <video {% if eager %}autoplay {% endif %}muted loop playsinline preload="{{ 'auto' if eager else 'none' }}" {% if eager %}poster="/assets/video/{{ name }}.jpg"{% else %}data-poster="{{ ('/assets/video/' + name + '.jpg') | withBase }}"{% endif %} data-bg-video>
+      {%- if small %}
+      <source src="/assets/video/{{ name }}-720.webm" type="video/webm" media="(max-width: 900px)">
+      <source src="/assets/video/{{ name }}-720.mp4" type="video/mp4" media="(max-width: 900px)">
+      {%- endif %}
+      <source src="/assets/video/{{ name }}.webm" type="video/webm">
+      <source src="/assets/video/{{ name }}.mp4" type="video/mp4">
+    </video>
+  </div>
+{%- endmacro %}

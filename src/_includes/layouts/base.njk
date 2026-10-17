@@ -1,0 +1,75 @@
+{#-
+  Base page layout.
+  Front matter used here:
+    title          full <title> / og:title
+    description    meta description / og:description
+    ogImage        key from site.ogImages (default: hero-space)
+    code           small code next to the logo, e.g. "ST/02"
+    navKey         key of the active item in site.nav
+    crumb          short page name for breadcrumbs (omit on the home page)
+    preloadImage   above-the-fold image to fetch early (LCP)
+    productPanel   true: include the product quick-view panel
+    footerAnchor   false: footer gets no id="contact" (page has its own #contact)
+    noindex        true: keep the page out of search results and the sitemap
+-#}
+{%- set canonical = site.url + page.url -%}
+{%- set og = site.ogImages[ogImage or "hero-space"] -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonical }}">
+{%- if noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ site.locale }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:image" content="{{ og.src | absoluteUrl }}">
+<meta property="og:image:width" content="{{ og.width }}">
+<meta property="og:image:height" content="{{ og.height }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ site.twitterHandle }}">
+<meta name="theme-color" content="{{ site.themeColor }}">
+<link rel="icon" href="/assets/images/logo-icon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/images/icon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+{%- if preloadImage %}
+<link rel="preload" href="{{ preloadImage }}" as="image" fetchpriority="high">
+{%- endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | rev }}">
+<script src="{{ '/assets/js/main.js' | rev }}" defer></script>
+{%- if page.url == "/" %}
+<script type="application/ld+json">{{ site | organizationSchema | jsonScript | safe }}</script>
+<script type="application/ld+json">{{ site | websiteSchema | jsonScript | safe }}</script>
+{%- elif crumb %}
+<script type="application/ld+json">{{ site | breadcrumbSchema(page.url, crumb) | jsonScript | safe }}</script>
+{%- endif %}
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="fx-grain" aria-hidden="true"></div>
+<div class="fx-vignette" aria-hidden="true"></div>
+
+{% include "partials/header.njk" %}
+{% include "partials/menu.njk" %}
+
+<main id="main">
+{{ content | safe }}
+</main>
+
+{% if productPanel %}{% include "partials/product-panel.njk" %}{% endif %}
+{% include "partials/footer.njk" %}
+</body>
+</html>

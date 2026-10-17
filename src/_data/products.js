@@ -1,0 +1,83 @@
+// Products that came out of the lab's research. `idx` matches the number on each
+// product's detail page (RoboZET is 001). Single source for:
+//  - the product cards on the home and research pages (partials/product-cards.njk)
+//  - the expanding "quick view" panel (partials/product-panel.njk, read by main.js)
+// Internal links are root-relative; the build prefixes them with the deploy path.
+export default [
+  {
+    key: "asai",
+    title: "ASAI",
+    page: "/research/asai/",
+    idx: "002",
+    badge: "Early access",
+    badgeClass: "badge--access",
+    summary: "Personalized, self-hosted multi-agent AI avatars.",
+    desc: "Personalized, self-hosted multi-agent AI avatars. Build an avatar once, run it on your own infrastructure, and let it work across the tools your team already uses.",
+    link: "https://asai.astrosynapse.ai/",
+    linkLabel: "Try ASAI now",
+    tiles: [
+      { label: "Status", value: "Early access", sub: "Invite-based onboarding", bars: [6, 9] },
+      { label: "Architecture", value: "Multi-agent", sub: "Multi-LLM · no-code", accent: true },
+      { label: "Runs on", value: "Self-hosted", sub: "Your hardware, your data" },
+      { label: "Integrations", value: "4 plugins", sub: "Slack · Trello · Discord · Jira" },
+    ],
+    tags: ["No-code", "Multi-agent", "Multi-LLM", "Self-hosted", "Slack/Trello/Discord/Jira plugins"],
+  },
+  {
+    key: "interpress",
+    title: "Interpress",
+    page: "/research/interpress/",
+    idx: "003",
+    badge: "Live",
+    badgeClass: "badge--live",
+    summary: "Instant AI-powered document translation and interpretation across 200+ languages, formatting preserved.",
+    desc: "Instant AI-powered document translation and interpretation across 200+ languages, with layout and formatting preserved end-to-end.",
+    link: "https://interpress.app/",
+    linkLabel: "Open Interpress",
+    tiles: [
+      { label: "Status", value: "Live", sub: "In production today", bars: [9, 9] },
+      { label: "Languages", value: "200+", sub: "Industry-tuned accuracy", accent: true },
+      { label: "Formatting", value: "Preserved", sub: "Tables, headings, layout" },
+      { label: "Search", value: "Semantic", sub: "Find meaning, not strings" },
+    ],
+    tags: ["200+ languages", "Formatting retention", "Semantic search", "Industry-tuned accuracy"],
+  },
+  {
+    key: "gedor",
+    title: "Gedor",
+    page: "/research/gedor/",
+    idx: "004",
+    badge: "Waitlist",
+    badgeClass: "badge--wait",
+    summary: "LLM-as-a-Service, hosted entirely in the EU.",
+    desc: "LLM-as-a-Service hosted entirely in the EU: an OpenAI-compatible API over an open-weight catalog, with managed vector databases and compliance built in.",
+    link: "https://gedor.ai/",
+    linkLabel: "Join the waitlist",
+    tiles: [
+      { label: "Status", value: "Waitlist", sub: "Opening in cohorts", bars: [4, 9] },
+      { label: "Hosted in", value: "EU", sub: "Fully sovereign inference", accent: true },
+      { label: "API", value: "OpenAI-compatible", sub: "Drop-in client support" },
+      { label: "Compliance", value: "GDPR · AI Act", sub: "Managed vector DBs" },
+    ],
+    tags: ["OpenAI-compatible API", "Open-weight catalog", "Managed vector databases", "GDPR & EU AI Act compliant"],
+  },
+  {
+    key: "webagen",
+    title: "webAgen",
+    page: "/research/webagen/",
+    idx: "005",
+    badge: "In development",
+    badgeClass: "badge--dev",
+    summary: "Agentic website generation platform.",
+    desc: "Agentic website generation platform: describe the site in conversation and let agents build it, content model and all.",
+    link: "/contact/",
+    linkLabel: "Contact us",
+    tiles: [
+      { label: "Status", value: "In development", sub: "Private previews soon", bars: [2, 9] },
+      { label: "Interface", value: "Conversational", sub: "Describe it, iterate live", accent: true },
+      { label: "Output", value: "Agent-built CMS", sub: "Structured, editable content" },
+      { label: "Powered by", value: "ASAI agents", sub: "Same multi-agent core" },
+    ],
+    tags: ["Conversational site-building", "Agent-generated CMS"],
+  },
+];

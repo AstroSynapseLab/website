@@ -1,0 +1,54 @@
+---
+layout: base.njk
+title: Terms of Service · Astro Synapse
+description: Terms of Service for Astro Synapse Limited.
+code: ST/07
+crumb: Terms of Service
+ogImage: hero-space
+# Draft: keep out of search results until legal review is done, then remove this line.
+noindex: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>07. Legal</span><span>Draft</span></p>
+      <h1 data-reveal="d1">Terms of Service</h1>
+      <p class="lede" data-reveal="d2">Draft - not legal advice. Placeholders are highlighted until counsel reviews this page.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"></div>
+  </div>
+</section>
+
+<section class="legal-doc">
+  <div class="wrap two-col two-col--legal">
+    <nav class="legal-doc__toc" aria-label="On this page" data-reveal><a href="#sec0">Who these terms apply to</a><a href="#sec1">Services</a><a href="#sec2">Early access and waitlist products</a><a href="#sec3">Client data and confidentiality</a><a href="#sec4">Intellectual property</a><a href="#sec5">Limitation of liability</a><a href="#sec6">Acceptable use</a><a href="#sec7">Changes to these terms</a><a href="#sec8">Governing law</a><a href="#sec9">Contact</a></nav>
+    <div data-reveal="d1">
+      <p class="legal-doc__banner"><strong>Important: this is a starting draft, not legal advice.</strong> Given Astro Synapse builds client-facing AI products and processes client data, have a qualified commercial/tech lawyer review and finalise these terms, along with product-specific terms for ASAI, Interpress, and Gedor, before publishing.</p>
+      <p>Last updated: <span class="legal-doc__placeholder">[DATE]</span></p>
+      <h2 id="sec0">1. Who these terms apply to</h2>
+      <p>These Terms of Service govern use of the Astro Synapse website and, where not superseded by a separate product agreement, our products (ASAI, Interpress, Gedor, webAgen) and services.</p>
+      <h2 id="sec1">2. Services</h2>
+      <p>Astro Synapse Limited ("Astro Synapse", "we", "us") provides AI research, integration, and product development services, including custom AI integrations, knowledge base and document intelligence solutions, AI systems integration, software automation, model provisioning, embedded AI team augmentation, and our own products (ASAI, Interpress, Gedor, webAgen).</p>
+      <h2 id="sec2">3. Early access and waitlist products</h2>
+      <p>ASAI, Interpress, and Gedor are offered in early access, beta, or waitlist stages. Features, availability, and pricing may change without notice, and functionality is provided "as is" during this stage. <span class="legal-doc__placeholder">[Confirm whether a separate beta agreement should govern early access users.]</span></p>
+      <h2 id="sec3">4. Client data and confidentiality</h2>
+      <p>Where a client engagement involves processing client data (documents, business systems, knowledge bases), the specific terms for data handling, confidentiality, and processing are set out in a separate agreement or Data Processing Agreement, not these general terms. <span class="legal-doc__placeholder">[Confirm this cross-reference before publishing.]</span></p>
+      <h2 id="sec4">5. Intellectual property</h2>
+      <p><span class="legal-doc__placeholder">[To be confirmed: ownership of custom-built integrations and IP for client work vs. Astro Synapse's own product IP (ASAI, Interpress, Gedor, webAgen).]</span></p>
+      <h2 id="sec5">6. Limitation of liability</h2>
+      <p><span class="legal-doc__placeholder">[To be confirmed with legal counsel: standard limitation of liability, disclaimer of warranties, and liability caps appropriate for an AI services company operating in the EU.]</span></p>
+      <h2 id="sec6">7. Acceptable use</h2>
+      <p>Users agree not to misuse our website, products, or services, including attempting to disrupt, reverse-engineer without permission, or use them for unlawful purposes.</p>
+      <h2 id="sec7">8. Changes to these terms</h2>
+      <p>We may update these terms from time to time. <span class="legal-doc__placeholder">[Confirm notice period/process for material changes.]</span></p>
+      <h2 id="sec8">9. Governing law</h2>
+      <p>These terms are governed by the laws of Ireland. <span class="legal-doc__placeholder">[Confirm with legal counsel.]</span></p>
+      <h2 id="sec9">10. Contact</h2>
+      <p>For questions about these terms, contact: <a href="mailto:legal@astrosynapse.ai">legal@astrosynapse.ai</a></p>
+    </div>
+  </div>
+</section>

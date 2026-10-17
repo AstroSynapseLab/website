@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Astro Synapse</title>
+  <meta name="description" content="Tell us what you're trying to solve. We will tell you honestly whether AI is the right answer, and what it would take to build it.">
+  <link rel="canonical" href="https://astrosynapse.ai/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://astrosynapse.ai/contact.html">
+  <meta property="og:title" content="Contact · Astro Synapse">
+  <meta property="og:description" content="Tell us what you're trying to solve. We will tell you honestly whether AI is the right answer.">
+  <meta property="og:image" content="https://astrosynapse.ai/public/logo/logo.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <div class="fx-grain" aria-hidden="true"></div>
+  <div class="fx-vignette" aria-hidden="true"></div>
+  <canvas class="fx-orbs" data-orbs aria-hidden="true"></canvas>
+  <div class="cursor" data-cursor aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner wrap">
+      <a class="brand" href="index.html">
+        <img src="public/logo/logo-white.png" width="32" height="28" alt="">
+        <span>Astro Synapse</span>
+        <span class="brand__code">ST/05</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="btn btn--nav" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--page">
+      <div class="hero__stage" aria-hidden="true">
+        <div class="hero__ring"></div>
+        <div class="hero__orb"></div>
+      </div>
+      <div class="wrap hero__copy">
+        <p class="kicker"><span>05. Signal</span><span>Dublin</span></p>
+        <h1>Tell us what you're trying to solve.</h1>
+        <p class="lede">We will tell you honestly whether AI is the right answer, and what it would take to build it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap" data-reveal>
+        <!--
+          FORMSPREE: this posts to the live Astro Synapse form already used on astrosynapse.ai
+          (https://formspree.io/f/mbjvkrja). Swap the action URL if you create a new form.
+        -->
+        <form class="form" data-form action="https://formspree.io/f/mbjvkrja" method="POST">
+          <label>
+            First name
+            <input type="text" name="first_name" autocomplete="given-name" required>
+          </label>
+          <label>
+            Last name
+            <input type="text" name="last_name" autocomplete="family-name" required>
+          </label>
+          <label>
+            Work email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Company
+            <input type="text" name="company" autocomplete="organization">
+          </label>
+          <label>
+            What do you need to build?
+            <textarea name="message" rows="8" required></textarea>
+          </label>
+          <button class="btn btn--primary" type="submit">Send message →</button>
+          <p class="form-status" data-form-status hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--tight section--void">
+      <div class="wrap" data-reveal>
+        <h2>Direct contact</h2>
+        <p class="direct-contact">Email: <a href="mailto:info@astrosynapse.ai">info@astrosynapse.ai</a></p>
+        <h2>Company</h2>
+        <p>Astro Synapse Limited</p>
+        <address class="address">71 Lower Baggot Street, Dublin 2, Co. Dublin, D02 P593, Ireland</address>
+        <ul class="social">
+          <li><a href="https://twitter.com/astrosynapselab" rel="noopener noreferrer">Twitter/X</a></li>
+          <li><a href="https://www.linkedin.com/company/astro-synapse/" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/AstroSynapseLab" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div>
+        <h3>Astro Synapse Limited</h3>
+        <address class="address">71 Lower Baggot Street, Dublin 2, Co. Dublin, D02 P593, Ireland</address>
+        <ul class="social">
+          <li><a href="https://twitter.com/astrosynapselab" rel="noopener noreferrer">Twitter/X</a></li>
+          <li><a href="https://www.linkedin.com/company/astro-synapse/" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/AstroSynapseLab" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Legal">
+        <ul class="footer-nav">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="wrap copyright">© Astro Synapse Limited. Dublin, Ireland.</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

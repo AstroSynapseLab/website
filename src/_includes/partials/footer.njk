@@ -1,0 +1,34 @@
+{%- from "macros.njk" import bgVideo -%}
+<footer class="site-footer"{% if footerAnchor !== false %} id="contact"{% endif %}>
+  {{ bgVideo("deep-space") }}
+  <div class="wrap site-footer__inner">
+    <div class="footer-cta">
+      <div>
+        <div class="footer-cta__label"><span>ST/05 · Collaborate</span><span data-clock>IE → --:--</span></div>
+        <h2 data-reveal>Ready to build something real?</h2>
+        <p class="lede" data-reveal="d1">Tell us what you're trying to solve; we'll tell you if AI is actually the answer.</p>
+      </div>
+      <div class="footer-cta__links">
+        <a class="ulink" href="/contact/" data-reveal>Discuss your project <span class="ulink__arr">→</span></a>
+        <a class="ulink" href="/research/" data-reveal="d1">Explore the research <span class="ulink__arr">→</span></a>
+      </div>
+    </div>
+    <div class="site-footer__grid">
+      <div><h2 class="label-heading">{{ site.legalName }}</h2><address class="address">{{ site.address.street }}<br>{{ site.address.locality }}, {{ site.address.region }}, {{ site.address.postalCode }}<br>{{ site.address.countryName }}</address></div>
+      <nav aria-label="Footer"><h2 class="label-heading">Navigate</h2><div class="site-footer__links">
+        {%- for key in site.footerNav %}{% set item = site.nav | findNav(key) %}
+        <a href="{{ item.url }}">{{ item.label }}</a>
+        {%- endfor %}
+      </div></nav>
+      <div><h2 class="label-heading">Social</h2><div class="site-footer__links">
+        {%- for s in site.social %}
+        <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>
+        {%- endfor %}
+      </div></div>
+    </div>
+  </div>
+</footer>
+<div class="site-legal">
+  <p class="site-legal__copy">© {{ site.legalName }}. Dublin, Ireland.</p>
+  <div class="site-legal__links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-of-service/">Terms of Service</a></div>
+</div>

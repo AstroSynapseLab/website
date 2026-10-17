@@ -1,0 +1,135 @@
+---
+layout: base.njk
+title: Astro Synapse · AI Research & Integrations Lab
+description: "We research, build, and ship AI systems: RAG pipelines, autonomous agents, and embedded engineering teams for businesses that need real infrastructure, not another chatbot wrapper."
+code: ST/00
+navKey: home
+ogImage: hero-space
+preloadImage: /assets/video/hero-space.jpg
+productPanel: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  {{ bgVideo("hero-space", eager=true, parallax=true, small=true) }}
+  <div class="wrap hero__copy">
+    <p class="kicker" data-reveal><span>01. Data</span><span>02. Trust</span><span>03. Infrastructure</span></p>
+    <h1 data-reveal="d1"><span class="hero__line">AI research and</span><span class="hero__line">integrations lab</span></h1>
+    <div class="hero__ctas" data-reveal="d2">
+      <a class="ulink" href="/contact/">Discuss your project <span class="ulink__arr">→</span></a>
+      <a class="ulink" href="#lab">Discover the lab <span class="ulink__arr">↓</span></a>
+    </div>
+  </div>
+  <div class="wrap hero__bottom">
+    <div class="hero__hint" data-reveal="d2"><span><b>Move</b> to drift through the system.</span><span>Scroll to enter the lab.</span></div>
+    <div class="hero__card">
+      {#- the paragraph below is shown without the fade-in: it is the page's LCP element on mobile #}
+      <div class="meta-card" data-reveal="d3">
+        <div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Dublin, IE</div>
+        <div class="meta-card__text">AI research &amp;<br>integrations lab.</div>
+      </div>
+      <p>RAG pipelines, autonomous agents, and embedded engineering teams for businesses that need real infrastructure, not another chatbot wrapper.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about section" id="lab">
+  {{ bgVideo("deep-space", modifier="soft") }}
+  <div class="wrap about__inner">
+    <p class="eyebrow" data-reveal>ST/01 · About</p>
+    <h2 data-reveal="d1">Astro Synapse is an independent lab that <b>researches, builds, and ships AI systems</b> for companies that need them to hold up in production.</h2>
+    <div class="about__rule" data-reveal></div>
+    <div class="about__cols">
+      <p class="lede" data-reveal>We design for longevity: <b>data first, trust always, built on infrastructure you control.</b></p>
+      <div data-reveal="d1">
+        <p>Our mission is to make AI feel like engineering, not magic. Systems that are observable, self-hostable, and honest about what they can and cannot do.</p>
+        <a class="ulink" href="/about/">More about us <span class="ulink__arr">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__lbl">Focused research.<br>Measured shipping.</div>
+  <div class="marquee__track">
+    {%- for i in range(2) %}
+    <span class="marquee__word">Data</span><span class="marquee__word">Trust</span><span class="marquee__word">Infrastructure</span><span class="marquee__word">Agents</span>
+    {%- endfor %}
+  </div>
+</div>
+
+<!-- ============ KEY FACTS ============ -->
+<section class="facts section">
+  {{ bgVideo("ringed-planet") }}
+  <div class="wrap facts__inner">
+    <div class="section-head">
+      <div><p class="st-code" data-reveal>✦ From idea to outcome</p><h2 data-reveal="d1">Key facts</h2></div>
+      <p class="lede" data-reveal="d2">A snapshot of what we build, how we host it, and the shape of the lab.</p>
+    </div>
+    <div class="fact-grid">
+      <div class="fact" data-reveal><div class="fact__num">07</div><div class="fact__cap"><b>Capabilities</b>From custom integrations to model provisioning and team augmentation.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num">05</div><div class="fact__cap"><b>Research projects</b>Built and shipped by the lab itself, from trams to translation.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num">02</div><div class="fact__cap"><b>Products</b>Came out of our research: Interpress and Gedor.</div></div>
+      <div class="fact" data-reveal="d3"><div class="fact__num">EU</div><div class="fact__cap"><b>Sovereign inference</b>Gedor hosts LLM-as-a-Service entirely within the EU.</div></div>
+      <div class="fact fact--wide" data-reveal>
+        <div class="fact__cap"><b>Works with your stack</b>Ingestion, connectors and plugins we ship against today.</div>
+        <ul class="pills"><li class="pill">Slack</li><li class="pill">Google Drive</li><li class="pill">Email</li><li class="pill">Calendar</li><li class="pill">Trello</li><li class="pill">Discord</li><li class="pill">Jira</li><li class="pill">MCP</li><li class="pill">OpenAI-compatible API</li></ul>
+      </div>
+      <div class="fact fact--wide" data-reveal="d1">
+        <div class="fact__num fact__num--text">Multi-LLM.<br>Self-hosted or managed.</div>
+        <div class="fact__cap">No forced dependency on a single model provider. Every system can run on your hardware or ours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="section section--bordered">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="st-code" data-reveal>ST/02 · Capabilities</p><h2 data-reveal="d1">Do it all with<br>Astro Synapse.</h2></div>
+      <p class="lede" data-reveal="d2">Seven ways we plug into a business, from a single pipeline to a full embedded team.</p>
+    </div>
+    <ol class="service-list">
+      <li class="service-list__item" data-reveal><span class="service-list__index">01</span><h3>Custom AI Integrations.</h3><p><em>RAG pipelines</em> · document-aware search · plugin integrations · multi-LLM support</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">02</span><h3>Knowledge Base &amp; Company Knowledge Bank.</h3><p><em>Vector search</em> · unified company knowledge · semantic + text search · Slack, Drive &amp; email ingestion</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">03</span><h3>AI Systems Integration.</h3><p><em>Chat platform connectors</em> · email &amp; calendar integrations · unified MCP server · custom API interfaces</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">04</span><h3>Data &amp; Privacy Protection.</h3><p><em>Custom data management layer</em> · self-hosted options · full control over training data</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">05</span><h3>Software Automation.</h3><p><em>Scrum automation</em> · sales &amp; lead-gen · content generation · code generation · document &amp; image analysis</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">06</span><h3>IaaS: Model Provisioning.</h3><p><em>SLM provisioning</em> · embedding model hosting · fine-tuning &amp; training</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">07</span><h3>AI Team Augmentation.</h3><p><em>Embedded AI &amp; engineering specialists</em> · protocol-driven onboarding · CTO-level technical leadership</p></li>
+    </ol>
+    <div class="section-foot">
+      <span class="st-code">Different disciplines. One standard of engineering.</span>
+      <a class="ulink" href="/solutions/">View solutions <span class="ulink__arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section class="products section" id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="st-code" data-reveal>ST/03 · Research</p><h2 data-reveal="d1">Research we build<br>and ship ourselves.</h2></div>
+      <p class="lede" data-reveal="d2">Applied research in the open: from an AI that drives trams to the products that came out of our own work. Each one started as a problem we needed solved.</p>
+    </div>
+    {% include "partials/research-feature.njk" %}
+    {% include "partials/product-cards.njk" %}
+  </div>
+</section>
+
+<!-- ============ SOVEREIGNTY ============ -->
+<section class="sov section">
+  {{ bgVideo("hero-planet", modifier="mirrored") }}
+  <div class="wrap sov__inner">
+    <div><p class="eyebrow" data-reveal>ST/04 · Sovereignty</p><h2 data-reveal="d1">Your data.<br>Your infra.<br>Your rules.</h2></div>
+    <div class="sov__r">
+      <p data-reveal="d1">Every system we build can run <b>self-hosted or managed</b>, giving you full vertical control over your data, software, hardware, and training pipeline. No forced dependency on a single model provider. For EU-based operations, Gedor extends that control to fully sovereign, EU-hosted inference.</p>
+      <ul class="pills" data-reveal="d2"><li class="pill">Self-hosted</li><li class="pill">Managed</li><li class="pill">Multi-LLM</li><li class="pill">EU-hosted</li><li class="pill">GDPR</li><li class="pill">EU AI Act</li></ul>
+      <a class="ulink" href="/use-cases/" data-reveal="d3">See use cases <span class="ulink__arr">→</span></a>
+    </div>
+  </div>
+</section>

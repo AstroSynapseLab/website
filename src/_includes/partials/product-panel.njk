@@ -1,0 +1,19 @@
+{#- Expanding product "quick view" dialog. Filled and animated by main.js from the JSON below. -#}
+<div class="xp" id="product-panel" role="dialog" aria-modal="true" aria-labelledby="xp-title" hidden>
+  <div class="xp__bg" data-xp-close></div>
+  <div class="xp__panel">
+    <button class="xp__close" type="button" aria-label="Close" data-xp-close>×</button>
+    <div class="xp__inner">
+      <div class="xp__left">
+        <div>
+          <div class="meta-row wipe" style="--d:.05s"><span class="st-code" data-xp="idx"></span><span class="badge" data-xp="badge"></span></div>
+          <h3 class="wipe" id="xp-title" style="--d:.12s" data-xp="title"></h3>
+          <p class="wipe" style="--d:.2s" data-xp="desc"></p>
+        </div>
+        <div class="xp__cta wipe" style="--d:.55s"><a class="btn btn--primary" href="#" data-xp="link"></a><a class="btn btn--ghost" href="#" data-xp="page">Full project →</a></div>
+      </div>
+      <div class="xp__tiles" data-xp="tiles"></div>
+    </div>
+  </div>
+</div>
+<script type="application/json" id="product-data">{{ products | panelData | jsonScript | safe }}</script>

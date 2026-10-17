@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: About · Astro Synapse
+description: "Astro Synapse is a research and integrations lab: part engineering studio, part product lab, registered in Dublin, Ireland."
+code: ST/04
+navKey: about
+crumb: About
+ogImage: hero-space
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("hero-space", eager=true, small=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>04. Studio</span><span>Dublin</span></p>
+      <h1 data-reveal="d1">We build the AI infrastructure we wish already existed.</h1>
+      <p class="lede" data-reveal="d2">Astro Synapse is a research and integrations lab: part engineering studio, part product lab.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Dublin, IE</div><div class="meta-card__text">Part engineering studio.<br>Part product lab.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro">
+  <div class="wrap two-col">
+    <div class="two-col__sticky title-block" data-reveal>
+      <p class="st-code">ST/04.1 · Practice</p>
+      <h2>Two halves that feed each other.</h2>
+      <p class="lede">Client engagements fund the research. The research improves the products.</p>
+    </div>
+    <div class="prose">
+      <div data-reveal><h3>What we do</h3><p>We split our work into two halves that feed each other. On one side, we integrate AI into real businesses: RAG systems, knowledge bases, automation, embedded engineering teams. On the other, we build our own products (ASAI, Interpress, Gedor, webAgen) using what we learn from that work. Client engagements fund the research. The research improves the products. The products get sharper because they are tested against real, messy business problems instead of demos.</p></div>
+      <div data-reveal><h3>How we operate</h3><p>We work from a small set of internal protocols covering how a product gets scoped, built, handed off, and maintained, refined across engagements rather than reinvented each time. Our own stack (Go, Vue and React, PostgreSQL, vector databases) is the same stack we bring into client integrations, so what we build for ourselves and what we build for clients stay compatible.</p><p>Where a problem has an exact, deterministic solution, we use it. AI gets reserved for problems that genuinely need it. That discipline shows up in everything from a client integration to our own products.</p></div>
+      <div data-reveal><h3>Where we're headed</h3><p>The near-term plan is straightforward: grow a small, senior engineering team, fund it through services and integration work, and use that runway to take our own product lines from internal tools to independent companies, each one spun out on its own while Astro Synapse retains equity. We are optimising for a team that can do a lot with a little, not for headcount.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="facts section">
+  {{ bgVideo("hero-planet") }}
+  <div class="wrap facts__inner">
+    <div class="section-head"><div><p class="st-code" data-reveal>ST/04.2 · Principles</p><h2 data-reveal="d1">How we decide</h2></div></div>
+    <div class="fact-grid fact-grid--3">
+      <div class="fact" data-reveal><div class="fact__num fact__num--text">Deterministic first.</div><div class="fact__cap">If an exact, programmable solution exists, it wins. AI is reserved for problems that genuinely need it.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num fact__num--text">One stack.</div><div class="fact__cap">Go · Vue &amp; React · PostgreSQL · vector databases. The same stack for our products and your integration.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num fact__num--text">Protocol driven.</div><div class="fact__cap">Scoping, building, hand-off and maintenance follow written protocols refined across engagements.</div></div>
+    </div>
+  </div>
+</section>

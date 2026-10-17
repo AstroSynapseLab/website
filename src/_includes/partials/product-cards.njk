@@ -1,0 +1,12 @@
+{#- 2x2 grid of product cards. Clicking a card opens the quick-view panel (main.js). -#}
+<div class="card-grid">
+  {%- for p in products %}
+  <a class="glow-card" href="{{ p.page }}" data-reveal{% if loop.index0 % 2 %}="d1"{% endif %} data-product="{{ p.key }}">
+    <span class="glow-card__num">{{ p.idx }}</span><span class="glow-card__expand" aria-hidden="true">⤢</span>
+    <div class="glow-card__top"><h3>{{ p.title }}</h3><span class="badge {{ p.badgeClass }}">{{ p.badge }}</span></div>
+    <p>{{ p.summary }}</p>
+    <ul class="pills">{% for t in p.tags %}<li class="pill">{{ t }}</li>{% endfor %}</ul>
+    <span class="ulink" data-ext="{{ p.link | withBase }}">{{ p.linkLabel }} <span class="ulink__arr">→</span></span>
+  </a>
+  {%- endfor %}
+</div>

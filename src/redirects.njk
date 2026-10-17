@@ -1,0 +1,21 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from }}"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redirecting</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ site.url }}{{ redirect.to }}">
+{#- the base plugin prefixes this URL (and the link below) with the deploy path #}
+<meta http-equiv="refresh" content="0; url={{ redirect.to }}">
+<script>location.replace({{ redirect.to | withBase | dump | safe }} + location.hash)</script>
+</head>
+<body style="background:#04050a;color:#f4efe6;font-family:system-ui;padding:2rem">This page has moved to <a href="{{ redirect.to }}" style="color:#7cf4e0">{{ site.url }}{{ redirect.to }}</a>.</body>
+</html>

@@ -1,0 +1,54 @@
+---
+layout: base.njk
+title: Privacy Policy · Astro Synapse
+description: Privacy Policy for Astro Synapse Limited.
+code: ST/06
+crumb: Privacy Policy
+ogImage: hero-space
+# Draft: keep out of search results until legal review is done, then remove this line.
+noindex: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>06. Legal</span><span>Draft</span></p>
+      <h1 data-reveal="d1">Privacy Policy</h1>
+      <p class="lede" data-reveal="d2">Draft - not legal advice. Placeholders are highlighted until counsel reviews this page.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"></div>
+  </div>
+</section>
+
+<section class="legal-doc">
+  <div class="wrap two-col two-col--legal">
+    <nav class="legal-doc__toc" aria-label="On this page" data-reveal><a href="#sec0">Who we are</a><a href="#sec1">What we collect</a><a href="#sec2">Why we collect it</a><a href="#sec3">Legal basis</a><a href="#sec4">Data processing agreements</a><a href="#sec5">Where data is stored</a><a href="#sec6">Data retention</a><a href="#sec7">Your rights</a><a href="#sec8">Third parties and sub-processors</a><a href="#sec9">Contact</a></nav>
+    <div data-reveal="d1">
+      <p class="legal-doc__banner"><strong>Important: this is a starting draft, not legal advice.</strong> Astro Synapse processes client documents and business data as part of its RAG and integration services, which likely qualifies as processing "special" or sensitive categories of data depending on the client. Have a qualified data protection lawyer (ideally one familiar with Irish/EU GDPR, since the company is Dublin-registered) review and finalise this before publishing.</p>
+      <p>Last updated: <span class="legal-doc__placeholder">[DATE]</span></p>
+      <h2 id="sec0">Who we are</h2>
+      <p>Astro Synapse Limited, registered at 71 Lower Baggot Street, Dublin 2, Co. Dublin, D02 P593, Ireland ("Astro Synapse", "we", "us"), is the data controller for personal data collected through this website, and may act as a data processor for client data processed through our products and services (ASAI, Interpress, Gedor, webAgen, and custom integrations), depending on the engagement.</p>
+      <h2 id="sec1">What we collect</h2>
+      <ul><li>Contact and enquiry data: name, email, company, and message content submitted through our contact form or waitlists.</li><li>Product usage data: for early access / waitlist products (ASAI, Gedor, Interpress), account and usage information needed to operate the service.</li><li>Client data processed on behalf of clients: documents, business data, and other content clients choose to connect to our AI systems (RAG pipelines, knowledge bases, translations) under a separate data processing agreement.</li></ul>
+      <h2 id="sec2">Why we collect it</h2>
+      <ul><li>To respond to enquiries and provide early access.</li><li>To operate, maintain, and improve our products.</li><li>To fulfil contractual obligations under client agreements, where we process data on a client's behalf.</li></ul>
+      <h2 id="sec3">Legal basis</h2>
+      <ul><li>Consent (waitlist sign-ups, marketing communications).</li><li>Contract performance (delivering a service you or your company requested).</li><li>Legitimate interest (operating and securing our website and products).</li></ul>
+      <h2 id="sec4">Data processing agreements</h2>
+      <p>For client engagements where Astro Synapse processes a client's business data (documents, knowledge bases, translations, or other content), processing terms are governed by a separate Data Processing Agreement (DPA), not this public policy. <span class="legal-doc__placeholder">[Confirm whether a standard DPA template should be linked here.]</span></p>
+      <h2 id="sec5">Where data is stored</h2>
+      <p><span class="legal-doc__placeholder">[To be confirmed: specify hosting locations/providers for each product; note EU-hosting commitments, e.g. for Gedor.]</span></p>
+      <h2 id="sec6">Data retention</h2>
+      <p><span class="legal-doc__placeholder">[To be confirmed: retention periods for enquiry data, waitlist data, and client data per product/engagement.]</span></p>
+      <h2 id="sec7">Your rights</h2>
+      <p>Under GDPR, you have the right to access, correct, delete, restrict, or port your personal data, and to withdraw consent at any time. To exercise these rights, contact privacy@astrosynapse.ai. <span class="legal-doc__placeholder">[Confirm this inbox exists before publishing.]</span></p>
+      <h2 id="sec8">Third parties and sub-processors</h2>
+      <p><span class="legal-doc__placeholder">[To be confirmed: list any third-party infrastructure, LLM providers, or sub-processors used across products.]</span></p>
+      <h2 id="sec9">Contact</h2>
+      <p>For privacy questions, contact: <a href="mailto:privacy@astrosynapse.ai">privacy@astrosynapse.ai</a></p>
+    </div>
+  </div>
+</section>

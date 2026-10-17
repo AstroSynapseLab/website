@@ -1,0 +1,17 @@
+{#- `inert` keeps the closed menu out of the tab order and the accessibility tree; main.js toggles it. -#}
+<div class="menu" id="site-menu" inert>
+  <nav aria-label="Primary">
+    {%- for item in site.nav %}
+    <a class="menu__link" href="{{ item.url }}"{% if item.key == navKey %} aria-current="page"{% endif %}><span class="menu__idx">{{ "0" ~ loop.index }}</span>{{ item.label }}</a>
+    {%- endfor %}
+  </nav>
+  <aside class="menu__side">
+    <div><h2 class="label-heading">Business enquiry</h2><a href="/contact/">Start a project →</a></div>
+    <div><h2 class="label-heading">Social</h2><div class="menu__row">
+      {%- for s in site.social %}
+      <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>
+      {%- endfor %}
+    </div></div>
+    <div><h2 class="label-heading">{{ site.legalName }}</h2><p>{{ site.address.street }}, {{ site.address.locality }}, {{ site.address.postalCode }}, {{ site.address.countryName }}</p></div>
+  </aside>
+</div>

@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: webAgen · Astro Synapse
+description: Agentic website generation platform.
+code: RS/05
+navKey: research
+crumb: webAgen
+ogImage: deep-space
+productPanel: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>Research 05</span><span>In Development</span></p>
+      <h1 data-reveal="d1">An agent that builds your website, not a template.</h1>
+      <p class="lede" data-reveal="d2">Agentic website generation platform.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>005</div><div class="meta-card__text">In Development.<br>Built in-house.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro-tight">
+  <div class="wrap">
+    <div class="product-banner product-banner--webagen" data-reveal>
+      <div class="product-banner__top"><h2>webAgen</h2><span class="badge badge--dev">In Development</span></div>
+      <span class="product-banner__num">005</span>
+    </div>
+    <div class="product-grid">
+      <div data-reveal>
+        <div class="prose"><p>Instead of a classic website, webAgen is an agent that generates a website for you based on your conversation with it: a CMS platform built for agentic websites.</p></div>
+        <ul class="pills"><li class="pill">agentic</li><li class="pill">CMS</li><li class="pill">in development</li></ul>
+        <div class="cta-row"><a class="btn btn--primary" href="/contact/">Contact us →</a><button class="btn btn--ghost" type="button" data-open-product="webagen">Quick view ⤢</button></div>
+      </div>
+      <div data-reveal="d1"><div class="prose"><p>Full product details are still in development. Check back soon, or get in touch to be notified at launch.</p></div><ul class="pills"><li class="pill">conversational site-building</li><li class="pill">agent-generated CMS</li></ul></div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/product-closing.njk" %}

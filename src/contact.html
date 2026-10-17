@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: Contact · Astro Synapse
+description: "Tell us what you are trying to solve. We will tell you honestly whether AI is the right answer, and what it would take to build it."
+code: ST/05
+navKey: contact
+crumb: Contact
+ogImage: deep-space
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>05. Signal</span><span>Dublin</span></p>
+      <h1 data-reveal="d1">Tell us what you're trying to solve.</h1>
+      <p class="lede" data-reveal="d2">We will tell you honestly whether AI is the right answer, and what it would take to build it.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Dublin, IE</div><div class="meta-card__text">Honest scoping.<br>No chatbot wrappers.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro">
+  <div class="wrap two-col two-col--contact">
+    <div data-reveal>
+      <p class="st-code">ST/05.1 · Start a project</p>
+      {#- Posts to the live Astro Synapse Formspree form. Swap the action URL if you create a new form. #}
+      <form class="form" data-form action="https://formspree.io/f/mbjvkrja" method="POST">
+        <label class="form__field">First name<input type="text" name="first_name" autocomplete="given-name" required></label>
+        <label class="form__field">Last name<input type="text" name="last_name" autocomplete="family-name" required></label>
+        <label class="form__field">Work email<input type="email" name="email" autocomplete="email" required></label>
+        <label class="form__field">Company<input type="text" name="company" autocomplete="organization"></label>
+        <label class="form__field form__field--full">What do you need to build?<textarea name="message" rows="8" required></textarea></label>
+        {#- Honeypot: hidden from people, filled in by spam bots; Formspree drops those submissions. #}
+        <label class="form__honeypot" aria-hidden="true">Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        <div class="form__foot"><button class="btn btn--primary" type="submit">Send message →</button><p class="form__status" data-form-status role="status" hidden></p></div>
+      </form>
+    </div>
+    <aside class="contact-side two-col__sticky" data-reveal="d1">
+      <div><h2 class="label-heading">Direct contact</h2><a class="contact-side__email" href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+      <div><h2 class="label-heading">Company</h2><p>{{ site.legalName }}<br>{{ site.address.street }}, {{ site.address.locality }},<br>{{ site.address.region }}, {{ site.address.postalCode }}, {{ site.address.countryName }}</p></div>
+      <div><h2 class="label-heading">Social</h2><p>{% for s in site.social %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p></div>
+      <div><h2 class="label-heading">What happens next</h2><ol class="steps"><li>We read your brief and reply within a few business days.</li><li>A short discovery call to understand the problem.</li><li>An honest answer: AI, a deterministic build, or neither.</li></ol></div>
+    </aside>
+  </div>
+</section>

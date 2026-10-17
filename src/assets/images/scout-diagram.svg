@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="t d" font-family="Inter, system-ui, sans-serif">
+  <title id="t">Scout robot detecting a blocked track</title>
+  <desc id="d">A scout robot on a tram line between Stop A and Stop B scans ahead, flags a blocked track before Stop C and sends a live operator alert.</desc>
+
+  <defs>
+    <clipPath id="coneClip"><path d="M530 418 L 852 376 L 852 522 L 530 428 Z"/></clipPath>
+  </defs>
+  <style>
+    @media (prefers-reduced-motion: reduce){ .anim{animation:none!important} }
+  </style>
+  <!-- backdrop -->
+  <rect width="1200" height="720" rx="28" fill="#07080f"/>
+  <rect x=".5" y=".5" width="1199" height="719" rx="28" fill="none" stroke="#232429"/>
+
+  <!-- corner labels -->
+  <text x="48" y="58" fill="#8b90a5" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="13" letter-spacing="2">SCOUT · LIVE SCAN</text>
+  <text x="1152" y="58" fill="#8b90a5" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="13" text-anchor="end" letter-spacing="2">LINE 2 · 05:12</text>
+
+  <!-- operator alert card -->
+  <g>
+    <rect x="128" y="168" width="326" height="76" rx="38" fill="#f4efe6"/>
+    <circle cx="170" cy="206" r="8" fill="#ff5f57"/>
+    <circle cx="170" cy="206" r="14" fill="none" stroke="#ff5f57" stroke-opacity=".5">
+      <animate attributeName="r" values="10;20;10" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-opacity" values=".6;0;.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="196" y="215" fill="#04050a" font-size="26" font-weight="600">Operator alert</text>
+  </g>
+  <!-- dotted link from blockage to alert -->
+  <path d="M832 318 C 760 230, 600 200, 466 206" fill="none" stroke="#ff5f57" stroke-width="3" stroke-dasharray="4 12" stroke-linecap="round">
+    <animate attributeName="stroke-dashoffset" from="32" to="0" dur="1.2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- scan cone -->
+  <path d="M530 418 L 852 376 L 852 522 L 530 428 Z" fill="#1f3a3c">
+    <animate attributeName="fill" values="#1f3a3c;#27494a;#1f3a3c" dur="2.6s" repeatCount="indefinite"/>
+  </path>
+  <g clip-path="url(#coneClip)">
+    <rect x="520" y="360" width="6" height="180" fill="#7cf4e0" opacity=".55">
+      <animate attributeName="x" from="520" to="852" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.6;.6;0" keyTimes="0;.1;.85;1" dur="2.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <!-- track -->
+  <rect x="140" y="434" width="930" height="26" rx="13" fill="#2a2f4a"/>
+  <rect x="140" y="434" width="640" height="26" rx="13" fill="#7cf4e0"/>
+  <line x1="150" y1="447" x2="770" y2="447" stroke="#f4efe6" stroke-opacity=".35" stroke-width="4" stroke-dasharray="10 26" stroke-linecap="round">
+    <animate attributeName="stroke-dashoffset" from="36" to="0" dur="1.6s" repeatCount="indefinite"/>
+  </line>
+  <!-- stops -->
+  <g stroke="#f4efe6" stroke-width="14" fill="#04050a">
+    <circle cx="232" cy="447" r="30"/>
+    <circle cx="612" cy="447" r="30"/>
+    <circle cx="990" cy="447" r="30"/>
+  </g>
+  <g fill="#8b90a5" font-size="26" text-anchor="middle">
+    <text x="232" y="548">Stop A</text>
+    <text x="612" y="548">Stop B</text>
+    <text x="990" y="548">Stop C</text>
+  </g>
+
+
+  <!-- scout tram -->
+  <g transform="translate(0,8)">
+    <animateTransform attributeName="transform" type="translate" values="0 8;0 7;0 8;0 9;0 8" dur="1.4s" repeatCount="indefinite" additive="replace"/>
+    <!-- pantograph -->
+    <path d="M400 366 L 428 336 L 456 366" fill="none" stroke="#7cf4e0" stroke-width="4" stroke-linecap="round"/>
+    <rect x="414" y="330" width="28" height="4" rx="2" fill="#7cf4e0"/>
+    <!-- body -->
+    <path d="M350 384 h 150 q 24 0 30 22 l 8 32 q 2 10 -8 10 h -180 q -10 0 -10 -10 v -44 q 0 -10 10 -10 z" fill="#7cf4e0"/>
+    <!-- windows -->
+    <g fill="#0f3a3a">
+      <rect x="364" y="398" width="30" height="22" rx="4"/>
+      <rect x="402" y="398" width="30" height="22" rx="4"/>
+      <rect x="440" y="398" width="30" height="22" rx="4"/>
+      <path d="M480 398 h 20 q 14 0 18 14 l 2 8 h -40 z"/>
+    </g>
+    <!-- door seam + skirt -->
+    <rect x="364" y="428" width="106" height="4" rx="2" fill="#0f3a3a" opacity=".6"/>
+    <!-- headlight -->
+    <circle cx="520" cy="440" r="5" fill="#f4efe6">
+      <animate attributeName="r" values="5;6.5;5" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="440" r="9" fill="none" stroke="#f4efe6" stroke-width="1.5" opacity=".5">
+      <animate attributeName="r" values="7;16" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".5;0" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <!-- wheels -->
+    <g fill="#04050a" stroke="#f4efe6" stroke-width="2"><circle cx="380" cy="452" r="9"/><circle cx="412" cy="452" r="9"/><circle cx="458" cy="452" r="9"/><circle cx="490" cy="452" r="9"/></g>
+    <g fill="#f4efe6">
+      <rect x="378.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 380 452" to="360 380 452" dur="1.2s" repeatCount="indefinite"/></rect>
+      <rect x="410.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 412 452" to="360 412 452" dur="1.2s" repeatCount="indefinite"/></rect>
+      <rect x="456.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 458 452" to="360 458 452" dur="1.2s" repeatCount="indefinite"/></rect>
+      <rect x="488.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 490 452" to="360 490 452" dur="1.2s" repeatCount="indefinite"/></rect>
+    </g>
+  </g>
+
+  <!-- blockage -->
+  <rect x="730" y="366" width="120" height="162" rx="20" fill="#251218">
+    <animate attributeName="fill" values="#251218;#3a1a1e;#251218" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="762" y="422" width="56" height="52" rx="10" fill="#ff5f57"/>
+  <g fill="none" stroke="#ff5f57" stroke-width="5" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="1.8s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;-31.6 -17.9;0 0" dur="1.8s" repeatCount="indefinite" additive="sum"/>
+    <path d="M744 404 v-18 h18"/><path d="M836 404 v-18 h-18"/>
+    <path d="M744 492 v18 h18"/><path d="M836 492 v18 h-18"/>
+  </g>
+  <!-- track blocked label -->
+  <g>
+    <rect x="730" y="298" width="248" height="56" rx="28" fill="#ff5f57">
+      <animate attributeName="fill" values="#ff5f57;#ff8a80;#ff5f57" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="854" y="334" fill="#f4efe6" font-size="24" font-weight="600" text-anchor="middle">Track blocked</text>
+  </g>
+
+  <!-- caption -->
+  <text x="600" y="660" fill="#b2aeaa" font-size="30" text-anchor="middle">Live scans of every line, every day.</text>
+</svg>

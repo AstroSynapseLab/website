@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: ASAI · Astro Synapse
+description: Personalized, self-hosted multi-agent AI avatars.
+code: RS/02
+navKey: research
+crumb: ASAI
+ogImage: products-eclipse
+productPanel: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("hero-planet", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>Research 02</span><span>Early Access</span></p>
+      <h1 data-reveal="d1">Your personalized, multi-agent AI avatar.</h1>
+      <p class="lede" data-reveal="d2">Personalized, self-hosted multi-agent AI avatars.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>002</div><div class="meta-card__text">Early Access.<br>Built in-house.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro-tight">
+  <div class="wrap">
+    <div class="product-banner product-banner--asai" data-reveal>
+      <div class="product-banner__top"><h2>ASAI</h2><span class="badge badge--access">Early Access</span></div>
+      <span class="product-banner__num">002</span>
+    </div>
+    <div class="product-grid">
+      <div data-reveal>
+        <div class="prose"><p>Most businesses have no easy way to bring multi-agent AI assistants into their existing workflows without handing over control of their data and infrastructure. ASAI is a no-code assistant creation and management platform built to fix that: point-and-click setup, full vertical control over your data, software, hardware, and training data.</p></div>
+        <ul class="pills"><li class="pill">no-code</li><li class="pill">multi-agent</li><li class="pill">self-hosted</li><li class="pill">multi-LLM</li><li class="pill">open-source</li></ul>
+        <div class="cta-row"><a class="btn btn--primary" href="https://asai.astrosynapse.ai/" target="_blank" rel="noopener">Try ASAI now →</a><button class="btn btn--ghost" type="button" data-open-product="asai">Quick view ⤢</button></div>
+      </div>
+      <div data-reveal="d1">
+        <h3>How it works</h3>
+        <ol class="steps"><li>Set up your assistant's personality</li><li>Connect it to your platforms (Slack, Trello, Discord, Jira)</li><li>Select and activate the tools and agents it will use</li><li>Your assistant is ready to work</li></ol>
+        <h3>What sets it apart</h3>
+        <p>Unlike LangChain, Auto-GPT, or Crew AI, ASAI combines a genuinely no-code interface with full self-hosting, multi-LLM support, extensive plugin integrations, and an open-source core, so non-technical teams get the same control that used to require a developer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/product-closing.njk" %}

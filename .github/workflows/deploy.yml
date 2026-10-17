@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+# Builds the site with Eleventy and publishes _site/ to GitHub Pages.
+# One-time setup: in Settings, Pages, set "Build and deployment" Source to "GitHub Actions".
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history: sitemap <lastmod> comes from each page's last git commit
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - uses: actions/configure-pages@v6
+
+      - run: npm ci
+
+      # SITE_URL and PATH_PREFIX come from the committed .env file
+      - run: npm run build
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

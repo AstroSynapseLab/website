@@ -1,0 +1,20 @@
+---
+layout: base.njk
+permalink: /404.html
+eleventyExcludeFromCollections: true
+noindex: true
+title: Page not found · Astro Synapse
+description: The page you are looking for does not exist.
+code: ST/404
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<section class="page-hero not-found">
+  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wrap">
+    <p class="kicker" data-reveal><span>404</span><span>Not found</span></p>
+    <h1 data-reveal="d1">Page not found.</h1>
+    <p class="lede" data-reveal="d2">The page you are looking for does not exist or has moved.</p>
+    <div class="cta-row" data-reveal="d3"><a class="btn btn--primary" href="/">Back to home</a><a class="btn btn--ghost" href="/contact/">Contact us</a></div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: Interpress · Astro Synapse
+description: Instant AI-powered document translation and interpretation across 200+ languages, formatting preserved.
+code: RS/03
+navKey: research
+crumb: Interpress
+ogImage: hero-planet
+productPanel: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("hero-space", eager=true, small=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>Research 03</span><span>Live</span></p>
+      <h1 data-reveal="d1">Talent is everywhere. Access is not.</h1>
+      <p class="lede" data-reveal="d2">Instant AI-powered document translation and interpretation across 200+ languages, formatting preserved.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>003</div><div class="meta-card__text">Live.<br>Built in-house.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro-tight">
+  <div class="wrap">
+    <div class="product-banner product-banner--interpress" data-reveal>
+      <div class="product-banner__top"><h2>Interpress</h2><span class="badge badge--live">Live</span></div>
+      <span class="product-banner__num">003</span>
+    </div>
+    <div class="product-grid">
+      <div data-reveal>
+        <div class="prose"><p>Interpress is an AI-powered platform that instantly translates, interprets, and navigates internal documents across any language, without losing structure, context, or time.</p></div>
+        <ul class="pills"><li class="pill">200+ languages</li><li class="pill">formatting retention engine</li><li class="pill">semantic search</li><li class="pill">industry-tuned accuracy</li></ul>
+        <div class="cta-row"><a class="btn btn--primary" href="https://interpress.app/" target="_blank" rel="noopener">Get early access →</a><button class="btn btn--ghost" type="button" data-open-product="interpress">Quick view ⤢</button></div>
+      </div>
+      <div data-reveal="d1"><dl class="facts-dl">
+        <div><dt>Translated.</dt><dd>Instant translation of PDF, MS Office, and internal documents into any language, original formatting preserved.</dd></div>
+        <div><dt>Interpret.</dt><dd>An AI agent that does not just translate, it searches, interprets, and explains documents across languages.</dd></div>
+        <div><dt>Search.</dt><dd>Semantic document search powered by vector databases, so teams can find information without needing full fluency.</dd></div>
+        <div><dt>Built for.</dt><dd>Manufacturing, travel and hospitality, finance, education, technology, and legal teams working across languages.</dd></div>
+        <div><dt>Proof.</dt><dd>Mar-Mar (manufacturing) cut onboarding and salary costs by €80K over six months using Interpress, and is now tracking an estimated 2x production volume increase in the first half of 2025.</dd></div>
+      </dl></div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/product-closing.njk" %}

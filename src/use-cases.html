@@ -1,0 +1,95 @@
+---
+layout: base.njk
+title: Use Cases · Astro Synapse
+description: "Concrete AI applications, organised by problem, not by buzzword: sales, content, manufacturing, engineering, and emerging agent capabilities."
+code: ST/03
+navKey: use-cases
+crumb: Use Cases
+ogImage: deep-space
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>03. Applications</span><span>By problem</span></p>
+      <h1 data-reveal="d1">What AI can actually do for your business.</h1>
+      <p class="lede" data-reveal="d2">Concrete applications, organised by problem, not by buzzword.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>09 + 06</div><div class="meta-card__text">Functions and industries.<br>Organised by problem.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>ST/03.1 · By function</p><h2 data-reveal="d1">By function</h2></div><p class="lede" data-reveal="d2">Nine places where an LLM integration pays for itself inside a normal week of work.</p></div>
+    <div class="use-grid">
+      <article class="use-item" data-reveal><span class="use-item__idx">01</span><div><h3>Sales &amp; lead generation.</h3><p>An AI agent qualifies leads, follows up, and hands off warm conversations to your team.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">02</span><div><h3>Content &amp; copywriting.</h3><p>On-brand copy, drafts, and campaign content generated at the pace a marketing calendar actually needs.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">03</span><div><h3>Scrum &amp; project automation.</h3><p>Standups, backlog grooming, and sprint reporting automated, so teams spend less time updating tickets and more time shipping.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">04</span><div><h3>Accounting &amp; operations.</h3><p>Invoices organised, records reconciled, and the repetitive parts of back-office work automated.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">05</span><div><h3>Code generation.</h3><p>AI-assisted code generation integrated directly into an existing development workflow.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">06</span><div><h3>Design by prompting.</h3><p>A written brief turned into a first-draft design in minutes, not days.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">07</span><div><h3>Document &amp; image analysis.</h3><p>Fast, automated analysis of documents and images at volume, without manual review bottlenecks.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">08</span><div><h3>Video transcription.</h3><p>Recorded meetings, calls, and training videos turned into searchable, structured text.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">09</span><div><h3>Digital sales persona.</h3><p>A branded AI persona representing a business consistently across every channel.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="facts section">
+  {{ bgVideo("ringed-planet") }}
+  <div class="wrap facts__inner">
+    <div class="section-head"><div><p class="st-code" data-reveal>ST/03.2 · By industry</p><h2 data-reveal="d1">By industry</h2></div><p class="lede" data-reveal="d2">Multilingual document intelligence, applied across sectors.</p></div>
+    <ul class="industry-list" data-reveal>
+      <li><strong>Manufacturing</strong><span>Recurring equipment issues diagnosed by connecting technician logs, service reports, and shift notes across languages.</span></li>
+      <li><strong>Travel &amp; hospitality</strong><span>Guides, booking information, hotel policies, and itineraries translated instantly.</span></li>
+      <li><strong>Finance</strong><span>Financial reports, investment documents, and banking materials translated with accurate financial terminology.</span></li>
+      <li><strong>Education</strong><span>Educational materials, research papers, and academic content translated while preserving academic integrity.</span></li>
+      <li><strong>Technology</strong><span>Technical documentation and software interfaces translated while maintaining technical accuracy.</span></li>
+      <li><strong>Legal</strong><span>Contracts and compliance materials translated precisely, with legal terminology intact.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--bordered">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="two-col__sticky title-block" data-reveal>
+        <p class="st-code">ST/03.3 · Engineering</p>
+        <h2>AI in engineering and manufacturing</h2>
+        <p class="lede">Not every problem needs AI, and pretending otherwise is how projects fail.</p>
+      </div>
+      <div class="prose" data-reveal="d1">
+        <p>The right approach: where a deterministic, programmable solution exists and produces exact results, that solution wins. AI earns its place only where an exact programmatic solution does not exist or is cost-prohibitive to build. In engineering and manufacturing especially, a probabilistic error is expensive: a single wrong value in a production record can block an entire manufacturing run.</p>
+        <p>Applied well, this looks like three tiers of capability rather than AI layered on everything at once.</p>
+      </div>
+    </div>
+    <div class="tiers">
+      <div class="tier" data-reveal><span class="tier__idx">Tier 01</span><h3>Systems integration &amp; data automation.</h3><p>Design systems, planning systems, and document platforms connected into a single, deterministic pipeline: structured data moved automatically and accurately between systems, with a full audit trail and clean rollback if any step fails. AI is introduced only at the edges where it adds genuine value, such as document intelligence on incoming change requests, kept fully isolated from the deterministic core so a model's uncertainty never touches production data.</p></div>
+      <div class="tier" data-reveal="d1"><span class="tier__idx">Tier 02</span><h3>Intelligent design &amp; search.</h3><p>Visual and geometric search across historical design records, so a rough sketch or partial spec instantly surfaces the closest existing designs instead of starting from scratch. Automated classification and metadata tagging, combining language and vision models to clean up and organise design data at scale. Automated identification of lower-cost, off-the-shelf substitutes for custom-designed components.</p></div>
+      <div class="tier" data-reveal="d2"><span class="tier__idx">Tier 03</span><h3>Predictive manufacturing intelligence.</h3><p>Real-time cost estimation as a product is being designed, based on geometry, material, and current production rates. Predictive flags for manufacturability issues before a design ever reaches the production floor. Fast surrogate models that give instant early-stage estimates ahead of expensive full simulations. The same class of model extends into computer-vision-driven cost and quality assessment: analysing design or product images directly to calculate pricing factors or flag defects.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bordered">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>ST/03.4 · Research</p><h2 data-reveal="d1">Emerging capabilities</h2></div><p class="lede" data-reveal="d2">What the lab is building toward next.</p></div>
+    <div class="use-grid use-grid--2">
+      <article class="use-item" data-reveal><span class="use-item__idx">R&amp;D 01</span><div><h3>Synthetic personality &amp; memory systems.</h3><p>Long-term, persistent memory for AI agents, so an assistant retains context across sessions instead of starting from zero every time.</p></div></article>
+      <article class="use-item" data-reveal="d1"><span class="use-item__idx">R&amp;D 02</span><div><h3>MCP indexing &amp; search.</h3><p>Discovery and search infrastructure for the growing ecosystem of MCP servers, making it easier to find and connect the right tools to an agent.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="wrap" data-reveal>
+    <h2>Don't see your exact use case?</h2>
+    <p class="lede">That usually means it has not been built yet. Tell us what you need.</p>
+    <div class="cta-row"><a class="btn btn--primary" href="/contact/">Contact us →</a><a class="btn btn--ghost" href="/">Back to home</a></div>
+  </div>
+</section>

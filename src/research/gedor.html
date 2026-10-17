@@ -1,0 +1,47 @@
+---
+layout: base.njk
+title: Gedor · Astro Synapse
+description: LLM-as-a-Service, hosted entirely in the EU.
+code: RS/04
+navKey: research
+crumb: Gedor
+ogImage: ringed-planet
+productPanel: true
+---
+{%- from "macros.njk" import bgVideo -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("ringed-planet", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>Research 04</span><span>Waitlist</span></p>
+      <h1 data-reveal="d1">LLM as a Service. Hosted in the EU.</h1>
+      <p class="lede" data-reveal="d2">LLM-as-a-Service, hosted entirely in the EU.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>004</div><div class="meta-card__text">Waitlist.<br>Built in-house.</div></div></div>
+  </div>
+</section>
+
+<section class="section section--intro-tight">
+  <div class="wrap">
+    <div class="product-banner product-banner--gedor" data-reveal>
+      <div class="product-banner__top"><h2>Gedor</h2><span class="badge badge--wait">Waitlist</span></div>
+      <span class="product-banner__num">004</span>
+    </div>
+    <div class="product-grid">
+      <div data-reveal>
+        <div class="prose"><p>On-demand or private provisioning, a curated open-weight model catalog, and an OpenAI-compatible API. One key, one endpoint: switch models without touching your code.</p></div>
+        <ul class="pills"><li class="pill">OpenAI-compatible API</li><li class="pill">open-weight catalog</li><li class="pill">managed vector databases</li><li class="pill">GDPR &amp; EU AI Act compliant</li></ul>
+        <div class="cta-row"><a class="btn btn--primary" href="https://gedor.ai/" target="_blank" rel="noopener">Join the waitlist →</a><button class="btn btn--ghost" type="button" data-open-product="gedor">Quick view ⤢</button></div>
+      </div>
+      <div data-reveal="d1"><div class="prose">
+        <p><strong>Built for data sovereignty.</strong> Gedor runs entirely within the EU, subject only to EU legislation (GDPR, EU AI Act), with no foreign surveillance framework exposure, unlike US-based providers legally obligated to share data with US authorities on request.</p>
+        <p><strong>Coming soon.</strong> A curated catalog of general purpose, coding, and embedding open-weight models, plus managed vector databases (Qdrant, Milvus, Weaviate, Chroma, and more) ready to pair with any model in the catalog.</p>
+        <p><strong>What's next.</strong> AI Agents as a Service: ready-to-deploy agents for common workflows. Already have your own agent? Bring Your Own Agent and run it on EU infrastructure, fully compliant.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+{% include "partials/product-closing.njk" %}
