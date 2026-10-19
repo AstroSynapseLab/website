@@ -18,6 +18,7 @@
   --muted:#8b90a5;
   --cyan:#7cf4e0;
   --live:#4ade80;
+  --error:#ff8a80;
   --wait:#f5c15a;
   --dev:#9aa3b5;
   --gold:#f2d27a;
@@ -477,16 +478,19 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 /* contact */
 .form{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
 .st-code+.form{margin-top:1.4rem}
-.form__field{display:grid;gap:.4rem;color:var(--cream);font-size:.85rem;font-weight:500;font-family:var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+.form__field{display:grid;align-content:start;gap:.4rem;color:var(--cream);font-size:.85rem;font-weight:500;font-family:var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
 .form__field--full,.form__foot{grid-column:1/-1}
 .form input,.form textarea{width:100%;min-height:52px;padding:.9rem 1rem;border:1px solid var(--line-strong);border-radius:.9rem;background:rgba(255,255,255,.03);color:var(--cream);font-family:var(--font-body);font-size:1rem;letter-spacing:0;text-transform:none;transition:border-color 200ms var(--ease),box-shadow 200ms var(--ease)}
 .form textarea{min-height:10rem;resize:vertical}
 .form input:focus,.form textarea:focus{border-color:var(--cyan);outline:none;box-shadow:0 0 0 4px rgba(124,244,224,.12)}
+.form [aria-invalid="true"]{border-color:var(--error)}
+.form [aria-invalid="true"]:focus{border-color:var(--error);box-shadow:0 0 0 4px rgba(255,138,128,.15)}
+.form__error{margin:0;color:var(--error);font-family:var(--font-body);font-size:.85rem;font-weight:400;letter-spacing:0;text-transform:none}
 .form__foot{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap}
 .form__honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form__status{margin:0;color:var(--cream-dim)}
 .form__status.is-success{color:var(--live)}
-.form__status.is-error{color:#ff8a80}
+.form__status.is-error{color:var(--error)}
 .contact-side{display:flex;flex-direction:column;gap:2rem}
 .contact-side .label-heading{margin-bottom:.5rem}
 .contact-side a,.contact-side p{color:var(--cream-dim);font-size:1rem}

@@ -301,11 +301,27 @@ function initProductPanel() {
 
 /* ---------------------------------------------------------
    Contact form (Formspree, submitted without a page reload)
+   The form is novalidate, so validation happens here. Each field's rules
+   come from its own attributes: required, type="email" and minlength.
    --------------------------------------------------------- */
+// Stricter than the browser's check: the domain needs a dot and a TLD of 2+ characters.
+const EMAIL_RE = /^[^\s@]+@(?:[^\s@.]+\.)+[^\s@.]{2,}$/;
+
+function fieldError(field) {
+  const value = field.value.trim();
+  if (!value) return field.required ? field.dataset.requiredMsg || "This field is required." : "";
+  if (field.type === "email" && !EMAIL_RE.test(value)) return "Enter a valid email address, like name@company.com.";
+  if (field.minLength > 0 && value.length < field.minLength) {
+    return `Please write at least ${field.minLength} characters (${value.length} so far).`;
+  }
+  return "";
+}
+
 function initForms() {
   document.querySelectorAll("form[data-form]").forEach((form) => {
     const status = form.querySelector("[data-form-status]");
     const submit = form.querySelector("[type='submit']");
+    const fields = [...form.querySelectorAll(".form__field :is(input, textarea)")];
     const setStatus = (text, state) => {
       if (!status) return;
       status.hidden = false;
@@ -313,14 +329,57 @@ function initForms() {
       status.className = `form__status${state ? ` is-${state}` : ""}`;
     };
 
+    // One error line under each field, linked to it for screen readers while it shows.
+    const errors = new Map(
+      fields.map((field) => {
+        const error = document.createElement("p");
+        error.className = "form__error";
+        error.id = `${field.id}-error`;
+        error.hidden = true;
+        field.after(error);
+        return [field, error];
+      })
+    );
+    const showError = (field, message) => {
+      const error = errors.get(field);
+      error.textContent = message;
+      error.hidden = !message;
+      if (message) {
+        field.setAttribute("aria-invalid", "true");
+        field.setAttribute("aria-describedby", error.id);
+      } else {
+        field.removeAttribute("aria-invalid");
+        field.removeAttribute("aria-describedby");
+      }
+    };
+    const validate = (field) => {
+      const message = fieldError(field);
+      showError(field, message);
+      return !message;
+    };
+
+    fields.forEach((field) => {
+      // Check a field once the visitor leaves it with something typed in, then
+      // re-check on every keystroke while its error shows so it clears as soon as it is fixed.
+      field.addEventListener("blur", () => field.value.trim() && validate(field));
+      field.addEventListener("input", () => field.hasAttribute("aria-invalid") && validate(field));
+    });
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+      const invalid = fields.filter((field) => !validate(field));
+      if (invalid.length) {
+        if (status) status.hidden = true;
+        invalid[0].focus();
+        return;
+      }
       setStatus("Sending…");
       if (submit) submit.disabled = true;
       try {
         const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
         form.reset();
+        fields.forEach((field) => showError(field, ""));
         setStatus("Message sent. We will be in touch.", "success");
       } catch {
         setStatus("Something went wrong. Email us at info@astrosynapse.ai.", "error");
