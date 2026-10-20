@@ -11,6 +11,7 @@
     productPanel   true: include the product quick-view panel
     footerAnchor   false: footer gets no id="contact" (page has its own #contact)
     noindex        true: keep the page out of search results and the sitemap
+    scripts        extra bundles for this page, e.g. ["/assets/js/scout-stages.js"]
 -#}
 {%- set canonical = site.url + page.url -%}
 {%- set og = site.ogImages[ogImage or "hero-space"] -%}
@@ -50,6 +51,9 @@
 {%- endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | rev }}">
 <script src="{{ '/assets/js/main.js' | rev }}" defer></script>
+{%- for script in scripts %}
+<script src="{{ script | rev }}" defer></script>
+{%- endfor %}
 {%- if page.url == "/" %}
 <script type="application/ld+json">{{ site | organizationSchema | jsonScript | safe }}</script>
 <script type="application/ld+json">{{ site | websiteSchema | jsonScript | safe }}</script>

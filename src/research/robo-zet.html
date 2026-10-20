@@ -7,6 +7,7 @@ navKey: research
 crumb: RoboZET
 ogImage: robo-zet
 footerAnchor: false
+scripts: ["/assets/js/scout-stages.js"]
 ---
 {%- from "macros.njk" import bgVideo -%}
 {%- set assets = "https://struki84.github.io/robo-zet-web/assets" -%}
@@ -23,7 +24,7 @@ footerAnchor: false
     <div class="page-hero__aside" data-reveal="d3">
       <div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Zagreb, HR</div><div class="meta-card__text">3 phases to a<br>driverless line.</div></div>
       <div class="cta-row"><a class="btn btn--primary" href="{{ assets }}/RoboZET.pdf" target="_blank" rel="noopener">Project paper (PDF)</a></div>
-      <p class="page-hero__jump">Jump to: <a href="#how">How it works</a> · <a href="#phase-1">Phase 1</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Contact</a></p>
+      <p class="page-hero__jump">Jump to: <a href="#how">How it works</a> · <a href="#phase-1">Phase 1</a> · <a href="#scout-stages">Scout 3D</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Contact</a></p>
     </div>
   </div>
 </section>
@@ -253,6 +254,77 @@ footerAnchor: false
             <div><dt>Changes</dt><dd>Anything that differs from the last scan, flagged for the operator.</dd></div>
           </dl>
         </div>
+      </div>
+    </article>
+
+    <article class="stage" id="scout-stages">
+      <div class="stage__head" data-reveal><span class="badge badge--dev">Design study</span><h3>The scout, stage by stage</h3></div>
+      <p class="lede" data-reveal="d1">From the first crude test rig to the final robot. All three stages share the Tatra T3 metre-gauge bogie; the parts are concept volumes, not engineered parts.</p>
+
+      <div class="scout-model" data-scout-model data-reveal="d2">
+        <div class="scout-model__view" data-scout-view tabindex="0" aria-label="3D model of the scout robot. Drag to orbit, click then scroll to zoom, arrow keys switch stages.">
+          <div class="scout-model__labels" data-scout-labels aria-hidden="true"></div>
+          <div class="scout-model__stepper" role="group" aria-label="Switch stage">
+            <button class="scout-model__arrow" type="button" data-scout-step="-1" aria-label="Previous stage">‹</button>
+            <div class="scout-model__stepper-mid">
+              <span class="scout-model__stepper-label" data-scout-stepper-label></span>
+              <span class="scout-model__dots" data-scout-dots><i></i><i></i><i></i></span>
+            </div>
+            <button class="scout-model__arrow" type="button" data-scout-step="1" aria-label="Next stage">›</button>
+          </div>
+          <p class="scout-model__hint st-code">Drag to orbit · click, then scroll to zoom</p>
+          <p class="scout-model__fallback" data-scout-fallback hidden>The 3D model needs WebGL, which this browser has turned off.</p>
+        </div>
+
+        <aside class="scout-model__panel">
+          <ol class="scout-model__stages">
+            <li><button class="scout-model__stage" type="button" data-scout-stage="0" aria-pressed="true"><span class="scout-model__idx">01</span><span class="scout-model__stage-text"><strong>Test rig</strong><span class="scout-model__status scout-model__status--live">Building now</span></span></button></li>
+            <li><button class="scout-model__stage" type="button" data-scout-stage="1" aria-pressed="false"><span class="scout-model__idx">02</span><span class="scout-model__stage-text"><strong>Field prototype</strong><span class="scout-model__status">Concept</span></span></button></li>
+            <li><button class="scout-model__stage" type="button" data-scout-stage="2" aria-pressed="false"><span class="scout-model__idx">03</span><span class="scout-model__stage-text"><strong>Final scout</strong><span class="scout-model__status">Concept</span></span></button></li>
+          </ol>
+
+          <div class="scout-model__info" data-scout-info="0">
+            <p class="scout-model__summary">The first build. Off-the-shelf sensors on an aluminium mast, bolted to a steel deck on the bogie. Runs on batteries in the depot or on closed track to record data and test the first AI control at walking pace. Cameras sit at tram-cab height, so footage matches the cab video.</p>
+            <dl class="facts-dl facts-dl--compact">
+              <div><dt>Power</dt><dd>Battery packs (test runs only)</dd></div>
+              <div><dt>Height</dt><dd>≈ 2.5 m</dd></div>
+              <div><dt>Cameras</dt><dd>2.35 m (cab level)</dd></div>
+              <div><dt>Where</dt><dd>Depot, closed track</dd></div>
+              <div><dt>Build</dt><dd>Steel deck, aluminium profile, rugged cases</dd></div>
+            </dl>
+          </div>
+          <div class="scout-model__info" data-scout-info="1" hidden>
+            <p class="scout-model__summary">Weatherproof shell with sensor bands at both ends, so it runs in either direction, and the first pantograph. Goes out on live lines, at night first, to collect data at scale.</p>
+            <dl class="facts-dl facts-dl--compact">
+              <div><dt>Power</dt><dd>Overhead line (pantograph)</dd></div>
+              <div><dt>Height</dt><dd>≈ 1.75 m body</dd></div>
+              <div><dt>Cameras</dt><dd>1.45 m</dd></div>
+              <div><dt>Where</dt><dd>Live lines, night runs</dd></div>
+              <div><dt>Build</dt><dd>Simple panel shell over a frame</dd></div>
+            </dl>
+          </div>
+          <div class="scout-model__info" data-scout-info="2" hidden>
+            <p class="scout-model__summary">Production look: the shape of ZET's newest tram reworked as a robot. Curved shell, black visor with the camera cluster, light lines, and line power. For scaling to more lines and cities.</p>
+            <dl class="facts-dl facts-dl--compact">
+              <div><dt>Power</dt><dd>Overhead line (pantograph)</dd></div>
+              <div><dt>Length</dt><dd>≈ 3.6 m</dd></div>
+              <div><dt>Roof</dt><dd>1.95 m</dd></div>
+              <div><dt>Cameras</dt><dd>1.5 m (visor)</dd></div>
+              <div><dt>Build</dt><dd>Moulded curved shell</dd></div>
+            </dl>
+          </div>
+
+          <div class="scout-model__toggles">
+            <label class="scout-model__toggle scout-model__toggle--labels"><input type="checkbox" data-scout-toggle="labels" checked> Label parts</label>
+            <label class="scout-model__toggle"><input type="checkbox" data-scout-toggle="pantograph" checked> Raise pantograph to wire</label>
+            <label class="scout-model__toggle"><input type="checkbox" data-scout-toggle="wire" checked> Show overhead line</label>
+            <label class="scout-model__toggle"><input type="checkbox" data-scout-toggle="fov"> Show front camera view</label>
+            <label class="scout-model__toggle"><input type="checkbox" data-scout-toggle="body" checked> Show scout (off = bare bogie)</label>
+            <label class="scout-model__toggle"><input type="checkbox" data-scout-toggle="spin"> Spin wheels</label>
+            <label class="scout-model__toggle"><input type="checkbox" data-scout-toggle="rotate"> Auto-rotate</label>
+          </div>
+          <p class="stage__note scout-model__note">Stage 1 is the build focus. Stages 2 and 3 are concepts for scaling.</p>
+        </aside>
       </div>
     </article>
   </div>
