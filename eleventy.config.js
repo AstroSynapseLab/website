@@ -20,9 +20,13 @@ try {
 const pathPrefix = process.env.PATH_PREFIX || "/";
 
 const CSS_ENTRY = "src/assets/css/styles.css";
-const JS_ENTRY = "src/assets/js/main.js";
 const CSS_OUT = "assets/css/main.css";
-const JS_OUT = "assets/js/main.js";
+// Each entry becomes its own bundle. main.js is loaded on every page;
+// the others are opted into per page via the `scripts` front-matter key.
+const JS_ENTRIES = {
+  "src/assets/js/main.js": "assets/js/main.js",
+  "src/assets/js/scout-stages.js": "assets/js/scout-stages.js",
+};
 
 /** Content hashes of built assets, used for cache-busting query strings. */
 const assetHashes = new Map();
@@ -46,15 +50,19 @@ async function buildCss(outputDir, minify) {
 }
 
 async function buildJs(outputDir, minify) {
-  const result = await esbuild.build({
-    entryPoints: [JS_ENTRY],
-    bundle: true,
-    format: "iife",
-    target: "es2020",
-    minify,
-    write: false,
-  });
-  await writeAsset(outputDir, JS_OUT, result.outputFiles[0].contents);
+  await Promise.all(
+    Object.entries(JS_ENTRIES).map(async ([entry, out]) => {
+      const result = await esbuild.build({
+        entryPoints: [entry],
+        bundle: true,
+        format: "iife",
+        target: "es2020",
+        minify,
+        write: false,
+      });
+      await writeAsset(outputDir, out, result.outputFiles[0].contents);
+    }),
+  );
 }
 
 /** Prefix a root-relative path with the deploy path. Absolute URLs pass through. */

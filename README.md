@@ -30,7 +30,8 @@ src/
   _data/products.js         product data for cards + quick-view panel
   _data/redirects.js        redirects from old *.html URLs
   assets/css/styles.css     all styles (bundled with fonts.css by Lightning CSS)
-  assets/js/main.js         all behaviour (bundled by esbuild)
+  assets/js/main.js         site-wide behaviour (bundled by esbuild, loaded on every page)
+  assets/js/scout-stages.js RoboZET 3D model (three.js); page-only bundle, see `scripts` below
   assets/fonts|images|video static files, copied as-is
 lib/schema.js               JSON-LD structured data
 eleventy.config.js          build configuration
@@ -52,6 +53,8 @@ crumb: My page
 ```
 
 It is published at `/my-page/` and added to `sitemap.xml` automatically.
+
+A page that needs its own JavaScript (large or page-specific code that should not go into `main.js`) lists extra bundles in front matter: `scripts: ["/assets/js/scout-stages.js"]`. Each bundle is an entry in `JS_ENTRIES` in `eleventy.config.js`.
 
 ### Conventions
 

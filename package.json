@@ -15,6 +15,9 @@
   "browserslist": [
     "defaults"
   ],
+  "dependencies": {
+    "three": "0.128.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "3.1.6",
     "browserslist": "4.29.3",
