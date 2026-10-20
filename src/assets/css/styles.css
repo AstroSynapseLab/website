@@ -521,6 +521,8 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 
 @media (max-width:900px){
   .page-hero__grid,.two-col,.sol__grid,.product-grid{grid-template-columns:1fr}
+  /* single column: a sticky title would slide over the text below it */
+  .two-col__sticky{position:static}
   .page-hero__aside{justify-self:start}
   .use-grid,.tiers{grid-template-columns:1fr}
   .industry-list li{grid-template-columns:1fr;gap:.3rem}
@@ -557,6 +559,7 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 .stage__head{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .stage__head h3{margin:0;font-size:clamp(1.5rem,2.6vw,2.2rem)}
 .stage__note{color:var(--cream-dim);margin-top:1rem}
+.stage .lede+.check-list{margin-top:1.4rem}
 
 /* fixed-column fact grids keep their column count above the mobile breakpoint */
 .fact-grid--3{grid-template-columns:repeat(3,1fr)}
@@ -630,6 +633,8 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
   .gallery{grid-template-columns:1fr}
   .gallery .figure:first-child{grid-column:span 1}
   .fact-grid--3,.fact-grid--4{grid-template-columns:1fr}
+  /* stacked cards don't need equal heights: drop the fixed row/min heights */
+  .fact-grid--3 .fact,.fact-grid--4 .fact{min-height:0;grid-template-rows:auto;gap:1rem;padding:1.5rem 1.4rem}
   .scout-model{grid-template-columns:1fr;border-radius:1rem}
   .scout-model__view{min-height:0;aspect-ratio:4/3}
   /* part labels overlap on small screens: 3D model only */
