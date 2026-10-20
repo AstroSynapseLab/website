@@ -212,6 +212,10 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 .marquee:hover .marquee__track{animation-play-state:paused}
 .marquee__word{font-family:var(--font-display);font-size:clamp(3.4rem,10vw,9.5rem);font-weight:600;letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(244,239,230,.35);white-space:nowrap;text-transform:uppercase}
 .marquee__word:nth-child(odd){color:var(--cream);-webkit-text-stroke:0}
+/* narrow screens: the padding shrinks and the words would run into the label, so stack it above */
+@media (max-width:1100px){
+  .marquee__lbl{position:static;margin:0 0 1.2rem;padding:0 var(--gutter)}
+}
 
 /* ---------------------------------------------------------
    Key facts
