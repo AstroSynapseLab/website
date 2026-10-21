@@ -5,24 +5,49 @@
 const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------------------------------------------------------
-   Hero: the face as scanlines. The lines are rendered once to an
-   offscreen canvas from the bust's luminance (line thickness follows
-   brightness, like a CRT), then animated cheaply every frame: a refresh
-   sweep travelling down, a few rows of horizontal jitter, a soft breathe
-   and pointer parallax. Reduced motion keeps the static poster.
+   Hero: the drift field. The same stipple face as the section below,
+   larger and right of the headline. Dots ride a slow flow field and
+   leave fading trails; on a ~10 s cycle the face loosens into streams
+   and pulls itself back together. Colour follows motion: still dots are
+   cream, moving dots cyan, the fastest violet. Reduced motion keeps the
+   static poster.
    --------------------------------------------------------- */
-function initHeroLines() {
-  const root = document.querySelector("[data-hero-lines]");
+function initHeroDrift() {
+  const root = document.querySelector("[data-hero-drift]");
   const canvas = root?.querySelector("canvas");
   const src = root?.dataset.src;
   if (!root || !canvas || !src || prefersReducedMotion) return;
   const ctx = canvas.getContext("2d", { alpha: false });
   if (!ctx) return;
 
-  const styles = getComputedStyle(root);
-  const colorVoid = styles.getPropertyValue("--void").trim() || "#04050a";
-  const colorCyan = styles.getPropertyValue("--cyan").trim() || "#7cf4e0";
-  const colorCream = styles.getPropertyValue("--cream").trim() || "#f4efe6";
+  const CREAM = [244, 239, 230];
+  const CYAN = [124, 244, 224];
+  const VIOLET = [183, 156, 255];
+  const rgba = (c, a) => `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a})`;
+  const mix = (p, q, t) => [p[0] + (q[0] - p[0]) * t, p[1] + (q[1] - p[1]) * t, p[2] + (q[2] - p[2]) * t];
+
+  // small value-noise field for the drift
+  const perm = new Uint8Array(512);
+  for (let i = 0; i < 256; i++) perm[i] = i;
+  for (let i = 255; i > 0; i--) {
+    const j = (Math.random() * (i + 1)) | 0;
+    [perm[i], perm[j]] = [perm[j], perm[i]];
+  }
+  for (let i = 0; i < 256; i++) perm[256 + i] = perm[i];
+  const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10);
+  const lerp = (p, q, t) => p + t * (q - p);
+  const grad = (h, x, y) => (h & 1 ? -x : x) + (h & 2 ? -y : y);
+  function noise(x, y) {
+    const X = Math.floor(x) & 255;
+    const Y = Math.floor(y) & 255;
+    x -= Math.floor(x);
+    y -= Math.floor(y);
+    const u = fade(x);
+    const v = fade(y);
+    const A = perm[X] + Y;
+    const B = perm[X + 1] + Y;
+    return lerp(lerp(grad(perm[A], x, y), grad(perm[B], x - 1, y), u), lerp(grad(perm[A + 1], x, y - 1), grad(perm[B + 1], x - 1, y - 1), u), v);
+  }
 
   const image = new Image();
   image.decoding = "async";
@@ -31,53 +56,13 @@ function initHeroLines() {
   let width = 0;
   let height = 0;
   let dpr = 1;
-  let lines = null; // offscreen render of the scanlines
-  let box = { x: 0, y: 0, w: 0, h: 0 }; // where the figure sits
+  let pts = [];
   let pointer = { x: 0, y: 0 };
   let target = { x: 0, y: 0 };
   let frame = 0;
   let visible = true;
-  let jitter = []; // [{y, h, dx}]
-  let lastJitter = 0;
 
-  function renderLines() {
-    const pitch = width > 900 ? 6 : 5;
-    const col = 2;
-    const wide = width > 900;
-    // figure: fit the hero height on desktop, right of centre; on phones most of the width, at the top
-    const w = wide ? image.naturalWidth * (height / image.naturalHeight) : width * 0.78;
-    const h = image.naturalHeight * (w / image.naturalWidth);
-    const x0 = wide ? width * 0.72 - w / 2 : (width - w) / 2;
-    const y0 = wide ? 0 : -height * 0.02;
-    box = { x: x0, y: y0, w, h };
-    const cols = Math.ceil(w / col);
-    const rows = Math.ceil(h / pitch);
-    const off = document.createElement("canvas");
-    off.width = cols;
-    off.height = rows;
-    const octx = off.getContext("2d", { willReadFrequently: true });
-    octx.drawImage(image, 0, 0, cols, rows);
-    const data = octx.getImageData(0, 0, cols, rows).data;
-    lines = document.createElement("canvas");
-    lines.width = Math.ceil(width * dpr);
-    lines.height = Math.ceil(height * dpr);
-    const lctx = lines.getContext("2d");
-    lctx.scale(dpr, dpr);
-    for (let r = 0; r < rows; r++) {
-      const y = y0 + r * pitch + pitch / 2;
-      for (let c = 0; c < cols; c++) {
-        const l = Math.pow(data[(r * cols + c) * 4] / 255, 0.9);
-        if (l < 0.05) continue;
-        const th = Math.max(0.6, l * (pitch - 1.5));
-        lctx.globalAlpha = Math.min(1, 0.15 + l * 1.2);
-        lctx.fillStyle = l > 0.7 ? colorCream : colorCyan;
-        lctx.fillRect(x0 + c * col, y - th / 2, col, th);
-      }
-    }
-    lctx.globalAlpha = 1;
-  }
-
-  function layout() {
+  function build() {
     const rect = canvas.getBoundingClientRect();
     dpr = Math.min(devicePixelRatio || 1, 2);
     width = Math.round(rect.width);
@@ -85,69 +70,61 @@ function initHeroLines() {
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    renderLines();
+    ctx.fillStyle = "#04050a";
+    ctx.fillRect(0, 0, width, height);
+    // figure: fills the hero height, right of centre on desktop; most of the width, at the top, on phones
+    const wide = width > 900;
+    const fh = wide ? height * 1.02 : (width * 0.85 * image.naturalHeight) / image.naturalWidth;
+    const fw = (image.naturalWidth * fh) / image.naturalHeight;
+    const fx = wide ? width * 0.72 - fw / 2 : (width - fw) / 2;
+    const fy = wide ? -height * 0.01 : -height * 0.02;
+    const cols = 180;
+    const rows = Math.round((cols * image.naturalHeight) / image.naturalWidth);
+    const off = document.createElement("canvas");
+    off.width = cols;
+    off.height = rows;
+    const octx = off.getContext("2d", { willReadFrequently: true });
+    octx.drawImage(image, 0, 0, cols, rows);
+    const data = octx.getImageData(0, 0, cols, rows).data;
+    pts = [];
+    const n = Math.round((width * height) / 190);
+    let guard = 0;
+    while (pts.length < n && guard++ < n * 40) {
+      const c = (Math.random() * cols) | 0;
+      const r = (Math.random() * rows) | 0;
+      const l = data[(r * cols + c) * 4] / 255;
+      if (Math.random() > Math.pow(l, 0.9) * 0.9 + 0.02) continue;
+      const x = fx + ((c + Math.random()) / cols) * fw;
+      const y = fy + ((r + Math.random()) / rows) * fh;
+      pts.push({ hx: x, hy: y, x, y, vx: 0, vy: 0, l, s: Math.random() });
+    }
   }
 
   function draw(t) {
     const time = t / 1000;
-    ctx.fillStyle = colorVoid;
-    ctx.fillRect(0, 0, width, height);
-    if (!lines) return;
     pointer.x += (target.x - pointer.x) * 0.04;
     pointer.y += (target.y - pointer.y) * 0.04;
-    const dx = pointer.x * 10;
-    const dy = pointer.y * 6 + Math.sin(time * 0.5) * 2;
-    const breathe = 0.86 + 0.08 * Math.sin(time * 0.9);
-
-    // the figure, with parallax and a slow breathe in brightness
-    ctx.globalAlpha = breathe;
-    ctx.drawImage(lines, 0, 0, lines.width, lines.height, dx, dy, width, height);
-
-    // horizontal jitter: a few rows slip sideways for a moment, like a loose signal
-    if (time - lastJitter > 0.35) {
-      lastJitter = time;
-      jitter = [];
-      if (Math.random() < 0.55) {
-        const n = 1 + ((Math.random() * 3) | 0);
-        for (let i = 0; i < n; i++) {
-          jitter.push({ y: box.y + Math.random() * box.h, h: 3 + Math.random() * 14, dx: (Math.random() - 0.5) * 26 });
-        }
-      }
+    // trails: fade the last frame instead of clearing it
+    ctx.fillStyle = "rgba(4,5,10,0.22)";
+    ctx.fillRect(0, 0, width, height);
+    // the field swells and fades on a ~10 s cycle
+    const loose = 0.5 + 0.5 * Math.sin(time * 0.6);
+    for (const p of pts) {
+      const tx = p.hx + pointer.x * (12 + p.s * 18);
+      const ty = p.hy + pointer.y * (8 + p.s * 10);
+      const a = noise(p.x * 0.004 + time * 0.05, p.y * 0.004) * Math.PI * 2;
+      p.vx += (tx - p.x) * 0.05 * (1 - loose * 0.7) + Math.cos(a) * 0.55 * loose;
+      p.vy += (ty - p.y) * 0.05 * (1 - loose * 0.7) + Math.sin(a) * 0.55 * loose;
+      p.vx *= 0.86;
+      p.vy *= 0.86;
+      p.x += p.vx;
+      p.y += p.vy;
+      const sp = Math.min(1, Math.hypot(p.vx, p.vy) / 2.5);
+      const col = sp < 0.5 ? mix(CREAM, CYAN, sp * 2) : mix(CYAN, VIOLET, (sp - 0.5) * 2);
+      ctx.fillStyle = rgba(col, Math.min(1, 0.25 + p.l * 0.8));
+      const r = 0.7 + p.l * 1.2;
+      ctx.fillRect(p.x - r / 2, p.y - r / 2, r, r);
     }
-    for (const j of jitter) {
-      const sy = j.y * dpr;
-      const sh = j.h * dpr;
-      ctx.fillStyle = colorVoid;
-      ctx.fillRect(0, j.y + dy, width, j.h);
-      ctx.drawImage(lines, 0, sy, lines.width, sh, dx + j.dx, j.y + dy, width, j.h);
-    }
-
-    // refresh sweep: a soft band travelling down the figure, brightening the lines it crosses
-    const period = 7;
-    const p = (time % period) / period;
-    const bandY = box.y - 80 + p * (box.h + 160);
-    const bandH = 110;
-    ctx.save();
-    ctx.globalCompositeOperation = "lighter";
-    const g = ctx.createLinearGradient(0, bandY, 0, bandY + bandH);
-    g.addColorStop(0, "rgba(124,244,224,0)");
-    g.addColorStop(0.5, "rgba(124,244,224,0.9)");
-    g.addColorStop(1, "rgba(124,244,224,0)");
-    ctx.globalAlpha = 0.5;
-    ctx.beginPath();
-    ctx.rect(0, bandY, width, bandH);
-    ctx.clip();
-    ctx.drawImage(lines, 0, 0, lines.width, lines.height, dx, dy, width, height);
-    ctx.globalAlpha = 0.07;
-    ctx.fillStyle = g;
-    ctx.fillRect(0, bandY, width, bandH);
-    ctx.restore();
-
-    // a faint raster over everything, so the whole hero reads as a screen
-    ctx.globalAlpha = 0.06;
-    ctx.fillStyle = colorVoid;
-    for (let y = ((time * 18) % 4) - 4; y < height; y += 4) ctx.fillRect(0, y, width, 1);
-    ctx.globalAlpha = 1;
   }
 
   function tick(t) {
@@ -157,7 +134,7 @@ function initHeroLines() {
 
   function start() {
     root.classList.add("is-live");
-    layout();
+    build();
     new IntersectionObserver(
       ([entry]) => {
         visible = entry.isIntersecting;
@@ -181,7 +158,7 @@ function initHeroLines() {
     let resizeTimer = 0;
     addEventListener("resize", () => {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(layout, 150);
+      resizeTimer = setTimeout(build, 150);
     });
   }
 
@@ -426,7 +403,7 @@ function initJourney() {
   if (journey.classList.contains("is-in")) steps.forEach((s) => s.classList.add("is-lit"));
 }
 
-initHeroLines();
+initHeroDrift();
 initDataFace();
 initMonologue();
 initJourney();

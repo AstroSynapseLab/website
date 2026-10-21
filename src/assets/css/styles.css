@@ -662,13 +662,13 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
    Figures are inline SVG / canvas; asai.js drives the canvas,
    the monologue and the journey stepper via data-* hooks.
    --------------------------------------------------------- */
-/* hero: the face as scanlines, drawn live by asai.js (static poster until it starts) */
+/* hero: the stipple face as a drift field, drawn live by asai.js (static poster until it starts) */
 .page-hero--tall{min-height:min(82vh,50rem)}
-.bg-lines{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--void);pointer-events:none}
-.bg-lines__canvas,.bg-lines__fallback{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:right center}
-.bg-lines.is-live .bg-lines__fallback{display:none}
-.bg-lines:not(.is-live) .bg-lines__canvas{display:none}
-.bg-lines::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,5,10,.6),rgba(4,5,10,.2) 40%,transparent 65%),linear-gradient(180deg,rgba(4,5,10,.35),transparent 30%,transparent 65%,var(--void))}
+.bg-drift{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--void);pointer-events:none}
+.bg-drift__canvas,.bg-drift__fallback{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:right center}
+.bg-drift.is-live .bg-drift__fallback{display:none}
+.bg-drift:not(.is-live) .bg-drift__canvas{display:none}
+.bg-drift::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,5,10,.6),rgba(4,5,10,.2) 40%,transparent 65%),linear-gradient(180deg,rgba(4,5,10,.35),transparent 30%,transparent 65%,var(--void))}
 
 /* the "data face": canvas + internal monologue */
 .mind{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(17rem,.75fr);gap:1px;border:1px solid var(--line);border-radius:var(--radius);background:var(--line);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.45)}
@@ -785,8 +785,8 @@ html:not(.js) .journey__node::after{opacity:1;transform:none}
 }
 @media (max-width:900px){
   .page-hero--tall{min-height:min(100svh,60rem)}
-  .bg-lines__fallback{object-position:center top}
-  .bg-lines::after{background:linear-gradient(180deg,rgba(4,5,10,.2),rgba(4,5,10,.1) 38%,rgba(4,5,10,.88) 66%,var(--void))}
+  .bg-drift__fallback{object-position:center top}
+  .bg-drift::after{background:linear-gradient(180deg,rgba(4,5,10,.2),rgba(4,5,10,.1) 38%,rgba(4,5,10,.88) 66%,var(--void))}
   .mind{grid-template-columns:1fr;border-radius:1rem}
   .mind__view{aspect-ratio:4/5;min-height:0}
   .mind__corner--bl{display:none}
