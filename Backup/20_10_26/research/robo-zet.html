@@ -1,0 +1,308 @@
+---
+layout: base.njk
+title: "RoboZET: AI that drives trams · Astro Synapse"
+description: "RoboZET is building an AI system that can drive a tram, starting on Zagreb's network. The first version already reads the street ahead and decides how the tram should respond."
+code: RS/01
+navKey: research
+crumb: RoboZET
+ogImage: robo-zet
+footerAnchor: false
+---
+{%- from "macros.njk" import bgVideo -%}
+{%- set assets = "https://struki84.github.io/robo-zet-web/assets" -%}
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  {{ bgVideo("hero-planet", eager=true) }}
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="kicker" data-reveal><span>Research 01</span><span>Autonomous mobility</span></p>
+      <h1 data-reveal="d1">AI that drives trams.</h1>
+      <p class="lede" data-reveal="d2">RoboZET is building an AI system that can drive a tram, starting on Zagreb's network. The first version already reads the street ahead and decides how the tram should respond.</p>
+    </div>
+    <div class="page-hero__aside" data-reveal="d3">
+      <div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Zagreb, HR</div><div class="meta-card__text">3 phases to a<br>driverless line.</div></div>
+      <div class="cta-row"><a class="btn btn--primary" href="{{ assets }}/RoboZET.pdf" target="_blank" rel="noopener">Project paper (PDF)</a></div>
+      <p class="page-hero__jump">Jump to: <a href="#how">How it works</a> · <a href="#phase-1">Phase 1</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Contact</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--intro-tight">
+  <div class="wrap">
+    <figure class="player" data-reveal>
+      <div class="player__frame"><video controls preload="metadata" playsinline><source src="{{ assets }}/demo-90s.mp4" type="video/mp4">Your browser can't play this video. <a href="{{ assets }}/demo-90s.mp4">Download it</a>.</video></div>
+      <figcaption><span class="st-code">Line 2 · cab view · AI overlay</span><span>Ninety seconds of ZET line 2 as the AI sees it: detections, the track corridor, and the driving decision with confidence bars.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="facts section" id="why">
+  {{ bgVideo("ringed-planet") }}
+  <div class="wrap facts__inner">
+    <div class="two-col">
+      <div class="two-col__sticky title-block" data-reveal>
+        <p class="st-code">01 · Why trams</p>
+        <h2>Why start with trams</h2>
+      </div>
+      <div class="prose" data-reveal="d1">
+        <p>A tram follows fixed rails, so it never steers. The only decisions are when to accelerate, coast, brake or stop.</p>
+        <p>That turns a hard open-world problem into a narrower one: understand the scene ahead and control speed safely. Operators also need to modernise. ZET reported that only 57.47% of its trams were technically available in 2023, and it is now replacing its oldest Tatra trams.</p>
+      </div>
+    </div>
+    <div class="fact-grid fact-grid--3 fact-grid--spaced">
+      <div class="fact" data-reveal><div class="fact__num fact__num--text">Fixed, known routes.</div><div class="fact__cap">Every line can be mapped and recorded in advance, stop by stop.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num fact__num--text">One control axis.</div><div class="fact__cap">Speed only: no lane changes, parking or steering.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num fact__num--text">Infrastructure in place.</div><div class="fact__cap">Zagreb runs 15 day lines on about 116 km of metre-gauge track, and hundreds of European cities have similar networks.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bordered" id="how">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>02 · Pipeline</p><h2 data-reveal="d1">How it works</h2></div><p class="lede" data-reveal="d2">Driving is split into four stages, so each one can be tested and replaced on its own.</p></div>
+    <ol class="service-list">
+      <li class="service-list__item" data-reveal><span class="service-list__index">01</span><h3>See.</h3><p>Cameras at the front capture the track and street ahead.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">02</span><h3>Understand.</h3><p>A local vision system finds people, cars, bikes and lights, and works out what is on or heading toward the rails.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">03</span><h3>Decide.</h3><p>The scene goes to <em>Jev by TypeSafe AI</em>, which returns a driving action with a confidence for each option.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">04</span><h3>Act.</h3><p>A controller turns the action into motor and brake commands. A hardware emergency stop always overrides the AI.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--bordered" id="phase-1">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>03 · Phase 1</p><h2 data-reveal="d1">Phase 1: proof of concept</h2></div><p class="lede" data-reveal="d2">Put the AI on real tram hardware, then turn that hardware into a scout robot that works the network every day. Estimated at about 12 months.</p></div>
+
+    <article class="stage">
+      <div class="stage__head" data-reveal><span class="badge badge--live">Working today</span><h3>The AI vision system</h3></div>
+      <div class="sol__grid">
+        <div data-reveal>
+          <p class="lede">The first version runs on recorded cab footage of ZET line 2, at about five frames per second.</p>
+          <ul class="check-list">
+            <li>YOLO11 and ByteTrack detect and follow people, vehicles and traffic lights.</li>
+            <li>A calibrated track corridor shows what is on the rails or moving toward them.</li>
+            <li>Distance, the tram's own speed and signal colour are estimated from the video.</li>
+            <li>Jev chooses the action: speed up, keep steady, ease off, brake or emergency stop.</li>
+          </ul>
+        </div>
+        <figure class="figure" data-reveal="d1">
+          <img src="{{ assets }}/vision-system.png" width="896" height="616" alt="The vision system on ZET footage: detections, the tram's path highlighted in yellow, a scene summary and Jev's decision with confidence bars" loading="lazy" decoding="async">
+          <figcaption><span class="st-code">Vision system, v1</span><span>Line 2 footage with detections, the tram's path, and Jev's decision on the right.</span></figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="stage">
+      <div class="stage__head" data-reveal><span class="badge badge--wait">Next</span><h3>The bogie</h3></div>
+      <div class="sol__grid">
+        <div data-reveal>
+          <p class="lede">The platform is a single motor bogie from a retired Tatra T4 tram, the type ZET runs as TMK 401 and is now replacing.</p>
+          <ul class="check-list">
+            <li>Metre gauge, with the same wheels and brakes that run on ZET lines today.</li>
+            <li>Two original 40 kW DC traction motors.</li>
+            <li>A 72-96 V LiFePO4 battery instead of overhead power, for slow, safe test speeds.</li>
+            <li>An onboard GPU computer, cameras and depth sensors on a frame above the bogie.</li>
+            <li>A physical emergency stop that cuts power regardless of the AI.</li>
+          </ul>
+          <p class="stage__note">First runs take place on a closed test track.</p>
+        </div>
+        <div class="gallery" data-reveal="d1">
+          <figure class="figure"><img src="{{ assets }}/tatra-tram.webp" width="1288" height="952" alt="A red and white Tatra T3-family tram with its two bogies visible" loading="lazy" decoding="async"><figcaption><span>A Tatra T3-family tram. ZET's T4 uses the same bogie design.</span></figcaption></figure>
+          <figure class="figure"><img src="{{ assets }}/bogie-render.jpg" width="1092" height="1092" alt="3D model of the Tatra T3/T4 metre-gauge bogie" loading="lazy" decoding="async"><figcaption><span class="st-code">Bogie, 1000 mm</span></figcaption></figure>
+          <figure class="figure"><img src="{{ assets }}/bogie-photo.jpg" width="1484" height="812" alt="A refurbished tram motor bogie in a workshop" loading="lazy" decoding="async"><figcaption><span>A refurbished motor bogie.</span></figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage">
+      <div class="stage__head" data-reveal><span class="badge badge--dev">Then</span><h3>The scout robot</h3></div>
+      <div class="sol__grid">
+        <div data-reveal>
+          <p class="lede">Once the bogie drives reliably under AI control, it becomes a self-propelled scout. Its first job is to record a complete line to train the driving AI. After that it keeps working every day, giving the operator live, updated scans of every line.</p>
+          <p class="stage__note">Runs on live lines would start outside service hours, with the operator's approval.</p>
+          <figure class="player scout-figure" data-reveal="d1">
+            <div class="player__frame player__frame--svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="scout-title scout-desc" font-family="Inter, system-ui, sans-serif">
+  <title id="scout-title">Scout robot detecting a blocked track</title>
+  <desc id="scout-desc">A scout robot on a tram line between Stop A and Stop B scans ahead, flags a blocked track before Stop C and sends a live operator alert.</desc>
+
+  <defs>
+    <clipPath id="scout-cone"><path d="M530 418 L 852 376 L 852 522 L 530 428 Z"/></clipPath>
+  </defs>
+  <style>
+    @media (prefers-reduced-motion: reduce){ .anim{animation:none!important} }
+  </style>
+  <!-- backdrop -->
+  <rect width="1200" height="720" fill="#07080f"/>
+
+  <!-- corner labels -->
+  <text x="48" y="58" fill="#8b90a5" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="13" letter-spacing="2">SCOUT · LIVE SCAN</text>
+  <text x="1152" y="58" fill="#8b90a5" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="13" text-anchor="end" letter-spacing="2">LINE 2 · 05:12</text>
+
+  <!-- operator alert card -->
+  <g>
+    <rect x="128" y="168" width="326" height="76" rx="38" fill="#f4efe6"/>
+    <circle cx="170" cy="206" r="8" fill="#ff5f57"/>
+    <circle cx="170" cy="206" r="14" fill="none" stroke="#ff5f57" stroke-opacity=".5">
+      <animate attributeName="r" values="10;20;10" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-opacity" values=".6;0;.6" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <text x="196" y="215" fill="#04050a" font-size="26" font-weight="600">Operator alert</text>
+  </g>
+  <!-- dotted link from blockage to alert -->
+  <path d="M832 318 C 760 230, 600 200, 466 206" fill="none" stroke="#ff5f57" stroke-width="3" stroke-dasharray="4 12" stroke-linecap="round">
+    <animate attributeName="stroke-dashoffset" from="32" to="0" dur="1.2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- scan cone -->
+  <path d="M530 418 L 852 376 L 852 522 L 530 428 Z" fill="#1f3a3c">
+    <animate attributeName="fill" values="#1f3a3c;#27494a;#1f3a3c" dur="2.6s" repeatCount="indefinite"/>
+  </path>
+  <g clip-path="url(#scout-cone)">
+    <rect x="520" y="360" width="6" height="180" fill="#7cf4e0" opacity=".55">
+      <animate attributeName="x" from="520" to="852" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.6;.6;0" keyTimes="0;.1;.85;1" dur="2.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <!-- track -->
+  <rect x="140" y="434" width="930" height="26" rx="13" fill="#2a2f4a"/>
+  <rect x="140" y="434" width="640" height="26" rx="13" fill="#7cf4e0"/>
+  <line x1="150" y1="447" x2="770" y2="447" stroke="#f4efe6" stroke-opacity=".35" stroke-width="4" stroke-dasharray="10 26" stroke-linecap="round">
+    <animate attributeName="stroke-dashoffset" from="36" to="0" dur="1.6s" repeatCount="indefinite"/>
+  </line>
+  <!-- stops -->
+  <g stroke="#f4efe6" stroke-width="14" fill="#04050a">
+    <circle cx="232" cy="447" r="30"/>
+    <circle cx="612" cy="447" r="30"/>
+    <circle cx="990" cy="447" r="30"/>
+  </g>
+  <g fill="#8b90a5" font-size="26" text-anchor="middle">
+    <text x="232" y="548">Stop A</text>
+    <text x="612" y="548">Stop B</text>
+    <text x="990" y="548">Stop C</text>
+  </g>
+
+
+  <!-- scout tram -->
+  <g transform="translate(0,8)">
+    <animateTransform attributeName="transform" type="translate" values="0 8;0 7;0 8;0 9;0 8" dur="1.4s" repeatCount="indefinite" additive="replace"/>
+    <!-- pantograph -->
+    <path d="M400 366 L 428 336 L 456 366" fill="none" stroke="#7cf4e0" stroke-width="4" stroke-linecap="round"/>
+    <rect x="414" y="330" width="28" height="4" rx="2" fill="#7cf4e0"/>
+    <!-- body -->
+    <path d="M350 384 h 150 q 24 0 30 22 l 8 32 q 2 10 -8 10 h -180 q -10 0 -10 -10 v -44 q 0 -10 10 -10 z" fill="#7cf4e0"/>
+    <!-- windows -->
+    <g fill="#0f3a3a">
+      <rect x="364" y="398" width="30" height="22" rx="4"/>
+      <rect x="402" y="398" width="30" height="22" rx="4"/>
+      <rect x="440" y="398" width="30" height="22" rx="4"/>
+      <path d="M480 398 h 20 q 14 0 18 14 l 2 8 h -40 z"/>
+    </g>
+    <!-- door seam + skirt -->
+    <rect x="364" y="428" width="106" height="4" rx="2" fill="#0f3a3a" opacity=".6"/>
+    <!-- headlight -->
+    <circle cx="520" cy="440" r="5" fill="#f4efe6">
+      <animate attributeName="r" values="5;6.5;5" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="440" r="9" fill="none" stroke="#f4efe6" stroke-width="1.5" opacity=".5">
+      <animate attributeName="r" values="7;16" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values=".5;0" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <!-- wheels -->
+    <g fill="#04050a" stroke="#f4efe6" stroke-width="2"><circle cx="380" cy="452" r="9"/><circle cx="412" cy="452" r="9"/><circle cx="458" cy="452" r="9"/><circle cx="490" cy="452" r="9"/></g>
+    <g fill="#f4efe6">
+      <rect x="378.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 380 452" to="360 380 452" dur="1.2s" repeatCount="indefinite"/></rect>
+      <rect x="410.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 412 452" to="360 412 452" dur="1.2s" repeatCount="indefinite"/></rect>
+      <rect x="456.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 458 452" to="360 458 452" dur="1.2s" repeatCount="indefinite"/></rect>
+      <rect x="488.5" y="446" width="3" height="12" rx="1.5"><animateTransform attributeName="transform" type="rotate" from="0 490 452" to="360 490 452" dur="1.2s" repeatCount="indefinite"/></rect>
+    </g>
+  </g>
+
+  <!-- blockage -->
+  <rect x="730" y="366" width="120" height="162" rx="20" fill="#251218">
+    <animate attributeName="fill" values="#251218;#3a1a1e;#251218" dur="1.8s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="762" y="422" width="56" height="52" rx="10" fill="#ff5f57"/>
+  <g fill="none" stroke="#ff5f57" stroke-width="5" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="scale" values="1;1.04;1" dur="1.8s" repeatCount="indefinite" additive="sum"/>
+    <animateTransform attributeName="transform" type="translate" values="0 0;-31.6 -17.9;0 0" dur="1.8s" repeatCount="indefinite" additive="sum"/>
+    <path d="M744 404 v-18 h18"/><path d="M836 404 v-18 h-18"/>
+    <path d="M744 492 v18 h18"/><path d="M836 492 v18 h-18"/>
+  </g>
+  <!-- track blocked label -->
+  <g>
+    <rect x="730" y="298" width="248" height="56" rx="28" fill="#ff5f57">
+      <animate attributeName="fill" values="#ff5f57;#ff8a80;#ff5f57" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    <text x="854" y="334" fill="#f4efe6" font-size="24" font-weight="600" text-anchor="middle">Track blocked</text>
+  </g>
+
+  <!-- caption -->
+  <text x="600" y="660" fill="#b2aeaa" font-size="30" text-anchor="middle">Live scans of every line, every day.</text>
+</svg>
+            </div>
+            <figcaption><span class="st-code">Scout · live scan</span><span>A scout on line 2 spots a blocked track ahead and reports it to the operator in real time.</span></figcaption>
+          </figure>
+        </div>
+        <div data-reveal="d1">
+          <dl class="facts-dl">
+            <div><dt>Traffic jams</dt><dd>Cars on the rails, blocked junctions, stalled vehicles.</dd></div>
+            <div><dt>Accidents</dt><dd>Collisions and obstructions on or near the track.</dd></div>
+            <div><dt>Roadworks</dt><dd>New construction zones, temporary signals, track damage.</dd></div>
+            <div><dt>Changes</dt><dd>Anything that differs from the last scan, flagged for the operator.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="facts section" id="roadmap">
+  {{ bgVideo("deep-space") }}
+  <div class="wrap facts__inner">
+    <div class="section-head"><div><p class="st-code" data-reveal>04 · Roadmap</p><h2 data-reveal="d1">The route ahead</h2></div><p class="lede" data-reveal="d2">Three phases to a driverless line, then the network.</p></div>
+    <div class="fact-grid fact-grid--4">
+      <div class="fact" data-reveal><div><div class="fact__num">01</div><div class="fact__cap fact__cap--phase"><b>Phase 1 · Proof of concept, now</b></div></div><div class="fact__cap">AI-driven bogie on a closed track, then the scout robot on a real line.</div></div>
+      <div class="fact" data-reveal="d1"><div><div class="fact__num">02</div><div class="fact__cap fact__cap--phase"><b>Phase 2 · Prototype</b></div></div><div class="fact__cap">The AI in a real, road-legal tram: first alongside a driver, then driving under supervision.</div></div>
+      <div class="fact" data-reveal="d2"><div><div class="fact__num">03</div><div class="fact__cap fact__cap--phase"><b>Phase 3 · MVP</b></div></div><div class="fact__cap">A traffic-ready autonomous system in beta on one line, with a safety driver on board.</div></div>
+      <div class="fact" data-reveal="d3"><div><div class="fact__num">04</div><div class="fact__cap fact__cap--phase"><b>Scale-up · Network and beyond</b></div></div><div class="fact__cap">All Zagreb lines, other Croatian cities, then tram operators across Europe, with scouts monitoring every line daily.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bordered" id="ride">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>05 · Full ride</p><h2 data-reveal="d1">A full ride, as the AI sees it</h2></div><p class="lede" data-reveal="d2">Ten minutes on line 2, with every detection and decision on screen.</p></div>
+    <figure class="player" data-reveal>
+      <div class="player__frame"><video controls preload="metadata" playsinline><source src="{{ assets }}/full-ride.mp4" type="video/mp4">Your browser can't play this video. <a href="{{ assets }}/full-ride.mp4">Download it</a>.</video></div>
+      <figcaption><span class="st-code">Full ride · 10 min</span><span>Uncut line 2 run with the complete detection and decision overlay.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--bordered" id="funding">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>06 · Funding</p><h2 data-reveal="d1">Funding Phase 1</h2></div><p class="lede" data-reveal="d2">Phase 1 can be funded from one source or a combination.</p></div>
+    <div class="tiers">
+      <div class="tier" data-reveal><span class="tier__idx">Grants</span><h3>Public programmes.</h3><p>EU and Croatian innovation and smart-mobility programmes for applied AI and transport.</p></div>
+      <div class="tier" data-reveal="d1"><span class="tier__idx">Partnerships</span><h3>Co-development.</h3><p>Co-development with the operator, the city, research institutions or rail industry, through funding, hardware, track access or expertise.</p></div>
+      <div class="tier" data-reveal="d2"><span class="tier__idx">Venture capital</span><h3>Equity.</h3><p>Equity from investors in autonomous mobility and applied AI, backing a path from a working proof of concept to a product for tram operators across Europe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="wrap two-col">
+    <div class="title-block" data-reveal>
+      <p class="st-code">07 · Talk to us</p>
+      <h2>Talk to us</h2>
+      <p class="lede">RoboZET is developed by Astro Synapse, a Croatian company building applied AI systems.</p>
+    </div>
+    <div data-reveal="d1">
+      <a class="closing__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <div class="cta-row"><a class="btn btn--primary" href="{{ assets }}/RoboZET.pdf" target="_blank" rel="noopener">Download the project paper (PDF)</a><a class="btn btn--ghost" href="/research/">← All research</a></div>
+      <p class="st-code closing__credit">Decision model: Jev by TypeSafe AI. Demo footage used for research purposes.</p>
+    </div>
+  </div>
+</section>
