@@ -1,47 +1,469 @@
 ---
 layout: base.njk
-title: Gedor · Astro Synapse
-description: LLM-as-a-Service, hosted entirely in the EU.
+title: "Gedor: open-weight models, hosted in the EU · Astro Synapse"
+description: "Gedor runs open-weight language models in an EU data center: one OpenAI-compatible endpoint over a curated catalog, with managed vector databases alongside."
 code: RS/04
 navKey: research
 crumb: Gedor
 ogImage: ringed-planet
-productPanel: true
+footerAnchor: false
+scripts: ["/assets/js/gedor.js"]
 ---
 {%- from "macros.njk" import bgVideo -%}
+{%- set app = "https://gedor.ai/" -%}
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero">
-  {{ bgVideo("ringed-planet", eager=true) }}
+  <div class="gedor-sky" data-gedor-sky aria-hidden="true"><canvas class="gedor-sky__canvas"></canvas></div>
   <div class="wrap page-hero__grid">
     <div>
-      <p class="kicker" data-reveal><span>Research 04</span><span>Waitlist</span></p>
-      <h1 data-reveal="d1">LLM as a Service. Hosted in the EU.</h1>
-      <p class="lede" data-reveal="d2">LLM-as-a-Service, hosted entirely in the EU.</p>
+      <p class="kicker" data-reveal><span>Research 04</span><span>EU-hosted inference</span></p>
+      <h1 data-reveal="d1">Open-weight models, hosted in the EU.</h1>
+      <p class="lede" data-reveal="d2">Gedor is a platform for running language models in Europe: one OpenAI-compatible endpoint over a curated catalog of general, coding and embedding models, with managed vector databases alongside. Dedicated infrastructure and ready-made agents follow.</p>
     </div>
-    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>004</div><div class="meta-card__text">Waitlist.<br>Built in-house.</div></div></div>
+    <div class="page-hero__aside" data-reveal="d3">
+      <div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>EU</div><div class="meta-card__text">One key.<br>One endpoint.</div></div>
+      <div class="cta-row"><a class="btn btn--primary" href="{{ app }}" target="_blank" rel="noopener">Join the waitlist →</a></div>
+      <p class="page-hero__jump">Jump to: <a href="#route">How it works</a> · <a href="#catalog">Catalog</a> · <a href="#layers">Layers</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Waitlist</a></p>
+    </div>
   </div>
 </section>
 
+<!-- ============ MODEL CONSOLE ============ -->
 <section class="section section--intro-tight">
   <div class="wrap">
-    <div class="product-banner product-banner--gedor" data-reveal>
-      <div class="product-banner__top"><h2>Gedor</h2><span class="badge badge--wait">Waitlist</span></div>
-      <span class="product-banner__num">004</span>
-    </div>
-    <div class="product-grid">
-      <div data-reveal>
-        <div class="prose"><p>On-demand or private provisioning, a curated open-weight model catalog, and an OpenAI-compatible API. One key, one endpoint: switch models without touching your code.</p></div>
-        <ul class="pills"><li class="pill">OpenAI-compatible API</li><li class="pill">open-weight catalog</li><li class="pill">managed vector databases</li><li class="pill">GDPR &amp; EU AI Act compliant</li></ul>
-        <div class="cta-row"><a class="btn btn--primary" href="https://gedor.ai/" target="_blank" rel="noopener">Join the waitlist →</a><button class="btn btn--ghost" type="button" data-open-product="gedor">Quick view ⤢</button></div>
+    <figure class="player" data-reveal>
+      <div class="gedor-console" data-gedor-console>
+        <div class="gedor-console__bar">
+          <span class="gedor-console__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <p class="gedor-console__file">request.py</p>
+          <div class="gedor-console__tabs" role="tablist" aria-label="Model class">
+            <button class="gedor-console__tab" type="button" role="tab" id="gedor-console-tab-0" aria-controls="gedor-console-panel-0" aria-selected="true" data-gedor-tab>General</button>
+            <button class="gedor-console__tab" type="button" role="tab" id="gedor-console-tab-1" aria-controls="gedor-console-panel-1" aria-selected="false" tabindex="-1" data-gedor-tab>Coding</button>
+            <button class="gedor-console__tab" type="button" role="tab" id="gedor-console-tab-2" aria-controls="gedor-console-panel-2" aria-selected="false" tabindex="-1" data-gedor-tab>Embedding</button>
+          </div>
+        </div>
+
+        <div class="gedor-console__panel" id="gedor-console-panel-0" role="tabpanel" aria-labelledby="gedor-console-tab-0" data-gedor-panel>
+          <p class="gedor-console__title">General purpose</p>
+          <div class="gedor-console__body">
+<pre class="gedor-console__code"><code><span class="gedor-console__k">import</span> os
+<span class="gedor-console__k">from</span> openai <span class="gedor-console__k">import</span> OpenAI
+
+client = OpenAI(
+    base_url=<span class="gedor-console__s">"https://&lt;gedor-endpoint&gt;/v1"</span>,
+    api_key=os.environ[<span class="gedor-console__s">"GEDOR_API_KEY"</span>],
+)
+
+stream = client.chat.completions.create(
+<span class="gedor-console__hl">    model=<span class="gedor-console__s">"glm-5.1"</span>,</span>
+    messages=[
+        {<span class="gedor-console__s">"role"</span>: <span class="gedor-console__s">"user"</span>, <span class="gedor-console__s">"content"</span>: <span class="gedor-console__s">"Summarise our retention policy."</span>},
+    ],
+    stream=<span class="gedor-console__k">True</span>,
+)</code></pre>
+            <div class="gedor-console__out">
+              <p class="gedor-console__label">Response · streamed</p>
+              <p class="gedor-console__resp" data-gedor-resp>Customer records are kept for as long as the contract runs, plus 24 months. After that they are deleted from production systems and backups within 30 days.</p>
+            </div>
+          </div>
+          <p class="gedor-console__status"><span>model · glm-5.1</span><span>/v1/chat/completions</span><span class="gedor-console__region">EU</span></p>
+        </div>
+
+        <div class="gedor-console__panel" id="gedor-console-panel-1" role="tabpanel" aria-labelledby="gedor-console-tab-1" data-gedor-panel>
+          <p class="gedor-console__title">Coding</p>
+          <div class="gedor-console__body">
+<pre class="gedor-console__code"><code><span class="gedor-console__k">import</span> os
+<span class="gedor-console__k">from</span> openai <span class="gedor-console__k">import</span> OpenAI
+
+client = OpenAI(
+    base_url=<span class="gedor-console__s">"https://&lt;gedor-endpoint&gt;/v1"</span>,
+    api_key=os.environ[<span class="gedor-console__s">"GEDOR_API_KEY"</span>],
+)
+
+stream = client.chat.completions.create(
+<span class="gedor-console__hl">    model=<span class="gedor-console__s">"qwen3-coder"</span>,</span>
+    messages=[
+        {<span class="gedor-console__s">"role"</span>: <span class="gedor-console__s">"user"</span>, <span class="gedor-console__s">"content"</span>: <span class="gedor-console__s">"Validate an IBAN in Python."</span>},
+    ],
+    stream=<span class="gedor-console__k">True</span>,
+)</code></pre>
+            <div class="gedor-console__out">
+              <p class="gedor-console__label">Response · streamed</p>
+              <pre class="gedor-console__resp gedor-console__resp--code" data-gedor-resp>def is_valid_iban(iban: str) -> bool:
+    s = iban.replace(" ", "").upper()
+    s = s[4:] + s[:4]
+    digits = "".join(str(int(c, 36)) for c in s)
+    return int(digits) % 97 == 1</pre>
+            </div>
+          </div>
+          <p class="gedor-console__status"><span>model · qwen3-coder</span><span>/v1/chat/completions</span><span class="gedor-console__region">EU</span></p>
+        </div>
+
+        <div class="gedor-console__panel" id="gedor-console-panel-2" role="tabpanel" aria-labelledby="gedor-console-tab-2" data-gedor-panel>
+          <p class="gedor-console__title">Embedding</p>
+          <div class="gedor-console__body">
+<pre class="gedor-console__code"><code><span class="gedor-console__k">import</span> os
+<span class="gedor-console__k">from</span> openai <span class="gedor-console__k">import</span> OpenAI
+
+client = OpenAI(
+    base_url=<span class="gedor-console__s">"https://&lt;gedor-endpoint&gt;/v1"</span>,
+    api_key=os.environ[<span class="gedor-console__s">"GEDOR_API_KEY"</span>],
+)
+
+result = client.embeddings.create(
+<span class="gedor-console__hl">    model=<span class="gedor-console__s">"bge-m3"</span>,</span>
+    input=<span class="gedor-console__s">"GDPR Article 5: data processing principles"</span>,
+)</code></pre>
+            <div class="gedor-console__out">
+              <p class="gedor-console__label">Response · vector</p>
+              <pre class="gedor-console__resp gedor-console__resp--code" data-gedor-resp>[0.0213, -0.1137, 0.0582, 0.0094, -0.0461, 0.0718, …]
+1024 dimensions</pre>
+            </div>
+          </div>
+          <p class="gedor-console__status"><span>model · bge-m3</span><span>/v1/embeddings</span><span class="gedor-console__region">EU</span></p>
+        </div>
       </div>
-      <div data-reveal="d1"><div class="prose">
-        <p><strong>Built for data sovereignty.</strong> Gedor runs entirely within the EU, subject only to EU legislation (GDPR, EU AI Act), with no foreign surveillance framework exposure, unlike US-based providers legally obligated to share data with US authorities on request.</p>
-        <p><strong>Coming soon.</strong> A curated catalog of general purpose, coding, and embedding open-weight models, plus managed vector databases (Qdrant, Milvus, Weaviate, Chroma, and more) ready to pair with any model in the catalog.</p>
-        <p><strong>What's next.</strong> AI Agents as a Service: ready-to-deploy agents for common workflows. Already have your own agent? Bring Your Own Agent and run it on EU infrastructure, fully compliant.</p>
-      </div></div>
+      <figcaption><span class="st-code">Illustrative · switch the model, not the code</span><span>The same OpenAI client for every model class. Only the model name changes. Endpoint, model IDs and responses are placeholders.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 01 · WHY EU-HOSTED ============ -->
+<section class="facts section" id="why">
+  {{ bgVideo("ringed-planet") }}
+  <div class="wrap facts__inner">
+    <div class="two-col">
+      <div class="two-col__sticky title-block" data-reveal>
+        <p class="st-code">01 · Why EU-hosted</p>
+        <h2>Your prompts stay under EU law</h2>
+      </div>
+      <div class="prose" data-reveal="d1">
+        <p>Most hosted LLM APIs run on infrastructure owned by companies outside the EU, so the data they process can fall under non-EU law as well as European law.</p>
+        <p>For teams handling financial, health, legal or public-sector data, that can rule them out before the first prompt. <b>Gedor runs on GPUs in an EU data center, under EU law: GDPR and the EU AI Act.</b></p>
+      </div>
+    </div>
+    <div class="fact-grid fact-grid--3 fact-grid--spaced">
+      <div class="fact" data-reveal><div class="fact__num fact__num--text">EU-resident compute.</div><div class="fact__cap">Inference and storage stay in an EU data center.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num fact__num--text">Open weights.</div><div class="fact__cap">A curated catalog of open-weight models. No lock-in to one vendor's model.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num fact__num--text">Drop-in API.</div><div class="fact__cap">Existing OpenAI-compatible clients work unchanged. Point them at a new endpoint.</div></div>
     </div>
   </div>
 </section>
 
-{% include "partials/product-closing.njk" %}
+<!-- ============ 02 · HOW A REQUEST TRAVELS ============ -->
+<section class="section section--bordered" id="route">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>02 · Architecture</p><h2 data-reveal="d1">How a request travels</h2></div><p class="lede" data-reveal="d2">From your code to a GPU and back, every hop after the gateway runs inside the same EU data center.</p></div>
+
+    <figure class="player gedor-route" data-reveal>
+      <div class="gedor-route__frame">
+<svg class="gedor-route__svg gedor-route__svg--h" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" role="img" aria-labelledby="gedor-route-h-title gedor-route-h-desc">
+  <title id="gedor-route-h-title">Gedor request path</title>
+  <desc id="gedor-route-h-desc">A request leaves your application, passes the gateway, is scheduled by the orchestration layer, runs on an inference engine and GPU nodes in an EU data center, and the response returns the same way.</desc>
+  <rect class="gedor-route__zone" x="268" y="44" width="908" height="324" rx="22"/>
+  <text class="gedor-route__corner" x="292" y="74">Gedor · EU data center</text>
+  <text class="gedor-route__corner" x="40" y="74">Outside</text>
+  <line class="gedor-route__track" x1="120" y1="170" x2="1080" y2="170"/>
+  <g transform="translate(120 170)">
+    <circle class="gedor-route__ring" r="54" style="--d:0s"/>
+    <circle class="gedor-route__node" r="54"/>
+    <path class="gedor-route__icon" d="M-22 -16 H22 V16 H-22 Z M-22 -8 H22 M-8 -1 L-14 4 L-8 9 M8 -1 L14 4 L8 9"/>
+    <text class="gedor-route__idx" y="92" text-anchor="middle">01</text>
+    <text class="gedor-route__name" y="122" text-anchor="middle">Your app</text>
+    <text class="gedor-route__sub" y="150" text-anchor="middle">Any OpenAI client</text>
+  </g>
+  <g transform="translate(360 170)">
+    <circle class="gedor-route__ring" r="54" style="--d:1s"/><circle class="gedor-route__ring gedor-route__ring--res" r="54" style="--d:7s"/>
+    <circle class="gedor-route__node" r="54"/>
+    <path class="gedor-route__icon" d="M-20 -14 L-6 0 L-20 14 M0 -20 V20 M6 0 H20 M14 -6 L20 0 L14 6"/>
+    <text class="gedor-route__idx" y="92" text-anchor="middle">02</text>
+    <text class="gedor-route__name" y="122" text-anchor="middle">Gateway</text>
+    <text class="gedor-route__sub" y="150" text-anchor="middle">API keys · rate limits</text>
+    <text class="gedor-route__sub" y="172" text-anchor="middle">usage metering</text>
+  </g>
+  <g transform="translate(600 170)">
+    <circle class="gedor-route__ring" r="54" style="--d:2s"/><circle class="gedor-route__ring gedor-route__ring--res" r="54" style="--d:6s"/>
+    <circle class="gedor-route__node" r="54"/>
+    <path class="gedor-route__icon" d="M-21 -2 H-9 V10 H-21 Z M-6 -2 H6 V10 H-6 Z M9 -2 H21 V10 H9 Z M-15 -2 V-14 H15 V-2 M0 -14 V-2"/>
+    <text class="gedor-route__idx" y="92" text-anchor="middle">03</text>
+    <text class="gedor-route__name" y="122" text-anchor="middle">Orchestration</text>
+    <text class="gedor-route__sub" y="150" text-anchor="middle">Kubernetes · KServe</text>
+    <text class="gedor-route__sub" y="172" text-anchor="middle">scale-to-zero · canary</text>
+  </g>
+  <g transform="translate(840 170)">
+    <circle class="gedor-route__ring" r="54" style="--d:3s"/><circle class="gedor-route__ring gedor-route__ring--res" r="54" style="--d:5s"/>
+    <circle class="gedor-route__node" r="54"/>
+    <path class="gedor-route__icon" d="M-12 -12 H12 V12 H-12 Z M-5 -5 H5 V5 H-5 Z M-12 -5 H-19 M-12 5 H-19 M12 -5 H19 M12 5 H19 M-5 -12 V-19 M5 -12 V-19 M-5 12 V19 M5 12 V19"/>
+    <text class="gedor-route__idx" y="92" text-anchor="middle">04</text>
+    <text class="gedor-route__name" y="122" text-anchor="middle">Inference</text>
+    <text class="gedor-route__sub" y="150" text-anchor="middle">vLLM</text>
+    <text class="gedor-route__sub" y="172" text-anchor="middle">PagedAttention · batching</text>
+  </g>
+  <g transform="translate(1080 170)">
+    <circle class="gedor-route__ring" r="54" style="--d:4s"/>
+    <circle class="gedor-route__node" r="54"/>
+    <path class="gedor-route__icon" d="M-20 -17 H20 V-7 H-20 Z M-20 -4 H20 V6 H-20 Z M-20 9 H20 V19 H-20 Z M12 -12 H14 M12 1 H14 M12 14 H14"/>
+    <text class="gedor-route__idx" y="92" text-anchor="middle">05</text>
+    <text class="gedor-route__name" y="122" text-anchor="middle">GPU nodes</text>
+    <text class="gedor-route__sub" y="150" text-anchor="middle">EU data center</text>
+  </g>
+  <g class="gedor-route__packet gedor-route__packet--req gedor-route__packet--h"><circle r="7"/></g>
+  <g class="gedor-route__packet gedor-route__packet--res gedor-route__packet--h"><circle r="7"/></g>
+</svg>
+<svg class="gedor-route__svg gedor-route__svg--v" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1010" role="img" aria-labelledby="gedor-route-v-title gedor-route-v-desc">
+  <title id="gedor-route-v-title">Gedor request path</title>
+  <desc id="gedor-route-v-desc">A request leaves your application, passes the gateway, is scheduled by the orchestration layer, runs on an inference engine and GPU nodes in an EU data center, and the response returns the same way.</desc>
+  <rect class="gedor-route__zone" x="14" y="222" width="372" height="774" rx="20"/>
+  <text class="gedor-route__corner" x="366" y="250" text-anchor="end">Gedor · EU data center</text>
+  <line class="gedor-route__track" x1="80" y1="110" x2="80" y2="910"/>
+  <g transform="translate(80 110)">
+    <circle class="gedor-route__ring" r="48" style="--d:0s"/>
+    <circle class="gedor-route__node" r="48"/>
+    <path class="gedor-route__icon" d="M-22 -16 H22 V16 H-22 Z M-22 -8 H22 M-8 -1 L-14 4 L-8 9 M8 -1 L14 4 L8 9"/>
+    <text class="gedor-route__idx" x="78" y="-18">01</text>
+    <text class="gedor-route__name" x="78" y="14">Your app</text>
+    <text class="gedor-route__sub" x="78" y="42">Any OpenAI client</text>
+  </g>
+  <g transform="translate(80 310)">
+    <circle class="gedor-route__ring" r="48" style="--d:1s"/><circle class="gedor-route__ring gedor-route__ring--res" r="48" style="--d:7s"/>
+    <circle class="gedor-route__node" r="48"/>
+    <path class="gedor-route__icon" d="M-20 -14 L-6 0 L-20 14 M0 -20 V20 M6 0 H20 M14 -6 L20 0 L14 6"/>
+    <text class="gedor-route__idx" x="78" y="-18">02</text>
+    <text class="gedor-route__name" x="78" y="14">Gateway</text>
+    <text class="gedor-route__sub" x="78" y="42">Keys · limits · metering</text>
+  </g>
+  <g transform="translate(80 510)">
+    <circle class="gedor-route__ring" r="48" style="--d:2s"/><circle class="gedor-route__ring gedor-route__ring--res" r="48" style="--d:6s"/>
+    <circle class="gedor-route__node" r="48"/>
+    <path class="gedor-route__icon" d="M-21 -2 H-9 V10 H-21 Z M-6 -2 H6 V10 H-6 Z M9 -2 H21 V10 H9 Z M-15 -2 V-14 H15 V-2 M0 -14 V-2"/>
+    <text class="gedor-route__idx" x="78" y="-18">03</text>
+    <text class="gedor-route__name" x="78" y="14">Orchestration</text>
+    <text class="gedor-route__sub" x="78" y="42">Kubernetes · KServe</text>
+  </g>
+  <g transform="translate(80 710)">
+    <circle class="gedor-route__ring" r="48" style="--d:3s"/><circle class="gedor-route__ring gedor-route__ring--res" r="48" style="--d:5s"/>
+    <circle class="gedor-route__node" r="48"/>
+    <path class="gedor-route__icon" d="M-12 -12 H12 V12 H-12 Z M-5 -5 H5 V5 H-5 Z M-12 -5 H-19 M-12 5 H-19 M12 -5 H19 M12 5 H19 M-5 -12 V-19 M5 -12 V-19 M-5 12 V19 M5 12 V19"/>
+    <text class="gedor-route__idx" x="78" y="-18">04</text>
+    <text class="gedor-route__name" x="78" y="14">Inference</text>
+    <text class="gedor-route__sub" x="78" y="42">vLLM · batching</text>
+  </g>
+  <g transform="translate(80 910)">
+    <circle class="gedor-route__ring" r="48" style="--d:4s"/>
+    <circle class="gedor-route__node" r="48"/>
+    <path class="gedor-route__icon" d="M-20 -17 H20 V-7 H-20 Z M-20 -4 H20 V6 H-20 Z M-20 9 H20 V19 H-20 Z M12 -12 H14 M12 1 H14 M12 14 H14"/>
+    <text class="gedor-route__idx" x="78" y="-18">05</text>
+    <text class="gedor-route__name" x="78" y="14">GPU nodes</text>
+    <text class="gedor-route__sub" x="78" y="42">EU data center</text>
+  </g>
+  <g class="gedor-route__packet gedor-route__packet--req gedor-route__packet--v"><circle r="7"/></g>
+  <g class="gedor-route__packet gedor-route__packet--res gedor-route__packet--v"><circle r="7"/></g>
+</svg>
+      </div>
+      <figcaption><span class="st-code">Request path</span><span class="gedor-route__legend"><span class="gedor-route__key gedor-route__key--req">Request</span><span class="gedor-route__key gedor-route__key--res">Response</span></span><span>Everything after your app happens inside the boundary.</span></figcaption>
+    </figure>
+
+    <ol class="service-list">
+      <li class="service-list__item" data-reveal><span class="service-list__index">01</span><h3>Gateway.</h3><p>One OpenAI-compatible endpoint. It checks the API key, applies per-tenant rate limits and <em>meters usage</em> before anything reaches a model.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">02</span><h3>Orchestration.</h3><p>Kubernetes with KServe places each model on the cluster, <em>scales idle models to zero</em> and rolls out new versions as canaries.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">03</span><h3>Inference.</h3><p>vLLM serves the models, with PagedAttention and <em>continuous batching</em> to keep throughput high.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">04</span><h3>GPU nodes.</h3><p>The compute itself, <em>in an EU data center</em>. The response goes back the way the request came.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 03 · CATALOG ============ -->
+<section class="section section--bordered" id="catalog">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>03 · Catalog</p><h2 data-reveal="d1">Coming at launch</h2></div><p class="lede" data-reveal="d2">The open-weight models teams are deploying, curated, hosted and ready to call. Plus managed vector databases to pair with any of them.</p></div>
+
+    <div class="gedor-catalog" data-gedor-catalog data-reveal>
+      <div class="gedor-catalog__tabs" role="tablist" aria-label="Model category">
+        <button class="gedor-catalog__tab" type="button" role="tab" id="gedor-cat-tab-0" aria-controls="gedor-cat-panel-0" aria-selected="true" data-gedor-tab>General purpose <span>10</span></button>
+        <button class="gedor-catalog__tab" type="button" role="tab" id="gedor-cat-tab-1" aria-controls="gedor-cat-panel-1" aria-selected="false" tabindex="-1" data-gedor-tab>Coding <span>10</span></button>
+        <button class="gedor-catalog__tab" type="button" role="tab" id="gedor-cat-tab-2" aria-controls="gedor-cat-panel-2" aria-selected="false" tabindex="-1" data-gedor-tab>Embedding <span>10</span></button>
+      </div>
+
+      <div class="gedor-catalog__panel" id="gedor-cat-panel-0" role="tabpanel" aria-labelledby="gedor-cat-tab-0" data-gedor-panel>
+        <h3 class="gedor-catalog__title">General purpose</h3>
+        <ol class="gedor-catalog__list">
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">01</span><span class="gedor-catalog__name">GLM 5.1</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">02</span><span class="gedor-catalog__name">Llama 4 Maverick</span><span class="pill">Community</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">03</span><span class="gedor-catalog__name">Llama 4 Scout</span><span class="pill">Community</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">04</span><span class="gedor-catalog__name">Qwen 3.6 235B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">05</span><span class="gedor-catalog__name">Mistral Large 3</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">06</span><span class="gedor-catalog__name">Mistral Small 4</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">07</span><span class="gedor-catalog__name">Gemma 4 27B</span><span class="pill">Gemma</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">08</span><span class="gedor-catalog__name">Gemma 4 12B</span><span class="pill">Gemma</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">09</span><span class="gedor-catalog__name">gpt-oss 120B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">10</span><span class="gedor-catalog__name">Phi-4 14B</span><span class="pill">MIT</span></li>
+        </ol>
+      </div>
+
+      <div class="gedor-catalog__panel" id="gedor-cat-panel-1" role="tabpanel" aria-labelledby="gedor-cat-tab-1" data-gedor-panel>
+        <h3 class="gedor-catalog__title">Coding</h3>
+        <ol class="gedor-catalog__list">
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">01</span><span class="gedor-catalog__name">Devstral 22B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">02</span><span class="gedor-catalog__name">GLM 5.1 Coder</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">03</span><span class="gedor-catalog__name">Qwen 3 Coder</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">04</span><span class="gedor-catalog__name">Qwen 3.6 Coder 27B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">05</span><span class="gedor-catalog__name">DeepSeek Coder V2</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">06</span><span class="gedor-catalog__name">DeepSeek V4 Pro</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">07</span><span class="gedor-catalog__name">StarCoder 2 15B</span><span class="pill">BigCode</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">08</span><span class="gedor-catalog__name">MiniMax M2.7</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">09</span><span class="gedor-catalog__name">Granite Code 20B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">10</span><span class="gedor-catalog__name">Yi Coder 9B</span><span class="pill">Apache 2.0</span></li>
+        </ol>
+      </div>
+
+      <div class="gedor-catalog__panel" id="gedor-cat-panel-2" role="tabpanel" aria-labelledby="gedor-cat-tab-2" data-gedor-panel>
+        <h3 class="gedor-catalog__title">Embedding</h3>
+        <ol class="gedor-catalog__list">
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">01</span><span class="gedor-catalog__name">BGE-M3</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">02</span><span class="gedor-catalog__name">BGE Large EN v1.5</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">03</span><span class="gedor-catalog__name">Nomic Embed v1.5</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">04</span><span class="gedor-catalog__name">Jina v5 Text Small</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">05</span><span class="gedor-catalog__name">Jina CLIP v2</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">06</span><span class="gedor-catalog__name">Qwen3 Embedding 8B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">07</span><span class="gedor-catalog__name">Qwen3 Embedding 0.6B</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">08</span><span class="gedor-catalog__name">E5 Mistral 7B Instruct</span><span class="pill">MIT</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">09</span><span class="gedor-catalog__name">GTE Large EN v1.5</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__item"><span class="gedor-catalog__idx">10</span><span class="gedor-catalog__name">MPNet Base v2</span><span class="pill">Apache 2.0</span></li>
+        </ol>
+      </div>
+
+      <div class="gedor-catalog__db">
+        <h3 class="gedor-catalog__db-title st-code">Managed vector databases · 8</h3>
+        <ul class="gedor-catalog__db-list">
+          <li class="gedor-catalog__db-item"><span>Qdrant</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__db-item"><span>Milvus</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__db-item"><span>Weaviate</span><span class="pill">BSD-3</span></li>
+          <li class="gedor-catalog__db-item"><span>Chroma</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__db-item"><span>LanceDB</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__db-item"><span>Vespa</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__db-item"><span>OpenSearch</span><span class="pill">Apache 2.0</span></li>
+          <li class="gedor-catalog__db-item"><span>pgvector</span><span class="pill">PostgreSQL</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="st-code gedor-catalog__note">The catalog is not final. Models and databases may be added, swapped or removed before launch.</p>
+  </div>
+</section>
+
+<!-- ============ 04 · DOCUMENTS ============ -->
+<section class="section section--bordered" id="documents">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>04 · Retrieval</p><h2 data-reveal="d1">Your documents, next to your model</h2></div><p class="lede" data-reveal="d2">Start a managed vector database, upload files, and they are split into chunks, turned into embeddings and stored in a collection. Query it from the playground or over the API with the same key.</p></div>
+
+    <figure class="player" data-reveal>
+      <div class="gedor-rag is-chunked is-embedded is-queried is-answered" data-gedor-rag>
+        <div class="gedor-rag__col">
+          <p class="st-code gedor-rag__step"><span>01</span> Upload</p>
+          <div class="gedor-rag__doc">
+            <p class="gedor-rag__file">handbook.pdf</p>
+            <span class="gedor-rag__line" style="--d:0s"></span>
+            <span class="gedor-rag__line gedor-rag__line--short" style="--d:.12s"></span>
+            <span class="gedor-rag__line" style="--d:.24s"></span>
+            <span class="gedor-rag__line gedor-rag__line--hit" style="--d:.36s"></span>
+            <span class="gedor-rag__line gedor-rag__line--short gedor-rag__line--hit" style="--d:.48s"></span>
+            <span class="gedor-rag__line" style="--d:.6s"></span>
+          </div>
+          <dl class="facts-dl facts-dl--compact">
+            <div><dt>Collection</dt><dd>handbook</dd></div>
+            <div><dt>Chunks</dt><dd>6</dd></div>
+            <div><dt>Model</dt><dd>embedding</dd></div>
+          </dl>
+        </div>
+        <div class="gedor-rag__col gedor-rag__col--space">
+          <p class="st-code gedor-rag__step"><span>02</span> Embed &amp; index</p>
+          <svg class="gedor-rag__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="gedor-rag-title">
+            <title id="gedor-rag-title">Six new document chunks join a collection of vectors; a query finds its three nearest neighbours.</title>
+            <g class="gedor-rag__old"><circle class="gedor-rag__pt" cx="57" cy="68" r="2.6"/><circle class="gedor-rag__pt" cx="58" cy="57" r="2.6"/><circle class="gedor-rag__pt" cx="47" cy="59" r="2.6"/><circle class="gedor-rag__pt" cx="79" cy="67" r="2.6"/><circle class="gedor-rag__pt" cx="78" cy="55" r="2.6"/><circle class="gedor-rag__pt" cx="68" cy="64" r="2.6"/><circle class="gedor-rag__pt" cx="35" cy="73" r="2.6"/><circle class="gedor-rag__pt" cx="70" cy="76" r="2.6"/><circle class="gedor-rag__pt" cx="40" cy="45" r="2.6"/><circle class="gedor-rag__pt" cx="243" cy="47" r="2.6"/><circle class="gedor-rag__pt" cx="262" cy="53" r="2.6"/><circle class="gedor-rag__pt" cx="266" cy="41" r="2.6"/><circle class="gedor-rag__pt" cx="262" cy="64" r="2.6"/><circle class="gedor-rag__pt" cx="247" cy="76" r="2.6"/><circle class="gedor-rag__pt" cx="276" cy="69" r="2.6"/><circle class="gedor-rag__pt" cx="250" cy="58" r="2.6"/><circle class="gedor-rag__pt" cx="280" cy="52" r="2.6"/><circle class="gedor-rag__pt" cx="62" cy="175" r="2.6"/><circle class="gedor-rag__pt" cx="61" cy="203" r="2.6"/><circle class="gedor-rag__pt" cx="54" cy="189" r="2.6"/><circle class="gedor-rag__pt" cx="76" cy="168" r="2.6"/><circle class="gedor-rag__pt" cx="74" cy="198" r="2.6"/><circle class="gedor-rag__pt" cx="37" cy="183" r="2.6"/><circle class="gedor-rag__pt" cx="80" cy="184" r="2.6"/><circle class="gedor-rag__pt" cx="46" cy="200" r="2.6"/><circle class="gedor-rag__pt" cx="272" cy="198" r="2.6"/><circle class="gedor-rag__pt" cx="285" cy="186" r="2.6"/><circle class="gedor-rag__pt" cx="263" cy="169" r="2.6"/><circle class="gedor-rag__pt" cx="271" cy="182" r="2.6"/><circle class="gedor-rag__pt" cx="254" cy="176" r="2.6"/><circle class="gedor-rag__pt" cx="246" cy="190" r="2.6"/><circle class="gedor-rag__pt" cx="282" cy="160" r="2.6"/><circle class="gedor-rag__pt" cx="240" cy="171" r="2.6"/></g>
+            <g class="gedor-rag__links">
+              <line class="gedor-rag__link" x1="176" y1="118" x2="183" y2="104" style="--d:0s"/>
+              <line class="gedor-rag__link" x1="176" y1="118" x2="160" y2="106" style="--d:.15s"/>
+              <line class="gedor-rag__link" x1="176" y1="118" x2="187" y2="131" style="--d:.3s"/>
+            </g>
+            <g class="gedor-rag__new">
+              <circle class="gedor-rag__pt gedor-rag__pt--new gedor-rag__pt--hit" cx="183" cy="104" r="3.4" style="--d:0s"/>
+              <circle class="gedor-rag__pt gedor-rag__pt--new" cx="168" cy="146" r="3.4" style="--d:.1s"/>
+              <circle class="gedor-rag__pt gedor-rag__pt--new" cx="146" cy="134" r="3.4" style="--d:.2s"/>
+              <circle class="gedor-rag__pt gedor-rag__pt--new" cx="144" cy="114" r="3.4" style="--d:.3s"/>
+              <circle class="gedor-rag__pt gedor-rag__pt--new gedor-rag__pt--hit" cx="160" cy="106" r="3.4" style="--d:.4s"/>
+              <circle class="gedor-rag__pt gedor-rag__pt--new gedor-rag__pt--hit" cx="187" cy="131" r="3.4" style="--d:.5s"/>
+            </g>
+            <g class="gedor-rag__query"><circle class="gedor-rag__halo" cx="176" cy="118" r="13"/><circle class="gedor-rag__q" cx="176" cy="118" r="4.5"/></g>
+          </svg>
+          <p class="gedor-rag__legend"><span class="gedor-rag__key gedor-rag__key--new">New chunks</span><span class="gedor-rag__key gedor-rag__key--q">Query</span><span class="gedor-rag__key gedor-rag__key--link">Top 3</span></p>
+        </div>
+        <div class="gedor-rag__col">
+          <p class="st-code gedor-rag__step"><span>03</span> Ask</p>
+          <div class="gedor-rag__chat">
+            <p class="gedor-rag__msg gedor-rag__msg--q">How long do we keep support tickets?</p>
+            <div class="gedor-rag__msg gedor-rag__msg--a">
+              <p>Support tickets are kept for 24 months after they close, then deleted.</p>
+              <p class="gedor-rag__src"><span>handbook.pdf · chunk 4</span><span>chunk 5</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption><span class="st-code">Illustrative · prototype</span><span>Upload, embed, ask: the flow from our working prototype. Retrieval and generation run in the same EU data center.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 05 · THREE LAYERS ============ -->
+<section class="section section--bordered" id="layers">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>05 · Platform</p><h2 data-reveal="d1">Three layers, one platform</h2></div><p class="lede" data-reveal="d2">The pipeline from model to vector store to agent is meant to be something a team can set up without an ML department.</p></div>
+    <div class="tiers">
+      <div class="tier" data-reveal><p class="meta-row"><span class="tier__idx">01 · Models</span><span class="badge badge--wait">Launching first</span></p><h3>Models as a service.</h3><p>The hosted catalog behind one OpenAI-compatible API, with managed vector databases next to it.</p></div>
+      <div class="tier" data-reveal="d1"><p class="meta-row"><span class="tier__idx">02 · Infrastructure</span><span class="badge badge--dev">Planned</span></p><h3>Dedicated EU compute.</h3><p>Dedicated GPU capacity for your own models. Bring a model and its deployment spec, and reach it through the same API.</p></div>
+      <div class="tier" data-reveal="d2"><p class="meta-row"><span class="tier__idx">03 · Agents</span><span class="badge badge--dev">Planned</span></p><h3>Agents as a service.</h3><p>Ready-to-use agents for documents, web research, email and calendar, and long-form research. Already have one? Bring your own agent and run it on EU infrastructure.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · WHO IT'S FOR ============ -->
+<section class="section section--bordered" id="audience">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>06 · Audience</p><h2 data-reveal="d1">Who it's for</h2></div><p class="lede" data-reveal="d2">Teams that want open models without sending their data out of the EU.</p></div>
+    <div class="use-grid use-grid--2">
+      <article class="use-item" data-reveal><span class="use-item__idx">01</span><div><h3>Regulated teams.</h3><p>Finance, health, legal and the public sector, where data has to stay in Europe.</p></div></article>
+      <article class="use-item" data-reveal="d1"><span class="use-item__idx">02</span><div><h3>Product teams.</h3><p>Add language models to a product without building or running the infrastructure.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">03</span><div><h3>ML engineers and research groups.</h3><p>Dedicated EU compute for your own models, once the infrastructure layer opens.</p></div></article>
+      <article class="use-item" data-reveal="d1"><span class="use-item__idx">04</span><div><h3>Business users.</h3><p>Ready-made agents for everyday workflows, once the agent layer arrives.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · ROADMAP ============ -->
+<section class="facts section" id="roadmap">
+  {{ bgVideo("deep-space") }}
+  <div class="wrap facts__inner">
+    <div class="section-head"><div><p class="st-code" data-reveal>07 · Roadmap</p><h2 data-reveal="d1">Where it's headed</h2></div><p class="lede" data-reveal="d2">Models first, then infrastructure, then agents.</p></div>
+    <div class="fact-grid fact-grid--4">
+      <div class="fact" data-reveal><div><div class="fact__num">01</div><div class="fact__cap fact__cap--phase"><span class="badge badge--live">Done</span><b>Working prototype</b></div></div><div class="fact__cap">Managed vector databases, file upload, a chat playground and API keys, running end to end.</div></div>
+      <div class="fact" data-reveal="d1"><div><div class="fact__num">02</div><div class="fact__cap fact__cap--phase"><span class="badge badge--wait">Next</span><b>Models API</b></div></div><div class="fact__cap">The catalog, vector databases and self-service keys. The waitlist is open now.</div></div>
+      <div class="fact" data-reveal="d2"><div><div class="fact__num">03</div><div class="fact__cap fact__cap--phase"><span class="badge badge--dev">Planned</span><b>Infrastructure</b></div></div><div class="fact__cap">Dedicated EU GPU capacity for your own models.</div></div>
+      <div class="fact" data-reveal="d3"><div><div class="fact__num">04</div><div class="fact__cap fact__cap--phase"><span class="badge badge--dev">Planned</span><b>Agents</b></div></div><div class="fact__cap">Agents on demand, fine-tuning pipelines, our own vector store and agent memory.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · CLOSING ============ -->
+<section class="closing" id="contact">
+  <div class="wrap two-col">
+    <div class="title-block" data-reveal>
+      <p class="st-code">08 · Waitlist</p>
+      <h2>Get in line</h2>
+      <p class="lede">Gedor is built by Astro Synapse. Join the waitlist for early access and a say in what goes into the catalog.</p>
+    </div>
+    <div data-reveal="d1">
+      <a class="closing__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <div class="cta-row"><a class="btn btn--primary" href="{{ app }}" target="_blank" rel="noopener">Join the waitlist →</a><a class="btn btn--ghost" href="/research/">← All research</a></div>
+      <p class="st-code closing__credit">Code samples and figures on this page are illustrative. The model catalog is not final.</p>
+    </div>
+  </div>
+</section>

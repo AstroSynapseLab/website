@@ -32,6 +32,7 @@ src/
   assets/css/styles.css     all styles (bundled with fonts.css by Lightning CSS)
   assets/js/main.js         site-wide behaviour (bundled by esbuild, loaded on every page)
   assets/js/scout-stages.js RoboZET 3D model (three.js); page-only bundle, see `scripts` below
+  assets/js/gedor.js        Gedor hero gateway field, model console, catalog tabs, retrieval figure; page-only bundle
   assets/js/interpress.js   Interpress hero glyph field, document language morph, ask console; page-only bundle
   assets/js/asai.js         Asai hero drift field, stipple face canvas, monologue, journey stepper; page-only bundle
   assets/fonts|images|video static files, copied as-is
