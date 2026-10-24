@@ -48,5 +48,6 @@ export default {
     "deep-space": { src: "/assets/video/deep-space.jpg", width: 1280, height: 720 },
     "products-eclipse": { src: "/assets/images/products-eclipse.jpg", width: 1400, height: 1000 },
     "robo-zet": { src: "https://struki84.github.io/robo-zet-web/assets/vision-system.png", width: 896, height: 616 },
+    asai: { src: "/assets/images/og-asai.jpg", width: 1200, height: 630 },
   },
 };
