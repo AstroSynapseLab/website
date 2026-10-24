@@ -26,6 +26,7 @@ const CSS_OUT = "assets/css/main.css";
 const JS_ENTRIES = {
   "src/assets/js/main.js": "assets/js/main.js",
   "src/assets/js/scout-stages.js": "assets/js/scout-stages.js",
+  "src/assets/js/asai.js": "assets/js/asai.js",
 };
 
 /** Content hashes of built assets, used for cache-busting query strings. */
