@@ -27,6 +27,8 @@ const JS_ENTRIES = {
   "src/assets/js/main.js": "assets/js/main.js",
   "src/assets/js/scout-stages.js": "assets/js/scout-stages.js",
   "src/assets/js/gedor.js": "assets/js/gedor.js",
+  "src/assets/js/interpress.js": "assets/js/interpress.js",
+  "src/assets/js/asai.js": "assets/js/asai.js",
 };
 
 /** Content hashes of built assets, used for cache-busting query strings. */
