@@ -1,12 +1,11 @@
 ---
 layout: base.njk
 title: Research · Astro Synapse
-description: "Applied AI research from Astro Synapse: RoboZET, an AI that drives trams, and the products that came out of our own work."
+description: "Applied AI research from Astro Synapse: RoboZET, an AI that drives trams, plus Asai, Interpress, Gedor and webAgen."
 code: ST/02
 navKey: research
 crumb: Research
 ogImage: hero-planet
-productPanel: true
 ---
 {%- from "macros.njk" import bgVideo -%}
 
@@ -17,23 +16,17 @@ productPanel: true
     <div>
       <p class="kicker" data-reveal><span>02. Research</span><span>Built in the open</span></p>
       <h1 data-reveal="d1">Applied research, built in the open.</h1>
-      <p class="lede" data-reveal="d2">From an AI that drives trams to the products that came out of our own work. Each project is written up as a one-pager.</p>
+      <p class="lede" data-reveal="d2">From an AI that drives trams to the platforms that came out of our own work. Each project has its own write-up.</p>
     </div>
-    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>05 projects</div><div class="meta-card__text">Applied research.<br>Built in the open.</div></div><p class="page-hero__jump">Jump to: <a href="/research/robo-zet/">RoboZET</a> · <a href="#projects">Products</a></p></div>
+    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Dublin, IE</div><div class="meta-card__text">Applied research.<br>Built in the open.</div></div><p class="page-hero__jump">Jump to: {% for p in research %}<a href="#{{ p.key }}">{{ p.cardTitle or p.title }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p></div>
   </div>
 </section>
 
-<section class="section section--intro">
+<!-- ============ PROJECTS ============ -->
+<section class="section section--intro" id="projects">
   <div class="wrap">
-    <div class="section-head"><div><p class="st-code" data-reveal>ST/02.1 · Featured</p><h2 data-reveal="d1">Current project</h2></div><p class="lede" data-reveal="d2">The lab's most ambitious piece of applied research to date.</p></div>
-    {% include "partials/research-feature.njk" %}
-  </div>
-</section>
-
-<section class="products section" id="projects">
-  <div class="wrap">
-    <div class="section-head"><div><p class="st-code" data-reveal>ST/02.2 · From the lab</p><h2 data-reveal="d1">Research that became products.</h2></div><p class="lede" data-reveal="d2">Each of these started as an internal research question, then shipped. Every one runs in production today, or is close to it.</p></div>
-    {% include "partials/product-cards.njk" %}
+    <div class="section-head"><div><p class="st-code" data-reveal>ST/02.1 · Projects</p><h2 data-reveal="d1">Every project from the lab.</h2></div><p class="lede" data-reveal="d2">Each started as a research question we needed answered. Some are live, some are still in the lab; the badge on each says which.</p></div>
+    {% include "partials/research-list.njk" %}
   </div>
 </section>
 

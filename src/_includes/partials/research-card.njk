@@ -1,0 +1,19 @@
+{#-
+  One research project card (the RoboZET feature style).
+    p       entry from _data/research.js
+    mods    extra BEM modifiers, e.g. ["compact", "flip"]
+    anchor  true: give the card id="{key}" for the page's jump links
+    reveal  data-reveal delay ("d1" …), empty for none
+  The image comes from the .research-feature--{key} modifier in styles.css.
+-#}
+{% macro researchCard(p, mods=[], anchor=false, reveal="") -%}
+<a class="research-feature research-feature--{{ p.key }}{% for m in mods %} research-feature--{{ m }}{% endfor %}" href="{{ p.page }}"{% if anchor %} id="{{ p.key }}"{% endif %} data-reveal{% if reveal %}="{{ reveal }}"{% endif %}>
+  <div class="research-feature__copy">
+    <div class="meta-row"><span class="st-code">{{ p.idx }}</span><span class="badge {{ p.badgeClass }}">{{ p.badge }}</span></div>
+    <h3>{{ p.cardTitle or p.title }}: {{ p.tagline }}.</h3>
+    <p>{{ p.desc }}</p>
+    <ul class="pills">{% for t in p.tags %}<li class="pill">{{ t }}</li>{% endfor %}</ul>
+    <span class="ulink">Read the project <span class="ulink__arr">→</span></span>
+  </div>
+</a>
+{%- endmacro %}
