@@ -1,49 +1,445 @@
 ---
 layout: base.njk
-title: Interpress · Astro Synapse
-description: Instant AI-powered document translation and interpretation across 200+ languages, formatting preserved.
+title: "Interpress: your documents in every language · Astro Synapse"
+description: "Interpress translates internal documents into 249 languages without breaking their layout, then lets your team search and question them in their own language."
 code: RS/03
 navKey: research
 crumb: Interpress
-ogImage: hero-planet
-productPanel: true
+footerAnchor: false
+scripts: ["/assets/js/interpress.js"]
 ---
 {%- from "macros.njk" import bgVideo -%}
+{%- set app = "https://interpress.app/" -%}
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero">
-  {{ bgVideo("hero-space", eager=true, small=true) }}
+  <div class="glyph-field" data-glyph-field aria-hidden="true"><canvas class="glyph-field__canvas"></canvas></div>
   <div class="wrap page-hero__grid">
     <div>
-      <p class="kicker" data-reveal><span>Research 03</span><span>Live</span></p>
+      <p class="kicker" data-reveal><span>Research 03</span><span>Multilingual document AI</span></p>
       <h1 data-reveal="d1">Talent is everywhere. Access is not.</h1>
-      <p class="lede" data-reveal="d2">Instant AI-powered document translation and interpretation across 200+ languages, formatting preserved.</p>
+      <p class="lede" data-reveal="d2">Interpress translates your internal documents into 249 languages without breaking their layout, then lets your team search them and ask questions about them in their own language.</p>
     </div>
-    <div class="page-hero__aside" data-reveal="d3"><div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>003</div><div class="meta-card__text">Live.<br>Built in-house.</div></div></div>
+    <div class="page-hero__aside" data-reveal="d3">
+      <div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Live</div><div class="meta-card__text">One layout.<br>Any language.</div></div>
+      <div class="cta-row"><a class="btn btn--primary" href="{{ app }}" target="_blank" rel="noopener">Get early access →</a></div>
+      <p class="page-hero__jump">Jump to: <a href="#how">How it works</a> · <a href="#ask">Ask</a> · <a href="#deploy">Deployment</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Contact</a></p>
+    </div>
   </div>
 </section>
 
+<!-- ============ DOCUMENT MORPH ============ -->
 <section class="section section--intro-tight">
   <div class="wrap">
-    <div class="product-banner product-banner--interpress" data-reveal>
-      <div class="product-banner__top"><h2>Interpress</h2><span class="badge badge--live">Live</span></div>
-      <span class="product-banner__num">003</span>
-    </div>
-    <div class="product-grid">
-      <div data-reveal>
-        <div class="prose"><p>Interpress is an AI-powered platform that instantly translates, interprets, and navigates internal documents across any language, without losing structure, context, or time.</p></div>
-        <ul class="pills"><li class="pill">200+ languages</li><li class="pill">formatting retention engine</li><li class="pill">semantic search</li><li class="pill">industry-tuned accuracy</li></ul>
-        <div class="cta-row"><a class="btn btn--primary" href="https://interpress.app/" target="_blank" rel="noopener">Get early access →</a><button class="btn btn--ghost" type="button" data-open-product="interpress">Quick view ⤢</button></div>
+    <figure class="player" data-reveal>
+      <div class="morph" data-morph>
+        <div class="morph__stage">
+          <div class="morph__tabs" role="group" aria-label="Document language">
+            <button class="morph__tab" type="button" data-morph-tab="en" aria-pressed="true">EN</button>
+            <button class="morph__tab" type="button" data-morph-tab="de" aria-pressed="false">DE</button>
+            <button class="morph__tab" type="button" data-morph-tab="hr" aria-pressed="false">HR</button>
+            <button class="morph__tab" type="button" data-morph-tab="hi" aria-pressed="false">HI</button>
+            <button class="morph__tab" type="button" data-morph-tab="ar" aria-pressed="false">AR</button>
+          </div>
+          <article class="morph__paper" lang="en" dir="ltr" data-morph-doc>
+            <div class="morph__head"><span class="morph__logo" aria-hidden="true"></span><span class="morph__kicker" data-morph-key="kicker">SOP 07 · Packaging line 3</span></div>
+            <h3 class="morph__title" data-morph-key="title">Before you start the line</h3>
+            <p class="morph__intro" data-morph-key="intro">Read this before every shift. Ask your supervisor if anything is unclear.</p>
+            <ol class="morph__steps">
+              <li data-morph-key="s1">Put on gloves and safety goggles.</li>
+              <li data-morph-key="s2">Check that the emergency stop is released.</li>
+              <li data-morph-key="s3">Start the conveyor at low speed and watch the first cycle.</li>
+            </ol>
+            <table class="morph__table">
+              <thead><tr><th scope="col" data-morph-key="th1">Item</th><th scope="col" data-morph-key="th2">Detail</th></tr></thead>
+              <tbody>
+                <tr><td data-morph-key="r1a">Shift start</td><td data-morph-key="r1b">06:00</td></tr>
+                <tr><td data-morph-key="r2a">Max. speed</td><td data-morph-key="r2b">40 units / min</td></tr>
+                <tr><td data-morph-key="r3a">Supervisor</td><td data-morph-key="r3b">Ext. 214</td></tr>
+              </tbody>
+            </table>
+            <p class="morph__foot" data-morph-key="foot">Page 1 of 4 · Rev. 3</p>
+          </article>
+        </div>
+        <aside class="morph__panel">
+          <div class="morph__panel-head"><p class="st-code">Translation job</p><p class="morph__lock">Layout locked</p></div>
+          <dl class="facts-dl facts-dl--compact">
+            <div><dt>File</dt><dd>SOP-07.docx</dd></div>
+            <div><dt>Source</dt><dd>English</dd></div>
+            <div><dt>Target</dt><dd data-morph-meta="name">English</dd></div>
+            <div><dt>Direction</dt><dd data-morph-meta="dir">Left to right</dd></div>
+            <div><dt>Layout</dt><dd>Headings, list and table unchanged</dd></div>
+          </dl>
+          <p class="morph__note">The text changes. The page doesn't: same headings, same numbered steps, same table, ready to print.</p>
+        </aside>
       </div>
-      <div data-reveal="d1"><dl class="facts-dl">
-        <div><dt>Translated.</dt><dd>Instant translation of PDF, MS Office, and internal documents into any language, original formatting preserved.</dd></div>
-        <div><dt>Interpret.</dt><dd>An AI agent that does not just translate, it searches, interprets, and explains documents across languages.</dd></div>
-        <div><dt>Search.</dt><dd>Semantic document search powered by vector databases, so teams can find information without needing full fluency.</dd></div>
-        <div><dt>Built for.</dt><dd>Manufacturing, travel and hospitality, finance, education, technology, and legal teams working across languages.</dd></div>
-        <div><dt>Proof.</dt><dd>Mar-Mar (manufacturing) cut onboarding and salary costs by €80K over six months using Interpress, and is now tracking an estimated 2x production volume increase in the first half of 2025.</dd></div>
-      </dl></div>
+      <figcaption><span class="st-code">Illustrative · one page, five languages</span><span>A shop-floor procedure as Interpress returns it, switching language without touching the layout. Arabic flips to right to left.</span></figcaption>
+    </figure>
+    <script type="application/json" data-morph-strings>
+{
+  "en": { "name": "English", "dir": "ltr", "dirLabel": "Left to right", "text": {
+    "kicker": "SOP 07 · Packaging line 3", "title": "Before you start the line",
+    "intro": "Read this before every shift. Ask your supervisor if anything is unclear.",
+    "s1": "Put on gloves and safety goggles.", "s2": "Check that the emergency stop is released.",
+    "s3": "Start the conveyor at low speed and watch the first cycle.",
+    "th1": "Item", "th2": "Detail", "r1a": "Shift start", "r1b": "06:00", "r2a": "Max. speed", "r2b": "40 units / min",
+    "r3a": "Supervisor", "r3b": "Ext. 214", "foot": "Page 1 of 4 · Rev. 3" } },
+  "de": { "name": "Deutsch", "dir": "ltr", "dirLabel": "Left to right", "text": {
+    "kicker": "SOP 07 · Verpackungslinie 3", "title": "Bevor Sie die Linie starten",
+    "intro": "Vor jeder Schicht lesen. Fragen Sie Ihre Schichtleitung, wenn etwas unklar ist.",
+    "s1": "Handschuhe und Schutzbrille anlegen.", "s2": "Prüfen, ob der Not-Halt entriegelt ist.",
+    "s3": "Förderband mit niedriger Geschwindigkeit starten und den ersten Zyklus beobachten.",
+    "th1": "Punkt", "th2": "Angabe", "r1a": "Schichtbeginn", "r1b": "06:00", "r2a": "Max. Geschwindigkeit", "r2b": "40 Stück / min",
+    "r3a": "Schichtleitung", "r3b": "Durchwahl 214", "foot": "Seite 1 von 4 · Rev. 3" } },
+  "hr": { "name": "Hrvatski", "dir": "ltr", "dirLabel": "Left to right", "text": {
+    "kicker": "SOP 07 · Linija pakiranja 3", "title": "Prije pokretanja linije",
+    "intro": "Pročitajte prije svake smjene. Ako nešto nije jasno, pitajte voditelja smjene.",
+    "s1": "Stavite rukavice i zaštitne naočale.", "s2": "Provjerite je li tipka za hitno zaustavljanje otpuštena.",
+    "s3": "Pokrenite traku na niskoj brzini i pratite prvi ciklus.",
+    "th1": "Stavka", "th2": "Podatak", "r1a": "Početak smjene", "r1b": "06:00", "r2a": "Najveća brzina", "r2b": "40 komada / min",
+    "r3a": "Voditelj smjene", "r3b": "Lokal 214", "foot": "Stranica 1 od 4 · Rev. 3" } },
+  "hi": { "name": "हिन्दी (Hindi)", "dir": "ltr", "dirLabel": "Left to right", "text": {
+    "kicker": "SOP 07 · पैकेजिंग लाइन 3", "title": "लाइन शुरू करने से पहले",
+    "intro": "हर शिफ्ट से पहले इसे पढ़ें। कुछ भी स्पष्ट न हो तो अपने सुपरवाइज़र से पूछें।",
+    "s1": "दस्ताने और सुरक्षा चश्मा पहनें।", "s2": "जाँच लें कि आपातकालीन स्टॉप बटन रिलीज़ है।",
+    "s3": "कन्वेयर को धीमी गति पर शुरू करें और पहला चक्र देखें।",
+    "th1": "मद", "th2": "विवरण", "r1a": "शिफ्ट की शुरुआत", "r1b": "06:00", "r2a": "अधिकतम गति", "r2b": "40 यूनिट / मिनट",
+    "r3a": "सुपरवाइज़र", "r3b": "एक्सटेंशन 214", "foot": "पृष्ठ 1 / 4 · संशोधन 3" } },
+  "ar": { "name": "العربية (Arabic)", "dir": "rtl", "dirLabel": "Right to left", "text": {
+    "kicker": "إجراء التشغيل 07 · خط التغليف 3", "title": "قبل تشغيل الخط",
+    "intro": "اقرأ هذا قبل كل وردية. اسأل مشرفك إذا كان أي شيء غير واضح.",
+    "s1": "ارتدِ القفازات ونظارات السلامة.", "s2": "تأكد من تحرير زر الإيقاف الطارئ.",
+    "s3": "شغّل الناقل بسرعة منخفضة وراقب الدورة الأولى.",
+    "th1": "البند", "th2": "التفاصيل", "r1a": "بداية الوردية", "r1b": "06:00", "r2a": "السرعة القصوى", "r2b": "40 وحدة / دقيقة",
+    "r3a": "المشرف", "r3b": "تحويلة 214", "foot": "الصفحة 1 من 4 · الإصدار 3" } }
+}
+    </script>
+  </div>
+</section>
+
+<!-- ============ 01 · THE PROBLEM ============ -->
+<section class="facts section" id="why">
+  {{ bgVideo("ringed-planet") }}
+  <div class="wrap facts__inner">
+    <div class="two-col">
+      <div class="two-col__sticky title-block" data-reveal>
+        <p class="st-code">01 · The problem</p>
+        <h2>Knowledge trapped by language</h2>
+      </div>
+      <div class="prose" data-reveal="d1">
+        <p>People move for work, for love, for a fresh start. Wherever they go, the first hurdles are the same: somewhere to live, a new language, a job.</p>
+        <p>Starting a job before you have learned the language is especially hard. Everything you need to know is written down, but in a language you don't read yet. <b>Knowledge people can't read is knowledge they can't use.</b></p>
+        <p>Companies now hire across borders, but their documentation still exists in one language. That costs time, wastes talent, and puts invisible walls between people and the information they need.</p>
+      </div>
+    </div>
+    <div class="fact-grid fact-grid--3 fact-grid--spaced">
+      <div class="fact" data-reveal><div class="fact__num fact__num--text">Teams cross borders.</div><div class="fact__cap">More and more colleagues are still learning the local language.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num fact__num--text">Documents don't.</div><div class="fact__cap">Manuals, SOPs and policies usually exist in one language only.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num fact__num--text">So people ask around.</div><div class="fact__cap">Answers travel by word of mouth, slowly and not always correctly.</div></div>
     </div>
   </div>
 </section>
 
-{% include "partials/product-closing.njk" %}
+<!-- ============ 02 · ORIGIN ============ -->
+<section class="section section--bordered" id="origin">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="two-col__sticky title-block" data-reveal>
+        <p class="st-code">02 · Origin</p>
+        <h2>Built for one factory first</h2>
+      </div>
+      <div class="prose" data-reveal="d1">
+        <p>Interpress started with a real request. A manufacturer in the EU asked us where AI could make a practical difference in his business. After a few iterations the problem was clear: <b>onboarding foreign employees</b> who were still learning the local language took far too much of his time.</p>
+        <p>He also wanted an LLM on top of his existing library of documents and internal databases. The agent we built for him did both, and it became the basis of Interpress. The name comes from the Latin <em>interpres</em>: interpreter, translator.</p>
+      </div>
+    </div>
+    <div class="section-head section-head--sub"><div><p class="st-code" data-reveal>Early results · Printing manufacturer</p></div></div>
+    <div class="fact-grid fact-grid--3">
+      <div class="fact" data-reveal><div class="fact__num">1 day</div><div class="fact__cap"><b>Problem resolution time</b>Down from two months.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num">10 → 2</div><div class="fact__cap"><b>Support tickets per day</b>Staff find answers in the documentation first.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num fact__num--text">Same files.</div><div class="fact__cap"><b>No restructuring</b>The team kept working with the documents it already had.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · HOW IT WORKS ============ -->
+<section class="section section--bordered" id="how">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>03 · Pipeline</p><h2 data-reveal="d1">How it works</h2></div><p class="lede" data-reveal="d2">Four steps take a document from one language to every language, and make it searchable on the way.</p></div>
+
+    <figure class="pipeline" data-reveal>
+      <div class="pipeline__frame">
+<svg class="pipeline__svg pipeline__svg--h" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="pipe-h-title pipe-h-desc">
+  <title id="pipe-h-title">Interpress pipeline</title>
+  <desc id="pipe-h-desc">A document is uploaded, translated with its layout kept, indexed in a vector database, and then answered from in any language.</desc>
+  <text class="pipeline__corner" x="40" y="46">Interpress · pipeline</text>
+  <text class="pipeline__corner" x="1160" y="46" text-anchor="end">SOP-07.docx</text>
+  <line class="pipeline__track" x1="150" y1="150" x2="1050" y2="150"/>
+  <line class="pipeline__flow" x1="150" y1="150" x2="1050" y2="150"/>
+  <g class="pipeline__packet pipeline__packet--h">
+    <path class="pipeline__sheet" d="M-20 -26 H12 L20 -18 V26 H-20 Z"/>
+    <rect class="pipeline__sheet-line" x="-13" y="-16" width="20" height="3" rx="1.5"/>
+    <rect class="pipeline__sheet-line" x="-13" y="-9" width="26" height="3" rx="1.5"/>
+    <text class="pipeline__lang pipeline__lang--src" x="0" y="17" text-anchor="middle">EN</text>
+    <text class="pipeline__lang pipeline__lang--dst" x="0" y="17" text-anchor="middle">DE</text>
+  </g>
+  <g transform="translate(150 150)">
+    <circle class="pipeline__ring" r="58" style="--d:.4s"/>
+    <circle class="pipeline__node" r="58"/>
+    <path class="pipeline__icon" d="M0 14 V-18 M-12 -6 L0 -18 L12 -6 M-22 6 V20 H22 V6"/>
+    <text class="pipeline__idx" y="100" text-anchor="middle">01</text>
+    <text class="pipeline__name" y="134" text-anchor="middle">Upload</text>
+    <text class="pipeline__sub" y="164" text-anchor="middle">PDF · DOCX · PPTX · XLSX</text>
+  </g>
+  <g transform="translate(450 150)">
+    <circle class="pipeline__ring" r="58" style="--d:2.53s"/>
+    <circle class="pipeline__node" r="58"/>
+    <text class="pipeline__glyph" x="-13" y="9" text-anchor="middle">A</text>
+    <text class="pipeline__glyph pipeline__glyph--alt" x="14" y="9" text-anchor="middle">Ж</text>
+    <path class="pipeline__icon" d="M-18 20 H18"/>
+    <text class="pipeline__idx" y="100" text-anchor="middle">02</text>
+    <text class="pipeline__name" y="134" text-anchor="middle">Translate</text>
+    <text class="pipeline__sub" y="164" text-anchor="middle">249 languages · layout kept</text>
+  </g>
+  <g transform="translate(750 150)">
+    <circle class="pipeline__ring" r="58" style="--d:4.67s"/>
+    <circle class="pipeline__node" r="58"/>
+    <path class="pipeline__icon pipeline__icon--thin" d="M-18 -10 L4 -18 L18 4 L-2 16 L-18 -10 M4 -18 L-2 16"/>
+    <circle class="pipeline__dot" cx="-18" cy="-10" r="4"/><circle class="pipeline__dot" cx="4" cy="-18" r="4"/><circle class="pipeline__dot" cx="18" cy="4" r="4"/><circle class="pipeline__dot" cx="-2" cy="16" r="4"/>
+    <text class="pipeline__idx" y="100" text-anchor="middle">03</text>
+    <text class="pipeline__name" y="134" text-anchor="middle">Index</text>
+    <text class="pipeline__sub" y="164" text-anchor="middle">Vector database</text>
+  </g>
+  <g transform="translate(1050 150)">
+    <circle class="pipeline__ring" r="58" style="--d:6.8s"/>
+    <circle class="pipeline__node" r="58"/>
+    <path class="pipeline__icon" d="M-16 -18 H16 A6 6 0 0 1 22 -12 V6 A6 6 0 0 1 16 12 H-4 L-14 21 V12 H-16 A6 6 0 0 1 -22 6 V-12 A6 6 0 0 1 -16 -18 Z M-10 -6 H10 M-10 2 H4"/>
+    <text class="pipeline__idx" y="100" text-anchor="middle">04</text>
+    <text class="pipeline__name" y="134" text-anchor="middle">Ask</text>
+    <text class="pipeline__sub" y="164" text-anchor="middle">Answers in your language</text>
+  </g>
+</svg>
+<svg class="pipeline__svg pipeline__svg--v" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900" role="img" aria-labelledby="pipe-v-title pipe-v-desc">
+  <title id="pipe-v-title">Interpress pipeline</title>
+  <desc id="pipe-v-desc">A document is uploaded, translated with its layout kept, indexed in a vector database, and then answered from in any language.</desc>
+  <text class="pipeline__corner" x="24" y="34">Interpress · pipeline</text>
+  <line class="pipeline__track" x1="80" y1="120" x2="80" y2="780"/>
+  <line class="pipeline__flow" x1="80" y1="120" x2="80" y2="780"/>
+  <g class="pipeline__packet pipeline__packet--v">
+    <path class="pipeline__sheet" d="M-20 -26 H12 L20 -18 V26 H-20 Z"/>
+    <rect class="pipeline__sheet-line" x="-13" y="-16" width="20" height="3" rx="1.5"/>
+    <rect class="pipeline__sheet-line" x="-13" y="-9" width="26" height="3" rx="1.5"/>
+    <text class="pipeline__lang pipeline__lang--src" x="0" y="17" text-anchor="middle">EN</text>
+    <text class="pipeline__lang pipeline__lang--dst" x="0" y="17" text-anchor="middle">DE</text>
+  </g>
+  <g transform="translate(80 120)">
+    <circle class="pipeline__ring" r="52" style="--d:.4s"/>
+    <circle class="pipeline__node" r="52"/>
+    <path class="pipeline__icon" d="M0 14 V-18 M-12 -6 L0 -18 L12 -6 M-22 6 V20 H22 V6"/>
+    <text class="pipeline__idx" x="84" y="-18">01</text>
+    <text class="pipeline__name" x="84" y="16">Upload</text>
+    <text class="pipeline__sub" x="84" y="44">PDF · DOCX · PPTX · XLSX</text>
+  </g>
+  <g transform="translate(80 340)">
+    <circle class="pipeline__ring" r="52" style="--d:2.53s"/>
+    <circle class="pipeline__node" r="52"/>
+    <text class="pipeline__glyph" x="-13" y="9" text-anchor="middle">A</text>
+    <text class="pipeline__glyph pipeline__glyph--alt" x="14" y="9" text-anchor="middle">Ж</text>
+    <path class="pipeline__icon" d="M-18 20 H18"/>
+    <text class="pipeline__idx" x="84" y="-18">02</text>
+    <text class="pipeline__name" x="84" y="16">Translate</text>
+    <text class="pipeline__sub" x="84" y="44">249 languages</text>
+  </g>
+  <g transform="translate(80 560)">
+    <circle class="pipeline__ring" r="52" style="--d:4.67s"/>
+    <circle class="pipeline__node" r="52"/>
+    <path class="pipeline__icon pipeline__icon--thin" d="M-18 -10 L4 -18 L18 4 L-2 16 L-18 -10 M4 -18 L-2 16"/>
+    <circle class="pipeline__dot" cx="-18" cy="-10" r="4"/><circle class="pipeline__dot" cx="4" cy="-18" r="4"/><circle class="pipeline__dot" cx="18" cy="4" r="4"/><circle class="pipeline__dot" cx="-2" cy="16" r="4"/>
+    <text class="pipeline__idx" x="84" y="-18">03</text>
+    <text class="pipeline__name" x="84" y="16">Index</text>
+    <text class="pipeline__sub" x="84" y="44">Vector database</text>
+  </g>
+  <g transform="translate(80 780)">
+    <circle class="pipeline__ring" r="52" style="--d:6.8s"/>
+    <circle class="pipeline__node" r="52"/>
+    <path class="pipeline__icon" d="M-16 -18 H16 A6 6 0 0 1 22 -12 V6 A6 6 0 0 1 16 12 H-4 L-14 21 V12 H-16 A6 6 0 0 1 -22 6 V-12 A6 6 0 0 1 -16 -18 Z M-10 -6 H10 M-10 2 H4"/>
+    <text class="pipeline__idx" x="84" y="-18">04</text>
+    <text class="pipeline__name" x="84" y="16">Ask</text>
+    <text class="pipeline__sub" x="84" y="44">Answers in your language</text>
+  </g>
+</svg>
+      </div>
+      <figcaption><span class="st-code">Pipeline</span><span>The document goes in as English and leaves the translate step as German, with the same layout, before it is indexed for search.</span></figcaption>
+    </figure>
+
+    <ol class="service-list">
+      <li class="service-list__item" data-reveal><span class="service-list__index">01</span><h3>Upload.</h3><p>Add PDF, Word, PowerPoint and Excel files (PDF, DOCX, DOC, PPT, PPTX, XLSX). Coworkers can upload their own content too.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">02</span><h3>Translate.</h3><p>Neural machine translation into any of 249 languages. The file is rebuilt in the target language with its <em>layout, tables and styles intact</em>, ready to use without re-editing.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">03</span><h3>Index.</h3><p>Each document is embedded and stored in a vector database, so it can be found <em>by meaning, not just keywords</em>, whatever language it was written in.</p></li>
+      <li class="service-list__item" data-reveal><span class="service-list__index">04</span><h3>Ask.</h3><p>An AI agent searches, summarises and explains your documents in the language you ask in. If the answer isn't in your documents, <em>it says so</em>.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 04 · NOT A CHATBOT ============ -->
+<section class="section section--bordered" id="versus">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>04 · Why not a chatbot</p><h2 data-reveal="d1">A file in, the same file out</h2></div><p class="lede" data-reveal="d2">A chat assistant can read a document and reply with translated text. Interpress gives you back the document itself.</p></div>
+    <div class="versus">
+      <div class="versus__card versus__card--chat" data-reveal>
+        <p class="versus__label">Chat assistant</p>
+        <div class="versus__visual">
+          <div class="versus__bubbles">
+            <p class="versus__bubble"><span class="versus__run">Run 1</span>Gloves and goggles on. Check the e-stop.</p>
+            <p class="versus__bubble"><span class="versus__run">Run 2</span>Wear gloves and safety glasses; make sure the emergency stop is released.</p>
+          </div>
+        </div>
+        <ul class="check-list">
+          <li>Returns plain text in a chat window, not a file.</li>
+          <li>Headings, tables and styles are lost along the way.</li>
+          <li>The wording can change every time you ask.</li>
+        </ul>
+      </div>
+      <div class="versus__card versus__card--ip" data-reveal="d1">
+        <p class="versus__label">Interpress</p>
+        <div class="versus__visual">
+          <div class="versus__files">
+            <div class="versus__file"><span class="versus__sheet" aria-hidden="true"><i></i><i></i><i></i><b></b></span><span class="versus__name">SOP-07.docx · EN</span></div>
+            <span class="versus__arrow" aria-hidden="true">→</span>
+            <div class="versus__file"><span class="versus__sheet" aria-hidden="true"><i></i><i></i><i></i><b></b></span><span class="versus__name">SOP-07.docx · DE</span></div>
+          </div>
+        </div>
+        <ul class="check-list">
+          <li>Returns the same file type, ready to share or print.</li>
+          <li>Layout, tables and styles stay where they were.</li>
+          <li>Same input, same output, every time.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · ASK ============ -->
+<section class="section section--bordered" id="ask">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>05 · Ask</p><h2 data-reveal="d1">Ask in your language</h2></div><p class="lede" data-reveal="d2">The question and the documents don't have to share a language. The assistant answers from what your company has written, and nothing else.</p></div>
+    <figure class="player" data-reveal>
+      <div class="ask" data-ask>
+        <div class="ask__bar">
+          <p class="ask__status">Interpress assistant · dedicated instance</p>
+          <div class="ask__dots" role="group" aria-label="Example conversations">
+            <button class="ask__dot" type="button" data-ask-dot="0" aria-pressed="true" aria-label="Example 1"></button>
+            <button class="ask__dot" type="button" data-ask-dot="1" aria-pressed="false" aria-label="Example 2"></button>
+            <button class="ask__dot" type="button" data-ask-dot="2" aria-pressed="false" aria-label="Example 3"></button>
+          </div>
+        </div>
+        <div class="ask__list">
+          <div class="ask__item is-active" data-ask-item>
+            <div class="ask__msg ask__msg--q" lang="de">
+              <p class="ask__who"><span>Question</span><span class="ask__lang">DE</span></p>
+              <p class="ask__text">Welche Probleme hatten wir im vierten Quartal an der Verpackungslinie?</p>
+              <p class="ask__gloss" lang="en">What issues did we have with the packaging line in Q4?</p>
+            </div>
+            <div class="ask__msg ask__msg--a" lang="de">
+              <p class="ask__who"><span>Answer</span><span class="ask__lang">DE</span><span class="ask__from">from Croatian maintenance logs</span></p>
+              <p class="ask__text">Drei wiederkehrende Probleme: Folienrisse an Station 2, Sensorfehler am Etikettierer und Stillstände nach dem Formatwechsel. Die Techniker empfehlen, die Folienspannung zu Schichtbeginn zu prüfen.</p>
+              <p class="ask__gloss" lang="en">Three recurring issues: film tears at station 2, labeller sensor faults and stoppages after changeovers. Technicians recommend checking film tension at the start of each shift.</p>
+            </div>
+          </div>
+          <div class="ask__item" data-ask-item>
+            <div class="ask__msg ask__msg--q" lang="hr">
+              <p class="ask__who"><span>Question</span><span class="ask__lang">HR</span></p>
+              <p class="ask__text">Koliko dana godišnjeg odmora imam u prvoj godini?</p>
+              <p class="ask__gloss" lang="en">How many days of annual leave do I get in my first year?</p>
+            </div>
+            <div class="ask__msg ask__msg--a" lang="hr">
+              <p class="ask__who"><span>Answer</span><span class="ask__lang">HR</span><span class="ask__from">from the English employee handbook</span></p>
+              <p class="ask__text">Prema priručniku za zaposlenike, u prvoj godini imate 20 radnih dana godišnjeg odmora. Termin dogovarate s voditeljem smjene najmanje dva tjedna unaprijed.</p>
+              <p class="ask__gloss" lang="en">According to the employee handbook, you get 20 working days of annual leave in your first year. Agree the dates with your shift lead at least two weeks in advance.</p>
+            </div>
+          </div>
+          <div class="ask__item" data-ask-item>
+            <div class="ask__msg ask__msg--q">
+              <p class="ask__who"><span>Question</span><span class="ask__lang">EN</span></p>
+              <p class="ask__text">What torque should the M8 bolts on the conveyor frame be tightened to?</p>
+            </div>
+            <div class="ask__msg ask__msg--a ask__msg--none">
+              <p class="ask__who"><span>Answer</span><span class="ask__lang">EN</span><span class="ask__from">no match</span></p>
+              <p class="ask__text">I couldn't find this in your documents. The closest match is the general assembly guide, which doesn't list torque values for the conveyor frame.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption><span class="st-code">Illustrative</span><span>Three example exchanges. The last one shows what happens when the answer isn't in your documents.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 06 · WHO IT'S FOR ============ -->
+<section class="section section--bordered" id="industries">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>06 · Industries</p><h2 data-reveal="d1">Who it's for</h2></div><p class="lede" data-reveal="d2">From factory floors to hotel lobbies, anywhere teams work across languages.</p></div>
+    <div class="use-grid use-grid--4">
+      <article class="use-item" data-reveal><span class="use-item__idx">01</span><div><h3>Manufacturing.</h3><p>Safety rules, SOPs and machine manuals in each worker's language.</p></div></article>
+      <article class="use-item" data-reveal="d1"><span class="use-item__idx">02</span><div><h3>Logistics.</h3><p>Warehouse procedures and shift briefings for multilingual crews.</p></div></article>
+      <article class="use-item" data-reveal="d2"><span class="use-item__idx">03</span><div><h3>Hospitality.</h3><p>Hotel policies, guest information and staff training.</p></div></article>
+      <article class="use-item" data-reveal="d3"><span class="use-item__idx">04</span><div><h3>Legal &amp; compliance.</h3><p>Contracts and policies translated with their structure intact, and searchable.</p></div></article>
+      <article class="use-item" data-reveal><span class="use-item__idx">05</span><div><h3>Finance.</h3><p>Reports and internal guidelines shared across markets.</p></div></article>
+      <article class="use-item" data-reveal="d1"><span class="use-item__idx">06</span><div><h3>Healthcare.</h3><p>Guidelines, forms and onboarding material for international staff.</p></div></article>
+      <article class="use-item" data-reveal="d2"><span class="use-item__idx">07</span><div><h3>Education.</h3><p>Course materials and research papers for students and staff.</p></div></article>
+      <article class="use-item" data-reveal="d3"><span class="use-item__idx">08</span><div><h3>Technology.</h3><p>Technical documentation and support knowledge for distributed teams.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · DEPLOYMENT ============ -->
+<section class="section section--bordered" id="deploy">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>07 · Deployment</p><h2 data-reveal="d1">Your instance, your data</h2></div><p class="lede" data-reveal="d2">Every client runs on a dedicated instance, hosted by us or on your own infrastructure.</p></div>
+    <div class="fact-grid fact-grid--3">
+      <div class="fact" data-reveal><div class="fact__num fact__num--text">Cloud.</div><div class="fact__cap"><b>Hosted by us</b>A managed instance, ready to use.</div></div>
+      <div class="fact" data-reveal="d1"><div class="fact__num fact__num--text">Private.</div><div class="fact__cap"><b>Hosted by you</b>A dedicated deployment for companies that need full control over their documents and data.</div></div>
+      <div class="fact" data-reveal="d2"><div class="fact__num fact__num--text">Unlimited users.</div><div class="fact__cap"><b>One instance per client</b>No seats to count. Coworkers can upload their own content.</div></div>
+    </div>
+    <div class="sol__grid deploy-specs">
+      <dl class="facts-dl" data-reveal>
+        <div><dt>Formats</dt><dd>PDF, DOCX, DOC, PPT, PPTX, XLSX.</dd></div>
+        <div><dt>Languages</dt><dd>249, including right-to-left scripts.</dd></div>
+        <div><dt>Answers</dt><dd>Grounded in your documents. When nothing matches, the assistant says so.</dd></div>
+        <div><dt>Input</dt><dd>Files are uploaded directly today. Storage connectors are on the roadmap.</dd></div>
+      </dl>
+      <div data-reveal="d1">
+        <p class="st-code deploy-specs__label">Built with</p>
+        <ul class="pills"><li class="pill">Go</li><li class="pill">LangChain-Go</li><li class="pill">LangGraph-Go</li><li class="pill">Chroma</li><li class="pill">PostgreSQL</li><li class="pill">Vue.js</li><li class="pill">AWS ECS</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · ROADMAP ============ -->
+<section class="facts section" id="roadmap">
+  {{ bgVideo("deep-space") }}
+  <div class="wrap facts__inner">
+    <div class="section-head"><div><p class="st-code" data-reveal>08 · Roadmap</p><h2 data-reveal="d1">What comes next</h2></div><p class="lede" data-reveal="d2">From a working product to our own translation models.</p></div>
+    <div class="fact-grid fact-grid--3">
+      <div class="fact" data-reveal><div><div class="fact__num">01</div><div class="fact__cap fact__cap--phase"><span class="badge badge--live">Live</span><b>Translate, search, ask</b></div></div><div class="fact__cap">Layout-preserving translation, semantic search and the document assistant, on dedicated instances.</div></div>
+      <div class="fact" data-reveal="d1"><div><div class="fact__num">02</div><div class="fact__cap fact__cap--phase"><span class="badge badge--wait">Next</span><b>Connectors and permissions</b></div></div><div class="fact__cap">Connect local and cloud storage instead of uploading, and set roles and permissions per user.</div></div>
+      <div class="fact" data-reveal="d2"><div><div class="fact__num">03</div><div class="fact__cap fact__cap--phase"><span class="badge badge--dev">Planned</span><b>Our own models, as an API</b></div></div><div class="fact__cap">Translation models built for documents, developed in-house and offered to developers through an API.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 · CLOSING ============ -->
+<section class="closing" id="contact">
+  <div class="wrap two-col">
+    <div class="title-block" data-reveal>
+      <p class="st-code">09 · Talk to us</p>
+      <h2>Talk to us</h2>
+      <p class="lede">Interpress is built by Astro Synapse. Early adopters get priority support, a say in what we build next, and hands-on onboarding.</p>
+    </div>
+    <div data-reveal="d1">
+      <a class="closing__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <div class="cta-row"><a class="btn btn--primary" href="{{ app }}" target="_blank" rel="noopener">Get early access →</a><a class="btn btn--ghost" href="/research/">← All research</a></div>
+    </div>
+  </div>
+</section>
