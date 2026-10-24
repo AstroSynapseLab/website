@@ -26,6 +26,7 @@ const CSS_OUT = "assets/css/main.css";
 const JS_ENTRIES = {
   "src/assets/js/main.js": "assets/js/main.js",
   "src/assets/js/scout-stages.js": "assets/js/scout-stages.js",
+  "src/assets/js/gedor.js": "assets/js/gedor.js",
 };
 
 /** Content hashes of built assets, used for cache-busting query strings. */
