@@ -553,6 +553,49 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 .research-feature__copy p{color:var(--cream-dim);max-width:34rem}
 .research-feature .ulink{color:var(--cyan);min-width:0;align-self:flex-start}
 
+/* ---------------------------------------------------------
+   Research index (research.html): every project as a .research-feature card.
+   Markup: partials/research-list.njk + research-card.njk, data: _data/research.js.
+   001 is the full-size feature; 002+ are --compact, every other one --flip
+   (image on the left). One image modifier per project key.
+   --------------------------------------------------------- */
+.research-index{display:grid;gap:2rem}
+.research-index>.research-feature{margin-bottom:0}
+.research-feature[id]{scroll-margin-top:calc(var(--header) + 1.5rem)}
+.research-feature::before{transition:transform 600ms var(--ease)}
+.research-feature:hover::before,.research-feature:focus-visible::before{transform:scale(1.04)}
+.research-feature:focus-visible{outline-offset:4px;transform:translateY(-6px);border-color:rgba(124,244,224,.38);box-shadow:0 20px 80px rgba(0,0,0,.35),0 0 40px rgba(124,244,224,.12)}
+
+.research-feature--asai{--img:url("../images/asai-hero.jpg")}
+.research-feature--asai::before{background-position:right 40%}
+.research-feature--interpress{--img:url("../images/interpress-hero-still.jpg")}
+.research-feature--interpress::before{background-position:left center}
+.research-feature--gedor{--img:url("../images/gedor-hero-still.jpg")}
+.research-feature--gedor::before{background-position:right 40%}
+.research-feature--webagen{--img:url("../video/deep-space.jpg")}
+.research-feature--webagen::before{background-position:center}
+
+.research-feature--compact{min-height:17rem;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.research-feature--compact .research-feature__copy p{max-width:40rem}
+.research-feature--flip{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+.research-feature--flip .research-feature__copy{grid-column:2}
+.research-feature--flip::after{background:linear-gradient(270deg,rgba(4,5,10,.96) 0%,rgba(4,5,10,.85) 45%,rgba(4,5,10,.25) 100%),linear-gradient(180deg,transparent,rgba(4,5,10,.6))}
+
+@media (max-width:900px){
+  .research-feature.research-feature--compact{grid-template-columns:1fr;min-height:18rem}
+  .research-feature--flip .research-feature__copy{grid-column:auto}
+  .research-feature--flip::after{background:linear-gradient(180deg,rgba(4,5,10,.9),rgba(4,5,10,.55))}
+  .research-feature--asai::before{background-position:72% center}
+  .research-feature--gedor::before{background-position:68% center}
+}
+@media (max-width:560px){
+  .research-index{gap:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .research-feature:hover,.research-feature:focus-visible,
+  .research-feature:hover::before,.research-feature:focus-visible::before{transform:none}
+}
+
 .player{margin:0}
 .player__frame{position:relative;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#000;aspect-ratio:16/9;box-shadow:0 30px 90px rgba(0,0,0,.45)}
 .player__frame video{width:100%;height:100%;display:block;object-fit:cover}

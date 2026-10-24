@@ -1,0 +1,14 @@
+{#-
+  All research projects (research page). 001 is the full-size feature; the rest
+  are compact cards whose image side alternates (right, left, right, left).
+-#}
+{%- from "partials/research-card.njk" import researchCard -%}
+<div class="research-index">
+  {%- for p in research %}
+  {%- if loop.first %}
+  {{ researchCard(p, anchor=true) }}
+  {%- else %}
+  {{ researchCard(p, (["compact", "flip"] if loop.index0 % 2 == 0 else ["compact"]), anchor=true, reveal=("d1" if loop.index0 % 2 == 0 else "")) }}
+  {%- endif %}
+  {%- endfor %}
+</div>
