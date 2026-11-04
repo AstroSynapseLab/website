@@ -1,0 +1,117 @@
+---
+layout: base.njk
+title: webAgen · Generative UI · Astro Synapse
+description: Generative UI from a prompt. Describe what you need and an AI agent assembles a live interface from vetted components.
+code: ST/08
+crumb: webAgen
+# TODO: placeholder; replace with a dedicated og-webagen image in site.ogImages
+ogImage: deep-space
+---
+{%- set demo = "https://webagen.astrosynapse.ai" -%}
+
+<!-- ============ HERO + USE CASES ============ -->
+<section class="wa-hero">
+  <div class="wa-wall" aria-hidden="true"><div class="wa-wall__plane"><div class="wa-wall__grid"><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span></div></div></div>
+  <div class="wrap wa-hero__inner">
+    <div class="wa-hero__head">
+      <div class="wa-hero__meta" data-reveal><p class="kicker"><span>webAgen</span></p><ul class="wa-hero__badges" aria-label="Status"><li class="badge badge--dev">In development</li><li class="badge">Proof of concept</li><li class="badge badge--live">2 live demos</li><li class="badge">Built in-house</li></ul></div>
+      <h1 data-reveal="d1">Interfaces that build themselves from a prompt.</h1>
+      <p class="lede" data-reveal="d2">Instead of one website for everyone, webAgen speaks to each visitor directly: a generative UI that adapts to what they are looking for and how they interact.</p>
+      <div class="cta-row" data-reveal="d3"><a class="btn btn--primary" href="#demos">Explore the demos ↓</a><a class="btn btn--ghost" href="#how">How it works ↓</a></div>
+    </div>
+
+    <ul class="wa-cases" id="demos" aria-label="Use cases">
+      <li data-reveal="d1">
+        <a class="wa-case" href="{{ demo }}/website/" target="_blank" rel="noopener">
+          <span class="wa-case__stage" aria-hidden="true">
+            <span class="wa-mini"><span class="wa-mini__state wa-mini__state--a"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__hero"><span class="wa-mini__h"></span><span class="wa-mini__h"></span><span class="wa-mini__ln"></span><span class="wa-mini__btn"></span></span><span class="wa-mini__cols"><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span></span></span><span class="wa-mini__state wa-mini__state--b"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__banner"><span class="wa-mini__h"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__list"><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span></span></span></span>
+            <span class="wa-prompt"><span class="wa-prompt__txt"><span class="wa-prompt__a">Give me an overview page</span><span class="wa-prompt__b">List your products</span></span><span class="wa-prompt__send">↑</span></span>
+          </span>
+          <span class="wa-case__foot">
+            <span class="wa-case__head"><span class="wa-case__title">Website</span><span class="badge badge--live">Live</span></span>
+            <span class="wa-case__cap">Company website · <span class="wa-case__go">Open demo <span class="wa-case__arr">↗</span></span></span>
+          </span>
+        </a>
+      </li>
+      <li data-reveal="d2">
+        <a class="wa-case" href="{{ demo }}/webshop/" target="_blank" rel="noopener">
+          <span class="wa-case__stage" aria-hidden="true">
+            <span class="wa-mini"><span class="wa-mini__state wa-mini__state--a"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__cart"></span></span><span class="wa-mini__banner"><span class="wa-mini__h"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__tiles"><span class="wa-mini__tile" style="--c:var(--cyan)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span><span class="wa-mini__tile" style="--c:var(--violet)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span><span class="wa-mini__tile" style="--c:var(--gold)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span><span class="wa-mini__tile" style="--c:var(--cream)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span></span></span><span class="wa-mini__state wa-mini__state--b"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__cart"></span></span><span class="wa-mini__pdp"><span class="wa-mini__img" style="--c:var(--gold)"></span><span class="wa-mini__info"><span class="wa-mini__h"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span><span class="wa-mini__sizes"><i></i><i></i><i></i><i></i></span><span class="wa-mini__btn"></span></span></span></span></span>
+            <span class="wa-prompt"><span class="wa-prompt__txt"><span class="wa-prompt__a">Show me running shoes</span><span class="wa-prompt__b">Open the yellow pair</span></span><span class="wa-prompt__send">↑</span></span>
+          </span>
+          <span class="wa-case__foot">
+            <span class="wa-case__head"><span class="wa-case__title">Webshop</span><span class="badge badge--live">Live</span></span>
+            <span class="wa-case__cap">E-commerce storefront · <span class="wa-case__go">Open demo <span class="wa-case__arr">↗</span></span></span>
+          </span>
+        </a>
+      </li>
+      <li data-reveal="d3">
+        <div class="wa-case wa-case--planned">
+          <span class="wa-case__stage" aria-hidden="true">
+            <span class="wa-mini wa-mini--empty">?</span>
+            <span class="wa-prompt wa-prompt--empty"><span class="wa-prompt__txt">Your use case…</span><span class="wa-prompt__caret"></span></span>
+          </span>
+          <span class="wa-case__foot">
+            <span class="wa-case__head"><span class="wa-case__title">Next use case</span><span class="badge badge--dev">Planned</span></span>
+            <span class="wa-case__cap">To be decided · <span class="wa-case__go">Being scoped</span></span>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 01 · HOW IT WORKS ============ -->
+<section class="section section--bordered" id="how">
+  <div class="wrap">
+    <div class="section-head"><div><p class="st-code" data-reveal>01 · How it works</p><h2 data-reveal="d1">From prompt to page</h2></div><p class="lede" data-reveal="d2">Describe what you need in plain language. An agent picks components from a vetted library, and the page renders live in your browser.</p></div>
+    <ol class="wa-steps">
+      <li class="wa-step" data-reveal>
+        <div class="wa-fig" aria-hidden="true">
+          <span class="wa-fig__label">On page</span>
+          <span class="wa-fig__chips"><span class="wa-fig__chip">header</span><span class="wa-fig__chip">footer</span></span>
+          <span class="wa-fig__input">Give me an overview page<span class="wa-fig__caret"></span><span class="wa-fig__send">↑</span></span>
+        </div>
+        <span class="wa-step__idx">01</span><h3>Prompt</h3><p>Your request goes over a WebSocket, together with the components already on the page.</p>
+      </li>
+      <li class="wa-step" data-reveal="d1">
+        <div class="wa-fig" aria-hidden="true">
+          <span class="wa-fig__label">Component library</span>
+          <span class="wa-fig__row"><span class="wa-fig__bar"></span></span>
+          <span class="wa-fig__row wa-fig__row--pick"><span class="wa-fig__code">astro-landing-heading</span><span class="wa-fig__tick">✓</span></span>
+          <span class="wa-fig__row"><span class="wa-fig__bar wa-fig__bar--short"></span></span>
+          <span class="wa-fig__props">props: { title, text } · next: ?</span>
+        </div>
+        <span class="wa-step__idx">02</span><h3>Agent</h3><p>A Go backend runs an LLM agent that selects a component, fills its props and decides whether another one is needed.</p>
+      </li>
+      <li class="wa-step" data-reveal="d2">
+        <div class="wa-fig" aria-hidden="true">
+          <span class="wa-fig__label">Stream</span>
+          <span class="wa-fig__code wa-fig__line" style="--d:0s">{ "name": "astro-landing-heading" }</span>
+          <span class="wa-fig__code wa-fig__line" style="--d:.6s">{ "props": { … } }</span>
+          <span class="wa-fig__ph" style="--d:0s"></span>
+          <span class="wa-fig__ph wa-fig__ph--short" style="--d:.3s"></span>
+        </div>
+        <span class="wa-step__idx">03</span><h3>Stream</h3><p>Every step streams back as JSON, so placeholders show up before the content is ready.</p>
+      </li>
+      <li class="wa-step" data-reveal="d3">
+        <div class="wa-fig wa-fig--page" aria-hidden="true">
+          <span class="wa-fig__nav"></span>
+          <span class="wa-fig__heading"><span class="wa-fig__h"></span><span class="wa-fig__t"></span><span class="wa-fig__t wa-fig__t--short"></span></span>
+          <span class="wa-fig__cols"><span></span><span></span><span></span></span>
+        </div>
+        <span class="wa-step__idx">04</span><h3>Render</h3><p>The frontend maps each component name to a real React component and renders it as it arrives.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CLOSING ============ -->
+<section class="closing">
+  <div class="wrap" data-reveal>
+    <h2>See it build itself.</h2>
+    <p class="lede">Try a live demo, or talk to us about your use case.</p>
+    <div class="cta-row"><a class="btn btn--primary" href="{{ demo }}/website/" target="_blank" rel="noopener">Website demo ↗</a><a class="btn btn--ghost" href="{{ demo }}/webshop/" target="_blank" rel="noopener">Webshop demo ↗</a><span class="btn btn--ghost wa-btn-planned" aria-disabled="true">Next use case · planned</span></div>
+    <p class="wa-closing__contact"><a class="ulink" href="/contact/">Contact us <span class="ulink__arr">→</span></a></p>
+  </div>
+</section>
