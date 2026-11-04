@@ -310,10 +310,10 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 .xp__left h3{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1}
 .xp__left p{color:var(--cream-dim);font-size:clamp(1.05rem,1.4vw,1.25rem);max-width:30rem;margin-top:1rem}
 .xp__tiles{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;align-content:center}
-.xp__tile{position:relative;min-height:9.5rem;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:1rem;background:rgba(7,8,15,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:space-between;gap:.8rem;overflow:hidden}
+.xp__tile{position:relative;min-height:9.5rem;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:1rem;background:rgba(7,8,15,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:space-between;gap:.8rem;overflow:hidden;min-width:0;container-type:inline-size}
 .xp__tile--wide{grid-column:span 2;min-height:7rem}
 .xp__tile-label{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.xp__tile-value{font-family:var(--font-display);font-weight:600;letter-spacing:-.03em;font-size:clamp(1.5rem,2.6vw,2.4rem);line-height:1.05;color:var(--cream)}
+.xp__tile-value{font-family:var(--font-display);font-weight:600;letter-spacing:-.03em;font-size:min(clamp(1.5rem,2.6vw,2.4rem),12cqi);line-height:1.05;color:var(--cream);overflow-wrap:break-word}
 .xp__tile-value--accent{color:var(--cyan)}
 .xp__tile-sub{color:var(--cream-dim);font-size:.9rem}
 .xp__tile .pills{gap:.35rem}
