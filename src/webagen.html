@@ -7,70 +7,53 @@ crumb: webAgen
 # TODO: placeholder; replace with a dedicated og-webagen image in site.ogImages
 ogImage: deep-space
 ---
-{%- from "macros.njk" import bgVideo -%}
 {%- set demo = "https://webagen.astrosynapse.ai" -%}
 
 <!-- ============ HERO + USE CASES ============ -->
 <section class="wa-hero">
-  {{ bgVideo("deep-space", eager=true) }}
+  <div class="wa-wall" aria-hidden="true"><div class="wa-wall__plane"><div class="wa-wall__grid"><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span></div></div></div>
   <div class="wrap wa-hero__inner">
     <div class="wa-hero__head">
-      <p class="kicker" data-reveal><span>webAgen</span><span>Generative UI</span></p>
+      <div class="wa-hero__meta" data-reveal><p class="kicker"><span>webAgen</span></p><ul class="wa-hero__badges" aria-label="Status"><li class="badge badge--dev">In development</li><li class="badge">Proof of concept</li><li class="badge badge--live">2 live demos</li><li class="badge">Built in-house</li></ul></div>
       <h1 data-reveal="d1">Interfaces that build themselves from a prompt.</h1>
       <p class="lede" data-reveal="d2">Instead of one website for everyone, webAgen speaks to each visitor directly: a generative UI that adapts to what they are looking for and how they interact.</p>
-      <ul class="wa-hero__badges" aria-label="Status" data-reveal="d2"><li class="badge badge--dev">In development</li><li class="badge">Proof of concept</li><li class="badge badge--live">2 live demos</li><li class="badge">Built in-house</li></ul>
       <div class="cta-row" data-reveal="d3"><a class="btn btn--primary" href="#demos">Explore the demos ↓</a><a class="btn btn--ghost" href="#how">How it works ↓</a></div>
     </div>
 
     <ul class="wa-cases" id="demos" aria-label="Use cases">
       <li data-reveal="d1">
         <a class="wa-case" href="{{ demo }}/website/" target="_blank" rel="noopener">
-          <span class="wa-case__top"><span class="wa-case__idx">01</span><span class="badge badge--live">Live</span></span>
-          <span class="wa-skel wa-skel--site" aria-hidden="true">
-            <span class="wa-skel__b wa-skel__b--full" style="--d:0s"></span>
-            <span class="wa-skel__b wa-skel__b--full" style="--d:.12s"></span>
-            <span class="wa-skel__b wa-skel__b--third" style="--d:.24s"></span>
-            <span class="wa-skel__b wa-skel__b--third" style="--d:.32s"></span>
-            <span class="wa-skel__b wa-skel__b--third" style="--d:.4s"></span>
-            <span class="wa-skel__b wa-skel__b--third" style="--d:.52s"></span>
+          <span class="wa-case__stage" aria-hidden="true">
+            <span class="wa-mini"><span class="wa-mini__state wa-mini__state--a"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__hero"><span class="wa-mini__h"></span><span class="wa-mini__h"></span><span class="wa-mini__ln"></span><span class="wa-mini__btn"></span></span><span class="wa-mini__cols"><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span></span></span><span class="wa-mini__state wa-mini__state--b"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__banner"><span class="wa-mini__h"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__list"><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span><span><i></i><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span></span></span></span></span>
+            <span class="wa-prompt"><span class="wa-prompt__txt"><span class="wa-prompt__a">Give me an overview page</span><span class="wa-prompt__b">List your products</span></span><span class="wa-prompt__send">↑</span></span>
           </span>
           <span class="wa-case__foot">
-            <span class="wa-case__title">Website</span>
-            <span class="wa-case__cap">Company website</span>
-            <span class="wa-case__go">Open demo <span class="wa-case__arr">↗</span></span>
+            <span class="wa-case__head"><span class="wa-case__title">Website</span><span class="badge badge--live">Live</span></span>
+            <span class="wa-case__cap">Company website · <span class="wa-case__go">Open demo <span class="wa-case__arr">↗</span></span></span>
           </span>
         </a>
       </li>
       <li data-reveal="d2">
         <a class="wa-case" href="{{ demo }}/webshop/" target="_blank" rel="noopener">
-          <span class="wa-case__top"><span class="wa-case__idx">02</span><span class="badge badge--live">Live</span></span>
-          <span class="wa-skel wa-skel--shop" aria-hidden="true">
-            <span class="wa-skel__b wa-skel__b--full" style="--d:0s"></span>
-            <span class="wa-skel__b wa-skel__b--full" style="--d:.12s"></span>
-            <span class="wa-skel__b wa-skel__b--half" style="--d:.24s"></span>
-            <span class="wa-skel__b wa-skel__b--half" style="--d:.32s"></span>
-            <span class="wa-skel__b wa-skel__b--half" style="--d:.4s"></span>
-            <span class="wa-skel__b wa-skel__b--half" style="--d:.48s"></span>
+          <span class="wa-case__stage" aria-hidden="true">
+            <span class="wa-mini"><span class="wa-mini__state wa-mini__state--a"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__cart"></span></span><span class="wa-mini__banner"><span class="wa-mini__h"></span><span class="wa-mini__ln"></span></span><span class="wa-mini__tiles"><span class="wa-mini__tile" style="--c:var(--cyan)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span><span class="wa-mini__tile" style="--c:var(--violet)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span><span class="wa-mini__tile" style="--c:var(--gold)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span><span class="wa-mini__tile" style="--c:var(--cream)"><span class="wa-mini__img"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span></span></span></span><span class="wa-mini__state wa-mini__state--b"><span class="wa-mini__nav"><span class="wa-mini__dot"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__cart"></span></span><span class="wa-mini__pdp"><span class="wa-mini__img" style="--c:var(--gold)"></span><span class="wa-mini__info"><span class="wa-mini__h"></span><span class="wa-mini__ln"></span><span class="wa-mini__ln"></span><span class="wa-mini__price"></span><span class="wa-mini__sizes"><i></i><i></i><i></i><i></i></span><span class="wa-mini__btn"></span></span></span></span></span>
+            <span class="wa-prompt"><span class="wa-prompt__txt"><span class="wa-prompt__a">Show me running shoes</span><span class="wa-prompt__b">Open the yellow pair</span></span><span class="wa-prompt__send">↑</span></span>
           </span>
           <span class="wa-case__foot">
-            <span class="wa-case__title">Webshop</span>
-            <span class="wa-case__cap">E-commerce storefront</span>
-            <span class="wa-case__go">Open demo <span class="wa-case__arr">↗</span></span>
+            <span class="wa-case__head"><span class="wa-case__title">Webshop</span><span class="badge badge--live">Live</span></span>
+            <span class="wa-case__cap">E-commerce storefront · <span class="wa-case__go">Open demo <span class="wa-case__arr">↗</span></span></span>
           </span>
         </a>
       </li>
       <li data-reveal="d3">
         <div class="wa-case wa-case--planned">
-          <span class="wa-case__top"><span class="wa-case__idx">03</span><span class="badge badge--dev">Planned</span></span>
-          <span class="wa-skel wa-skel--planned" aria-hidden="true">
-            <span class="wa-skel__b wa-skel__b--full" style="--d:0s"></span>
-            <span class="wa-skel__b wa-skel__b--full" style="--d:.12s"></span>
-            <span class="wa-skel__b wa-skel__b--full" style="--d:.24s"></span>
+          <span class="wa-case__stage" aria-hidden="true">
+            <span class="wa-mini wa-mini--empty">?</span>
+            <span class="wa-prompt wa-prompt--empty"><span class="wa-prompt__txt">Your use case…</span><span class="wa-prompt__caret"></span></span>
           </span>
           <span class="wa-case__foot">
-            <span class="wa-case__title">Next use case</span>
-            <span class="wa-case__cap">To be decided</span>
-            <span class="wa-case__go">Being scoped</span>
+            <span class="wa-case__head"><span class="wa-case__title">Next use case</span><span class="badge badge--dev">Planned</span></span>
+            <span class="wa-case__cap">To be decided · <span class="wa-case__go">Being scoped</span></span>
           </span>
         </div>
       </li>
