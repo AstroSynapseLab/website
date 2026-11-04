@@ -617,6 +617,115 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 .fact-grid--3{grid-template-columns:repeat(3,1fr)}
 .fact-grid--4{grid-template-columns:repeat(4,1fr)}
 
+/* ---------------------------------------------------------
+   webAgen landing (webagen.html): product landing page.
+   Hero + three use-case cards share the first viewport.
+   .wa-skel is a CSS-only wireframe that assembles on load
+   (staggered via --d) and lights up on hover. .wa-fig are
+   small CSS figures for the How it works steps. No page JS.
+   Reduced motion / no JS: wireframes and figures show their
+   final, static state.
+   --------------------------------------------------------- */
+.wa-hero{position:relative;isolation:isolate;overflow:hidden;min-height:100vh;min-height:100svh;display:flex;padding:calc(var(--header) + clamp(1rem,4vh,3rem)) 0 clamp(1.5rem,4vh,2.5rem)}
+.wa-hero .bg-video{--bg-video-overlay:linear-gradient(180deg,rgba(4,5,10,.6),rgba(4,5,10,.35) 45%,var(--void))}
+.wa-hero__inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(1.5rem,4vh,2.75rem)}
+.wa-hero__head{display:flex;flex-direction:column;align-items:center;text-align:center}
+.wa-hero__head .kicker{justify-content:center;margin-bottom:1rem}
+.wa-hero__head h1{max-width:20ch;font-size:clamp(2.3rem,4.6vw,4.2rem)}
+.wa-hero__head .lede{max-width:44rem;margin-top:1rem;font-size:clamp(1rem,1.3vw,1.12rem)}
+.wa-hero__badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;margin-top:1.1rem}
+.wa-hero__head .cta-row{justify-content:center;margin-top:1.25rem}
+
+/* use-case cards */
+.wa-cases{flex:1 1 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2.5vw,2rem);width:100%;max-width:68rem;min-height:16rem;max-height:30rem;margin:0 auto;scroll-margin-top:calc(var(--header) + 1rem)}
+.wa-cases>li{display:flex;min-width:0}
+.wa-case{flex:1;display:flex;flex-direction:column;gap:1rem;min-height:0;padding:1.2rem;border:1px solid var(--line-strong);border-radius:calc(var(--radius) + .5rem);background:rgba(7,8,15,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:inherit;transition:transform 280ms var(--ease),border-color 280ms var(--ease),box-shadow 280ms var(--ease)}
+a.wa-case:hover,a.wa-case:focus-visible{color:inherit;transform:translateY(-6px);border-color:rgba(124,244,224,.38);box-shadow:0 20px 80px rgba(0,0,0,.35),0 0 40px rgba(124,244,224,.12)}
+a.wa-case:focus-visible{outline-offset:4px}
+.wa-case--planned{border-style:dashed;background:rgba(7,8,15,.35)}
+.wa-case__top{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.wa-case__idx{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;color:var(--cyan)}
+.wa-case__foot{display:flex;flex-direction:column;gap:.2rem}
+.wa-case__title{font-family:var(--font-display);font-weight:600;letter-spacing:-.03em;font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.1;color:var(--cream)}
+.wa-case__cap{color:var(--cream-dim);font-size:.92rem}
+.wa-case__go{margin-top:.5rem;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.wa-case--planned .wa-case__go{color:var(--muted)}
+.wa-case__arr{display:inline-block;transition:transform .5s var(--ease)}
+a.wa-case:hover .wa-case__arr,a.wa-case:focus-visible .wa-case__arr{transform:translate(3px,-3px)}
+
+/* wireframe skeleton */
+.wa-skel{flex:1 1 auto;min-height:4rem;display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem}
+.wa-skel--site{grid-template-rows:.45fr 2fr 1.3fr .45fr}
+.wa-skel--shop{grid-template-rows:.45fr 1.2fr 1.1fr 1.1fr}
+.wa-skel--planned{grid-template-rows:repeat(3,1fr)}
+.wa-skel__b{border:1px solid var(--line);border-radius:.4rem;background:rgba(244,239,230,.045);animation:wa-build .8s var(--ease) both;animation-delay:calc(var(--d,0s) + .5s);transition:border-color .4s var(--ease),background-color .4s var(--ease);transition-delay:var(--d,0s)}
+.wa-skel__b--full{grid-column:span 6}
+.wa-skel__b--half{grid-column:span 3}
+.wa-skel__b--third{grid-column:span 2}
+.wa-skel--site .wa-skel__b:last-child{grid-column:1 / span 2}
+.wa-skel--planned .wa-skel__b{border-style:dashed;background:transparent}
+a.wa-case:hover .wa-skel__b,a.wa-case:focus-visible .wa-skel__b{border-color:rgba(124,244,224,.45);background:rgba(124,244,224,.07)}
+
+/* How it works: four step cards, each with a small figure */
+.wa-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.wa-step{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.3rem 1.8rem;background:rgba(7,8,15,.72);transition:background .5s var(--ease)}
+.wa-step:hover{background:rgba(12,14,24,.86)}
+.wa-step__idx{margin-top:.9rem;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;color:var(--cyan)}
+.wa-step h3{font-size:clamp(1.35rem,2vw,1.7rem)}
+.wa-step p{color:var(--cream-dim);font-size:.98rem}
+.wa-fig{position:relative;display:flex;flex-direction:column;justify-content:center;gap:.45rem;height:10rem;padding:1rem;border:1px solid var(--line);border-radius:1rem;background:linear-gradient(180deg,rgba(124,244,224,.04),transparent 70%),var(--void);overflow:hidden;transition:border-color .5s var(--ease)}
+.wa-step:hover .wa-fig{border-color:rgba(124,244,224,.3)}
+.wa-fig__label{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.wa-fig__chips{display:flex;gap:.35rem;margin-bottom:.35rem}
+.wa-fig__chip{padding:.1rem .5rem;border:1px solid var(--line-strong);border-radius:999px;font-family:var(--font-mono);font-size:.6rem;color:var(--cream-dim)}
+.wa-fig__input{display:flex;align-items:center;gap:.1rem;min-height:2.3rem;padding:.4rem .4rem .4rem .8rem;border:1px solid rgba(124,244,224,.35);border-radius:999px;font-size:.78rem;color:var(--cream);white-space:nowrap}
+.wa-fig__caret{width:1px;height:1em;background:var(--cyan);animation:wa-blink 1.1s steps(1) infinite}
+.wa-fig__send{display:grid;place-items:center;width:1.5rem;height:1.5rem;margin-left:auto;border-radius:50%;background:var(--cream);color:var(--void);font-size:.75rem;font-weight:700}
+.wa-fig__row{display:flex;align-items:center;justify-content:space-between;min-height:1.7rem;padding:0 .6rem;border:1px solid var(--line);border-radius:.45rem}
+.wa-fig__row--pick{border-color:rgba(124,244,224,.5);background:rgba(124,244,224,.08)}
+.wa-fig__bar{width:70%;height:.4rem;border-radius:999px;background:rgba(244,239,230,.12)}
+.wa-fig__bar--short{width:45%}
+.wa-fig__code{font-family:var(--font-mono);font-size:.62rem;color:var(--cyan);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wa-fig__tick{color:var(--cyan);font-size:.75rem}
+.wa-fig__props{font-family:var(--font-mono);font-size:.58rem;color:var(--muted)}
+.wa-fig__line{animation:wa-build .6s var(--ease) both;animation-delay:var(--d,0s)}
+.wa-fig__ph{height:.9rem;border-radius:.35rem;background:linear-gradient(90deg,rgba(244,239,230,.06) 0%,rgba(124,244,224,.18) 50%,rgba(244,239,230,.06) 100%) 0 0/200% 100%;animation:wa-shimmer 1.8s linear infinite;animation-delay:var(--d,0s)}
+.wa-fig__ph--short{width:60%}
+.wa-fig--page{justify-content:flex-start;gap:.5rem}
+.wa-fig__nav{height:.55rem;border-radius:999px;background:rgba(244,239,230,.1)}
+.wa-fig__heading{display:flex;flex-direction:column;gap:.35rem;padding:.7rem;border:1px solid rgba(124,244,224,.45);border-radius:.5rem;background:rgba(124,244,224,.06)}
+.wa-fig__h{width:75%;height:.7rem;border-radius:.2rem;background:var(--cream)}
+.wa-fig__t{width:90%;height:.3rem;border-radius:999px;background:rgba(244,239,230,.3)}
+.wa-fig__t--short{width:55%}
+.wa-fig__cols{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem}
+.wa-fig__cols>span{border:1px solid var(--line);border-radius:.35rem;background:rgba(244,239,230,.04)}
+
+/* closing */
+.wa-btn-planned{border-style:dashed;color:var(--muted);cursor:default}
+.wa-btn-planned:hover{border-color:var(--line-strong);color:var(--muted)}
+.wa-closing__contact{margin-top:1.5rem}
+
+@keyframes wa-build{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes wa-blink{50%{opacity:0}}
+@keyframes wa-shimmer{to{background-position:-200% 0}}
+
+@media (max-width:1100px){
+  .wa-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){
+  .wa-hero{min-height:0;padding-bottom:3rem}
+  .wa-cases{display:flex;flex:none;max-height:none;min-height:0;margin:0 calc(var(--gutter) * -1);padding:.5rem var(--gutter) .75rem;width:auto;max-width:none;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);scrollbar-width:none;overscroll-behavior-x:contain}
+  .wa-cases::-webkit-scrollbar{display:none}
+  .wa-cases>li{flex:0 0 min(78vw,20rem);height:20rem;scroll-snap-align:start}
+}
+@media (max-width:600px){
+  .wa-steps{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  a.wa-case:hover,a.wa-case:focus-visible,
+  a.wa-case:hover .wa-case__arr,a.wa-case:focus-visible .wa-case__arr{transform:none}
+}
+
 /* Scout 3D model (research/robo-zet): WebGL viewport + stage panel.
    The --scout-grid-* tokens are read by scout-stages.js for the floor grid. */
 .scout-model{
