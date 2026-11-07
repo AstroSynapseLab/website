@@ -1,20 +1,18 @@
 ---
-layout: base.njk
-title: webAgen · Generative UI · Astro Synapse
+layout: webagen.njk
+title: webAgen · Generative UI
 description: Generative UI from a prompt. Describe what you need and an AI agent assembles a live interface from vetted components.
-code: ST/08
-crumb: webAgen
+demo: https://webagen.astrosynapse.ai
 # TODO: placeholder; replace with a dedicated og-webagen image in site.ogImages
 ogImage: deep-space
 ---
-{%- set demo = "https://webagen.astrosynapse.ai" -%}
 
 <!-- ============ HERO + USE CASES ============ -->
 <section class="wa-hero">
   <div class="wa-wall" aria-hidden="true"><div class="wa-wall__plane"><div class="wa-wall__grid"><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span><span class="wa-wall__shot wa-wall__shot--webshop"></span><span class="wa-wall__shot wa-wall__shot--website"></span></div></div></div>
   <div class="wrap wa-hero__inner">
     <div class="wa-hero__head">
-      <div class="wa-hero__meta" data-reveal><p class="kicker"><span>webAgen</span></p><ul class="wa-hero__badges" aria-label="Status"><li class="badge badge--dev">In development</li><li class="badge">Proof of concept</li><li class="badge badge--live">2 live demos</li><li class="badge">Built in-house</li></ul></div>
+      <div class="wa-hero__meta" data-reveal><p class="kicker"><span>Generative UI</span></p><ul class="wa-hero__badges" aria-label="Status"><li class="badge badge--dev">In development</li><li class="badge">Proof of concept</li><li class="badge badge--live">2 live demos</li><li class="badge">Built in-house</li></ul></div>
       <h1 data-reveal="d1">Interfaces that build themselves from a prompt.</h1>
       <p class="lede" data-reveal="d2">Instead of one website for everyone, webAgen speaks to each visitor directly: a generative UI that adapts to what they are looking for and how they interact.</p>
       <div class="cta-row" data-reveal="d3"><a class="btn btn--primary" href="#demos">Explore the demos ↓</a><a class="btn btn--ghost" href="#how">How it works ↓</a></div>
@@ -112,6 +110,6 @@ ogImage: deep-space
     <h2>See it build itself.</h2>
     <p class="lede">Try a live demo, or talk to us about your use case.</p>
     <div class="cta-row"><a class="btn btn--primary" href="{{ demo }}/website/" target="_blank" rel="noopener">Website demo ↗</a><a class="btn btn--ghost" href="{{ demo }}/webshop/" target="_blank" rel="noopener">Webshop demo ↗</a><span class="btn btn--ghost wa-btn-planned" aria-disabled="true">Next use case · planned</span></div>
-    <p class="wa-closing__contact"><a class="ulink" href="/contact/">Contact us <span class="ulink__arr">→</span></a></p>
+    <p class="wa-closing__contact"><a class="ulink" href="{{ site.url }}/contact/">Contact us <span class="ulink__arr">→</span></a></p>
   </div>
 </section>

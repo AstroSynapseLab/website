@@ -649,6 +649,15 @@ html.js [data-reveal="d3"]{transition-delay:.3s}
 .wa-hero__badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem}
 .wa-hero__head .cta-row{justify-content:center;margin-top:1.25rem}
 
+/* standalone chrome (layouts/webagen.njk): header + footer */
+.wa-header__logo{font-family:var(--font-body);font-size:1.3rem;font-weight:700;letter-spacing:-.03em;color:var(--cream)}
+.wa-header__logo:hover{color:var(--cyan)}
+.wa-footer{position:relative;z-index:1;padding:2rem 0 2.4rem;border-top:1px solid var(--line)}
+.wa-footer__inner{display:flex;justify-content:center}
+.wa-footer p{color:var(--muted);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+.wa-footer a{color:var(--cream)}
+.wa-footer a:hover{color:var(--cyan)}
+
 /* use-case cards */
 .wa-cases{flex:1 1 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2.5vw,2rem);width:100%;max-width:68rem;min-height:17rem;max-height:30rem;margin:0 auto;scroll-margin-top:calc(var(--header) + 1rem)}
 .wa-cases>li{display:flex;min-width:0}
@@ -777,6 +786,9 @@ a.wa-case:is(:hover,:focus-visible) .wa-prompt__b{animation-name:wa-type-b-loop;
 @keyframes wa-blink{50%{opacity:0}}
 @keyframes wa-shimmer{to{background-position:-200% 0}}
 
+@media (max-width:560px){
+  .wa-header__long{display:none}
+}
 @media (max-width:1100px){
   .wa-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
