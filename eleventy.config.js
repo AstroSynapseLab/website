@@ -82,6 +82,7 @@ export default function (eleventyConfig) {
     "src/assets/fonts": "assets/fonts",
     "src/assets/images": "assets/images",
     "src/assets/video": "assets/video",
+    "src/assets/pdf": "assets/pdf",
   });
 
   eleventyConfig.addWatchTarget("src/assets/css/");

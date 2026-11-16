@@ -10,7 +10,6 @@ footerAnchor: false
 scripts: ["/assets/js/scout-stages.js"]
 ---
 {%- from "macros.njk" import bgVideo -%}
-{%- set assets = "https://struki84.github.io/robo-zet-web/assets" -%}
 
 <!-- ============ PAGE HERO ============ -->
 <section class="page-hero">
@@ -23,7 +22,7 @@ scripts: ["/assets/js/scout-stages.js"]
     </div>
     <div class="page-hero__aside" data-reveal="d3">
       <div class="meta-card"><div class="meta-card__place"><span class="globe" aria-hidden="true"></span>Zagreb, HR</div><div class="meta-card__text">3 phases to a<br>driverless line.</div></div>
-      <div class="cta-row"><a class="btn btn--primary" href="{{ assets }}/RoboZET.pdf" target="_blank" rel="noopener">Project paper (PDF)</a></div>
+      <div class="cta-row"><a class="btn btn--primary" href="/assets/pdf/RoboZET.pdf" target="_blank" rel="noopener">Project paper (PDF)</a></div>
       <p class="page-hero__jump">Jump to: <a href="#how">How it works</a> · <a href="#phase-1">Phase 1</a> · <a href="#scout-stages">Scout 3D</a> · <a href="#roadmap">Roadmap</a> · <a href="#contact">Contact</a></p>
     </div>
   </div>
@@ -32,7 +31,7 @@ scripts: ["/assets/js/scout-stages.js"]
 <section class="section section--intro-tight">
   <div class="wrap">
     <figure class="player" data-reveal>
-      <div class="player__frame"><video controls preload="metadata" playsinline><source src="{{ assets }}/demo-90s.mp4" type="video/mp4">Your browser can't play this video. <a href="{{ assets }}/demo-90s.mp4">Download it</a>.</video></div>
+      <div class="player__frame"><video controls preload="metadata" playsinline><source src="/assets/video/demo-90s.mp4" type="video/mp4">Your browser can't play this video. <a href="/assets/video/demo-90s.mp4">Download it</a>.</video></div>
       <figcaption><span class="st-code">Line 2 · cab view · AI overlay</span><span>Ninety seconds of ZET line 2 as the AI sees it: detections, the track corridor, and the driving decision with confidence bars.</span></figcaption>
     </figure>
   </div>
@@ -88,7 +87,7 @@ scripts: ["/assets/js/scout-stages.js"]
           </ul>
         </div>
         <figure class="figure" data-reveal="d1">
-          <img src="{{ assets }}/vision-system.png" width="896" height="616" alt="The vision system on ZET footage: detections, the tram's path highlighted in yellow, a scene summary and Jev's decision with confidence bars" loading="lazy" decoding="async">
+          <img src="/assets/images/vision-system.png" width="896" height="616" alt="The vision system on ZET footage: detections, the tram's path highlighted in yellow, a scene summary and Jev's decision with confidence bars" loading="lazy" decoding="async">
           <figcaption><span class="st-code">Vision system, v1</span><span>Line 2 footage with detections, the tram's path, and Jev's decision on the right.</span></figcaption>
         </figure>
       </div>
@@ -109,9 +108,9 @@ scripts: ["/assets/js/scout-stages.js"]
           <p class="stage__note">First runs take place on a closed test track.</p>
         </div>
         <div class="gallery" data-reveal="d1">
-          <figure class="figure"><img src="{{ assets }}/tatra-tram.webp" width="1288" height="952" alt="A red and white Tatra T3-family tram with its two bogies visible" loading="lazy" decoding="async"><figcaption><span>A Tatra T3-family tram. ZET's T4 uses the same bogie design.</span></figcaption></figure>
-          <figure class="figure"><img src="{{ assets }}/bogie-render.jpg" width="1092" height="1092" alt="3D model of the Tatra T3/T4 metre-gauge bogie" loading="lazy" decoding="async"><figcaption><span class="st-code">Bogie, 1000 mm</span></figcaption></figure>
-          <figure class="figure"><img src="{{ assets }}/bogie-photo.jpg" width="1484" height="812" alt="A refurbished tram motor bogie in a workshop" loading="lazy" decoding="async"><figcaption><span>A refurbished motor bogie.</span></figcaption></figure>
+          <figure class="figure"><img src="/assets/images/tatra-tram.webp" width="1288" height="952" alt="A red and white Tatra T3-family tram with its two bogies visible" loading="lazy" decoding="async"><figcaption><span>A Tatra T3-family tram. ZET's T4 uses the same bogie design.</span></figcaption></figure>
+          <figure class="figure"><img src="/assets/images/bogie-render.jpg" width="1092" height="1092" alt="3D model of the Tatra T3/T4 metre-gauge bogie" loading="lazy" decoding="async"><figcaption><span class="st-code">Bogie, 1000 mm</span></figcaption></figure>
+          <figure class="figure"><img src="/assets/images/bogie-photo.jpg" width="1484" height="812" alt="A refurbished tram motor bogie in a workshop" loading="lazy" decoding="async"><figcaption><span>A refurbished motor bogie.</span></figcaption></figure>
         </div>
       </div>
     </article>
@@ -347,7 +346,7 @@ scripts: ["/assets/js/scout-stages.js"]
   <div class="wrap">
     <div class="section-head"><div><p class="st-code" data-reveal>05 · Full ride</p><h2 data-reveal="d1">A full ride, as the AI sees it</h2></div><p class="lede" data-reveal="d2">Ten minutes on line 2, with every detection and decision on screen.</p></div>
     <figure class="player" data-reveal>
-      <div class="player__frame"><video controls preload="metadata" playsinline><source src="{{ assets }}/full-ride.mp4" type="video/mp4">Your browser can't play this video. <a href="{{ assets }}/full-ride.mp4">Download it</a>.</video></div>
+      <div class="player__frame"><video controls preload="metadata" playsinline><source src="/assets/video/full-ride.mp4" type="video/mp4">Your browser can't play this video. <a href="/assets/video/full-ride.mp4">Download it</a>.</video></div>
       <figcaption><span class="st-code">Full ride · 10 min</span><span>Uncut line 2 run with the complete detection and decision overlay.</span></figcaption>
     </figure>
   </div>
@@ -373,7 +372,7 @@ scripts: ["/assets/js/scout-stages.js"]
     </div>
     <div data-reveal="d1">
       <a class="closing__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-      <div class="cta-row"><a class="btn btn--primary" href="{{ assets }}/RoboZET.pdf" target="_blank" rel="noopener">Download the project paper (PDF)</a><a class="btn btn--ghost" href="/research/">← All research</a></div>
+      <div class="cta-row"><a class="btn btn--primary" href="/assets/pdf/RoboZET.pdf" target="_blank" rel="noopener">Download the project paper (PDF)</a><a class="btn btn--ghost" href="/research/">← All research</a></div>
       <p class="st-code closing__credit">Decision model: Jev by TypeSafe AI. Demo footage used for research purposes.</p>
     </div>
   </div>
