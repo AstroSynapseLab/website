@@ -1,3 +1,8 @@
-{#- RoboZET feature card (home page). Copy lives in _data/research.js. -#}
+{#- Featured research on the home page: RoboZET, ASAI and Gedor as full-size cards. Copy lives in _data/research.js. -#}
 {%- from "partials/research-card.njk" import researchCard -%}
-{{ researchCard(research | first) }}
+{%- set featured = ["robo-zet", "asai", "gedor"] -%}
+<div class="research-index">
+  {%- for p in research %}{% if p.key in featured %}
+  {{ researchCard(p) }}
+  {%- endif %}{% endfor %}
+</div>

@@ -1232,7 +1232,7 @@ html.js .gedor-rag:not(.is-answered) .gedor-rag__msg--a{opacity:0;transform:tran
 }
 
 /* ---------------------------------------------------------
-   Asai (research/asai): synthetic personality page.
+   ASAI (research/asai): synthetic personality page.
    Figures are inline SVG / canvas; asai.js drives the canvas,
    the monologue and the journey stepper via data-* hooks.
    --------------------------------------------------------- */

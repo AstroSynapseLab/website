@@ -1,4 +1,4 @@
-// Asai research page: the "data face" canvas, the internal-monologue ticker and the
+// ASAI research page: the "data face" canvas, the internal-monologue ticker and the
 // setup-journey stepper. Loaded only on /research/asai/ (front matter `scripts`).
 // Everything here degrades: no canvas → static image, reduced motion → single frame.
 
