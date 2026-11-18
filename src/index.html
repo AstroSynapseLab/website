@@ -6,7 +6,6 @@ code: ST/00
 navKey: home
 ogImage: hero-space
 preloadImage: /assets/video/hero-space.jpg
-productPanel: true
 ---
 {%- from "macros.njk" import bgVideo -%}
 
@@ -61,27 +60,17 @@ productPanel: true
   </div>
 </div>
 
-<!-- ============ KEY FACTS ============ -->
-<section class="facts section">
-  {{ bgVideo("ringed-planet") }}
-  <div class="wrap facts__inner">
+<!-- ============ RESEARCH ============ -->
+<section class="products section" id="research">
+  <div class="wrap">
     <div class="section-head">
-      <div><p class="st-code" data-reveal>✦ From idea to outcome</p><h2 data-reveal="d1">Key facts</h2></div>
-      <p class="lede" data-reveal="d2">A snapshot of what we build, how we host it, and the shape of the lab.</p>
+      <div><p class="st-code" data-reveal>ST/02 · Research</p><h2 data-reveal="d1">Research we build<br>and ship ourselves.</h2></div>
+      <p class="lede" data-reveal="d2">Applied research in the open: from an AI that drives trams to the products that came out of our own work. Each one started as a problem we needed solved.</p>
     </div>
-    <div class="fact-grid">
-      <div class="fact" data-reveal><div class="fact__num">07</div><div class="fact__cap"><b>Capabilities</b>From custom integrations to model provisioning and team augmentation.</div></div>
-      <div class="fact" data-reveal="d1"><div class="fact__num">05</div><div class="fact__cap"><b>Research projects</b>Built and shipped by the lab itself, from trams to translation.</div></div>
-      <div class="fact" data-reveal="d2"><div class="fact__num">02</div><div class="fact__cap"><b>Products</b>Came out of our research: Interpress and Gedor.</div></div>
-      <div class="fact" data-reveal="d3"><div class="fact__num">EU</div><div class="fact__cap"><b>Sovereign inference</b>Gedor hosts LLM-as-a-Service entirely within the EU.</div></div>
-      <div class="fact fact--wide" data-reveal>
-        <div class="fact__cap"><b>Works with your stack</b>Ingestion, connectors and plugins we ship against today.</div>
-        <ul class="pills"><li class="pill">Slack</li><li class="pill">Google Drive</li><li class="pill">Email</li><li class="pill">Calendar</li><li class="pill">Trello</li><li class="pill">Discord</li><li class="pill">Jira</li><li class="pill">MCP</li><li class="pill">OpenAI-compatible API</li></ul>
-      </div>
-      <div class="fact fact--wide" data-reveal="d1">
-        <div class="fact__num fact__num--text">Multi-LLM.<br>Self-hosted or managed.</div>
-        <div class="fact__cap">No forced dependency on a single model provider. Every system can run on your hardware or ours.</div>
-      </div>
+    {% include "partials/research-feature.njk" %}
+    <div class="section-foot">
+      <span class="st-code">Five projects. One lab.</span>
+      <a class="ulink" href="/research/">See all research projects <span class="ulink__arr">→</span></a>
     </div>
   </div>
 </section>
@@ -90,7 +79,7 @@ productPanel: true
 <section class="section section--bordered">
   <div class="wrap">
     <div class="section-head">
-      <div><p class="st-code" data-reveal>ST/02 · Capabilities</p><h2 data-reveal="d1">Do it all with<br>Astro Synapse.</h2></div>
+      <div><p class="st-code" data-reveal>ST/03 · Capabilities</p><h2 data-reveal="d1">Do it all with<br>Astro Synapse.</h2></div>
       <p class="lede" data-reveal="d2">Seven ways we plug into a business, from a single pipeline to a full embedded team.</p>
     </div>
     <ol class="service-list">
@@ -106,18 +95,6 @@ productPanel: true
       <span class="st-code">Different disciplines. One standard of engineering.</span>
       <a class="ulink" href="/solutions/">View solutions <span class="ulink__arr">→</span></a>
     </div>
-  </div>
-</section>
-
-<!-- ============ RESEARCH ============ -->
-<section class="products section" id="research">
-  <div class="wrap">
-    <div class="section-head">
-      <div><p class="st-code" data-reveal>ST/03 · Research</p><h2 data-reveal="d1">Research we build<br>and ship ourselves.</h2></div>
-      <p class="lede" data-reveal="d2">Applied research in the open: from an AI that drives trams to the products that came out of our own work. Each one started as a problem we needed solved.</p>
-    </div>
-    {% include "partials/research-feature.njk" %}
-    {% include "partials/product-cards.njk" %}
   </div>
 </section>
 

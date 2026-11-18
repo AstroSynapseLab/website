@@ -34,7 +34,7 @@ src/
   assets/js/scout-stages.js RoboZET 3D model (three.js); page-only bundle, see `scripts` below
   assets/js/gedor.js        Gedor hero gateway field, model console, catalog tabs, retrieval figure; page-only bundle
   assets/js/interpress.js   Interpress hero glyph field, document language morph, ask console; page-only bundle
-  assets/js/asai.js         Asai hero drift field, stipple face canvas, monologue, journey stepper; page-only bundle
+  assets/js/asai.js         ASAI hero drift field, stipple face canvas, monologue, journey stepper; page-only bundle
   assets/fonts|images|video static files, copied as-is
 lib/schema.js               JSON-LD structured data
 eleventy.config.js          build configuration

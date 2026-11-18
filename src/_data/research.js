@@ -1,4 +1,4 @@
-// Research projects, in page order (001 → 005). Feeds the RoboZET feature card on
+// Research projects, in page order (001 → 005). Feeds the featured cards on
 // the home page (partials/research-feature.njk) and the project list on the
 // research page (partials/research-list.njk).
 //
@@ -23,7 +23,7 @@ const roboZet = {
 };
 
 const extras = {
-  asai: { cardTitle: "Asai", tagline: "an AI with a personality of its own" },
+  asai: { tagline: "an AI with a personality of its own" },
   interpress: { tagline: "your documents in every language" },
   gedor: { tagline: "open-weight models, hosted in the EU" },
   webagen: { tagline: "an agent that builds your website, not a template" },
